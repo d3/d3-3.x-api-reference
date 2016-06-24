@@ -1,4 +1,4 @@
-> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Layouts]] ▸ **Hierarchy Layout**
+> [API Reference](API-Reference.md) ▸ [Layouts](Layouts.md) ▸ **Hierarchy Layout**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 

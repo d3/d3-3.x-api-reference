@@ -1,4 +1,4 @@
-> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Core]] ▸ **Requests**
+> [API Reference](API-Reference.md) ▸ [Core](Core.md) ▸ **Requests**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
@@ -121,7 +121,7 @@ Creates a request for the HTML file at the specified *url* with the mime type "t
 
 <a name="d3_csv" href="CSV">#</a> d3.<b>csv</b>(<i>url</i>[, <i>accessor</i>][, <i>callback</i>])
 
-Creates a request for the [[CSV]] file at the specified *url* with the mime type "text/csv". If a *callback* is specified, the request is immediately issued with the GET method, and the callback will be invoked asynchronously when the file is loaded or the request fails; the callback is invoked with two arguments: the error, if any, and the array of [parsed rows](CSV.md#parse) per [RFC 4180](http://tools.ietf.org/html/rfc4180). The rows array is undefined if an error occurs. If no callback is specified, the returned request can be issued using xhr.get or similar, and handled using xhr.on.
+Creates a request for the [CSV](CSV.md) file at the specified *url* with the mime type "text/csv". If a *callback* is specified, the request is immediately issued with the GET method, and the callback will be invoked asynchronously when the file is loaded or the request fails; the callback is invoked with two arguments: the error, if any, and the array of [parsed rows](CSV.md#parse) per [RFC 4180](http://tools.ietf.org/html/rfc4180). The rows array is undefined if an error occurs. If no callback is specified, the returned request can be issued using xhr.get or similar, and handled using xhr.on.
 
 <a name="d3_tsv" href="CSV#tsv">#</a> d3.<b>tsv</b>(<i>url</i>[, <i>accessor</i>][, <i>callback</i>])
 

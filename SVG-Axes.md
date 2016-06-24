@@ -1,4 +1,4 @@
-> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[SVG]] ▸ **SVG Axes**
+> [API Reference](API-Reference.md) ▸ [SVG](SVG.md) ▸ **SVG Axes**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
