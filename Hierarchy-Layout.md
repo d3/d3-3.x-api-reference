@@ -4,11 +4,11 @@
 
 The hierarchy layout is an *abstract* layout that is not used directly, but instead allows code sharing between multiple hierarchical layouts. For an implementation, see one of:
 
-* [[Cluster|Cluster-Layout]] - cluster entities into a dendrogram.
-* [[Pack|Pack-Layout]] - produce a hierarchical layout using recursive circle-packing.
-* [[Partition|Partition-Layout]] - recursively partition a node tree into a sunburst or icicle.
-* [[Tree|Tree-Layout]] - position a tree of nodes tidily.
-* [[Treemap|Treemap-Layout]] - use recursive spatial subdivision to display a tree of nodes.
+* [Cluster](Cluster-Layout.md) - cluster entities into a dendrogram.
+* [Pack](Pack-Layout.md) - produce a hierarchical layout using recursive circle-packing.
+* [Partition](Partition-Layout.md) - recursively partition a node tree into a sunburst or icicle.
+* [Tree](Tree-Layout.md) - position a tree of nodes tidily.
+* [Treemap](Treemap-Layout.md) - use recursive spatial subdivision to display a tree of nodes.
 
 Although not a hierarchy layout, the [bundle layout](Bundle-Layout.md) is also designed to work in conjunction with hierarchies.
 

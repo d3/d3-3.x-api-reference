@@ -15,7 +15,7 @@ Creates a new tree layout with the default settings: the default sort order is n
 <a name="_tree" href="#_tree">#</a> <b>tree</b>(<i>root</i>)
 <br><a name="nodes" href="#nodes">#</a> tree.<b>nodes</b>(<i>root</i>)
 
-Runs the tree layout, returning the array of nodes associated with the specified *root* node. The tree layout is part of D3's family of [[hierarchical|Hierarchy-Layout]] layouts. These layouts follow the same basic structure: the input argument to the layout is the root node of the hierarchy, and the output return value is an array representing the computed positions of all nodes. Several attributes are populated on each node:
+Runs the tree layout, returning the array of nodes associated with the specified *root* node. The tree layout is part of D3's family of [hierarchical](Hierarchy-Layout.md) layouts. These layouts follow the same basic structure: the input argument to the layout is the root node of the hierarchy, and the output return value is an array representing the computed positions of all nodes. Several attributes are populated on each node:
 
 * parent - the parent node, or null for the root.
 * children - the array of child nodes, or null for leaf nodes.

@@ -15,7 +15,7 @@ Creates a new partition layout with the default settings: the default sort order
 <a name="_partition" href="#_partition">#</a> <b>partition</b>(<i>root</i>)
 <br><a name="nodes" href="#nodes">#</a> partition.<b>nodes</b>(<i>root</i>)
 
-Runs the partition layout, returning the array of nodes associated with the specified *root* node. The partition layout is part of D3's family of [[hierarchical layouts|Hierarchy-Layout]]. These layouts follow the same basic structure: the input argument to the layout is the root node of the hierarchy, and the output return value is an array representing the computed positions of all nodes. Several attributes are populated on each node:
+Runs the partition layout, returning the array of nodes associated with the specified *root* node. The partition layout is part of D3's family of [hierarchical layouts](Hierarchy-Layout.md). These layouts follow the same basic structure: the input argument to the layout is the root node of the hierarchy, and the output return value is an array representing the computed positions of all nodes. Several attributes are populated on each node:
 
 * parent - the parent node, or null for the root.
 * children - the array of child nodes, or null for leaf nodes.
@@ -26,7 +26,7 @@ Runs the partition layout, returning the array of nodes associated with the spec
 * dx - the *x*-extent of the node position.
 * dy - the *y*-extent of the node position.
 
-Although the layout has a size in *x* and *y*, this represents an arbitrary coordinate system; for example, you can treat *x* as an angle and *y* as a radius to produce a radial rather than Cartesian layout. In Cartesian orientation, *x*, *y*, *dx* and *dy* correspond to the "x", "y", "width" and "height" attributes of the SVG [[rect|SVG-Shapes#svg_rect]] element. In radial orientation, they can be used to compute the innerRadius, startAngle, outerRadius and endAngle of an [[arc|SVG-Shapes#arc]] generator. The Cartesian orientation may be called an **icicle tree**, while the radial orientation is called a **sunburst**.
+Although the layout has a size in *x* and *y*, this represents an arbitrary coordinate system; for example, you can treat *x* as an angle and *y* as a radius to produce a radial rather than Cartesian layout. In Cartesian orientation, *x*, *y*, *dx* and *dy* correspond to the "x", "y", "width" and "height" attributes of the SVG [rect](SVG-Shapes.md#svg_rect) element. In radial orientation, they can be used to compute the innerRadius, startAngle, outerRadius and endAngle of an [arc](SVG-Shapes.md#arc) generator. The Cartesian orientation may be called an **icicle tree**, while the radial orientation is called a **sunburst**.
 
 <a name="links" href="#links">#</a> partition.<b>links</b>(<i>nodes</i>)
 

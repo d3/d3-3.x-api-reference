@@ -39,11 +39,11 @@ If *values* is specified, sets the scale's output range to the specified array o
 
 <a name="rangeRound" href="Time-Scales#rangeRound">#</a> scale.<b>rangeRound</b>([<i>values</i>])
 
-Sets the scale's output range to the specified array of values, while also setting the scale's interpolator to [[d3.interpolateRound|Transitions#d3_interpolateRound]]. This is a convenience routine for when the values output by the scale should be exact integers, such as to avoid antialiasing artifacts. It is also possible to round the output values manually after the scale is applied.
+Sets the scale's output range to the specified array of values, while also setting the scale's interpolator to [d3.interpolateRound](Transitions.md#d3_interpolateRound). This is a convenience routine for when the values output by the scale should be exact integers, such as to avoid antialiasing artifacts. It is also possible to round the output values manually after the scale is applied.
 
 <a name="interpolate" href="Time-Scales#interpolate">#</a> scale.<b>interpolate</b>([<i>factory</i>])
 
-If *factory* is specified, sets the scale's output interpolator using the specified *factory*. The interpolator factory defaults to [[d3.interpolate|Transitions#d3_interpolate]], and is used to map the normalized domain parameter *t* in [0,1] to the corresponding value in the output range. The interpolator factory will be used to construct interpolators for each adjacent pair of values from the output range. If *factory* is not specified, returns the scale's interpolator factory.
+If *factory* is specified, sets the scale's output interpolator using the specified *factory*. The interpolator factory defaults to [d3.interpolate](Transitions.md#d3_interpolate), and is used to map the normalized domain parameter *t* in [0,1] to the corresponding value in the output range. The interpolator factory will be used to construct interpolators for each adjacent pair of values from the output range. If *factory* is not specified, returns the scale's interpolator factory.
 
 <a name="clamp" href="Time-Scales#clamp">#</a> scale.<b>clamp</b>([<i>boolean</i>])
 
@@ -82,7 +82,7 @@ This set of time intervals is somewhat arbitrary and additional values may be ad
 
 <a name="tickFormat" href="Time-Scales#tickFormat">#</a> scale.<b>tickFormat</b>()
 
-Returns a [[time format|Time-Formatting]] function suitable for displaying a tick value. You don't have to use the scale's built-in tick format, but it automatically computes the appropriate display based on the input date.
+Returns a [time format](Time-Formatting.md) function suitable for displaying a tick value. You don't have to use the scale's built-in tick format, but it automatically computes the appropriate display based on the input date.
 
 The following time formats are considered:
 

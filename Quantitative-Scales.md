@@ -2,7 +2,7 @@
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
-**Scales** are functions that map from an input domain to an output range. **Quantitative** scales have a continuous domain, such as the set of real numbers, or dates. There are also [[ordinal scales|Ordinal-Scales]], which have a discrete domain, such as a set of names or categories. Scales are an optional feature in D3; you don't have to use them, if you prefer to do the math yourself. However, using scales can greatly simplify the code needed to map a dimension of data to a visual representation.
+**Scales** are functions that map from an input domain to an output range. **Quantitative** scales have a continuous domain, such as the set of real numbers, or dates. There are also [ordinal scales](Ordinal-Scales.md), which have a discrete domain, such as a set of names or categories. Scales are an optional feature in D3; you don't have to use them, if you prefer to do the math yourself. However, using scales can greatly simplify the code needed to map a dimension of data to a visual representation.
 
 A scale object, such as that returned by [d3.scale.linear](Quantitative-Scales.md#linear), is both an object and a function. That is: you can call the scale like any other function, and the scale has additional methods that change its behavior. Like other classes in D3, scales follow the method chaining pattern where setter methods return the scale itself, allowing multiple setters to be invoked in a concise statement.
 
@@ -26,7 +26,7 @@ Note: some [interpolators](#linear_interpolate) **reuse return values**. For exa
 
 Returns the value in the input domain *x* for the corresponding value in the output range *y*. This represents the inverse mapping from range to domain. For a valid value *y* in the output range, linear(linear.invert(<i>y</i>)) equals *y*; similarly, for a valid value *x* in the input domain, linear.invert(linear(<i>x</i>)) equals *x*. Equivalently, you can construct the invert operator by building a new scale while swapping the domain and range. The invert operator is particularly useful for interaction, say to determine the value in the input domain that corresponds to the pixel location under the mouse.
 
-Note: the invert operator is only supported if the output range is numeric! D3 allows the output range to be any type; under the hood, [[d3.interpolate|Transitions#d3_interpolate]] or a custom interpolator of your choice is used to map the normalized parameter *t* to a value in the output range. Thus, the output range may be colors, strings, or even arbitrary objects. As there is no facility to "uninterpolate" arbitrary types, the invert operator is currently supported only on numeric ranges.
+Note: the invert operator is only supported if the output range is numeric! D3 allows the output range to be any type; under the hood, [d3.interpolate](Transitions.md#d3_interpolate) or a custom interpolator of your choice is used to map the normalized parameter *t* to a value in the output range. Thus, the output range may be colors, strings, or even arbitrary objects. As there is no facility to "uninterpolate" arbitrary types, the invert operator is currently supported only on numeric ranges.
 
 <a name="linear_domain" href="Quantitative-Scales#linear_domain">#</a> linear.<b>domain</b>([<i>numbers</i>])
 
@@ -48,11 +48,11 @@ If *values* is specified, sets the scale's output range to the specified array o
 
 <a name="linear_rangeRound" href="Quantitative-Scales#linear_rangeRound">#</a> linear.<b>rangeRound</b>(<i>values</i>)
 
-Sets the scale's output range to the specified array of values, while also setting the scale's interpolator to [[d3.interpolateRound|Transitions#d3_interpolateRound]]. This is a convenience routine for when the values output by the scale should be exact integers, such as to avoid antialiasing artifacts. It is also possible to round the output values manually after the scale is applied.
+Sets the scale's output range to the specified array of values, while also setting the scale's interpolator to [d3.interpolateRound](Transitions.md#d3_interpolateRound). This is a convenience routine for when the values output by the scale should be exact integers, such as to avoid antialiasing artifacts. It is also possible to round the output values manually after the scale is applied.
 
 <a name="linear_interpolate" href="Quantitative-Scales#linear_interpolate">#</a> linear.<b>interpolate</b>([<i>factory</i>])
 
-If *factory* is specified, sets the scale's output interpolator using the specified *factory*. The interpolator factory defaults to [[d3.interpolate|Transitions#d3_interpolate]], and is used to map the normalized domain parameter *t* in [0,1] to the corresponding value in the output range. The interpolator factory will be used to construct interpolators for each adjacent pair of values from the output range. If *factory* is not specified, returns the scale's interpolator factory.
+If *factory* is specified, sets the scale's output interpolator using the specified *factory*. The interpolator factory defaults to [d3.interpolate](Transitions.md#d3_interpolate), and is used to map the normalized domain parameter *t* in [0,1] to the corresponding value in the output range. The interpolator factory will be used to construct interpolators for each adjacent pair of values from the output range. If *factory* is not specified, returns the scale's interpolator factory.
 
 <a name="linear_clamp" href="Quantitative-Scales#linear_clamp">#</a> linear.<b>clamp</b>([<i>boolean</i>])
 
@@ -70,9 +70,9 @@ A stateless method that returns approximately *count* representative values from
 
 <a name="linear_tickFormat" href="Quantitative-Scales#linear_tickFormat">#</a> linear.<b>tickFormat</b>(<i>count</i>, [<i>format</i>])
 
-A stateless method that returns a [[number format|Formatting#d3_format]] function suitable for displaying a tick value. The specified *count* should have the same value as the count that is used to generate the tick values. You don't have to use the scale's built-in tick format, but it automatically computes the appropriate precision based on the fixed interval between tick values.
+A stateless method that returns a [number format](Formatting.md#d3_format) function suitable for displaying a tick value. The specified *count* should have the same value as the count that is used to generate the tick values. You don't have to use the scale's built-in tick format, but it automatically computes the appropriate precision based on the fixed interval between tick values.
 
-The optional *format* argument allows a [[format specifier|Formatting#d3_format]] to be specified, where the precision of the format is automatically substituted by the scale to be appropriate for the tick interval. For example, to format percentage change, you might say:
+The optional *format* argument allows a [format specifier](Formatting.md#d3_format) to be specified, where the precision of the format is automatically substituted by the scale to be appropriate for the tick interval. For example, to format percentage change, you might say:
 
 ```js
 var x = d3.scale.linear().domain([-1, 1]);
@@ -113,7 +113,7 @@ Returns approximately *count* representative values from the scale's input domai
 
 Returns a [number format](Formatting.md#d3_format) function suitable for displaying a tick value. The specified *count* should have the same value as the count that is used to generate the tick values. You don't have to use the scale's built-in tick format, but it automatically computes the appropriate precision based on the fixed interval between tick values.
 
-The optional *format* argument allows a [[format specifier|Formatting#d3_format]] to be specified. If the format specifier doesn’t have a defined precision, the precision will be set automatically by the scale, returning the appropriate format. This provides a convenient, declarative way of specifying a format whose
+The optional *format* argument allows a [format specifier](Formatting.md#d3_format) to be specified. If the format specifier doesn’t have a defined precision, the precision will be set automatically by the scale, returning the appropriate format. This provides a convenient, declarative way of specifying a format whose
 precision will be automatically set by the scale.
 
 <a name="identity_copy" href="#identity_copy">#</a> identity.<b>copy</b>()
@@ -148,7 +148,7 @@ Note: some [interpolators](#pow_interpolate) **reuse return values**. For exampl
 
 Returns the value in the input domain *x* for the corresponding value in the output range *y*. This represents the inverse mapping from range to domain. For a valid value *y* in the output range, pow(pow.invert(<i>y</i>)) equals *y*; similarly, for a valid value *x* in the input domain, pow.invert(pow(<i>x</i>)) equals *x*. Equivalently, you can construct the invert operator by building a new scale while swapping the domain and range. The invert operator is particularly useful for interaction, say to determine the value in the input domain that corresponds to the pixel location under the mouse.
 
-Note: the invert operator is only supported if the output range is numeric! D3 allows the output range to be any type; under the hood, [[d3.interpolate|Transitions#d3_interpolate]] or a custom interpolator of your choice is used to map the normalized parameter *t* to a value in the output range. Thus, the output range may be colors, strings, or even arbitrary objects. As there is no facility to "uninterpolate" arbitrary types, the invert operator is currently supported only on numeric ranges.
+Note: the invert operator is only supported if the output range is numeric! D3 allows the output range to be any type; under the hood, [d3.interpolate](Transitions.md#d3_interpolate) or a custom interpolator of your choice is used to map the normalized parameter *t* to a value in the output range. Thus, the output range may be colors, strings, or even arbitrary objects. As there is no facility to "uninterpolate" arbitrary types, the invert operator is currently supported only on numeric ranges.
 
 <a name="pow_domain" href="Quantitative-Scales#pow_domain">#</a> pow.<b>domain</b>([<i>numbers</i>])
 
@@ -162,7 +162,7 @@ If *values* is specified, sets the scale's output range to the specified array o
 
 <a name="pow_rangeRound" href="Quantitative-Scales#pow_rangeRound">#</a> pow.<b>rangeRound</b>(<i>values</i>)
 
-Sets the scale's output range to the specified array of values, while also setting the scale's interpolator to [[d3.interpolateRound|Transitions#d3_interpolateRound]]. This is a convenience routine for when the values output by the scale should be exact integers, such as to avoid antialiasing artifacts. It is also possible to round the output values manually after the scale is applied.
+Sets the scale's output range to the specified array of values, while also setting the scale's interpolator to [d3.interpolateRound](Transitions.md#d3_interpolateRound). This is a convenience routine for when the values output by the scale should be exact integers, such as to avoid antialiasing artifacts. It is also possible to round the output values manually after the scale is applied.
 
 <a name="pow_exponent" href="Quantitative-Scales#pow_exponent">#</a> pow.<b>exponent</b>([<i>k</i>])
 
@@ -170,7 +170,7 @@ If *k* is specified, sets the current exponent to the given numeric value. If *k
 
 <a name="pow_interpolate" href="Quantitative-Scales#pow_interpolate">#</a> pow.<b>interpolate</b>([<i>factory</i>])
 
-If *factory* is specified, sets the scale's output interpolator using the specified *factory*. The interpolator factory defaults to [[d3.interpolate|Transitions#d3_interpolate]], and is used to map the normalized domain parameter *t* in [0,1] to the corresponding value in the output range. The interpolator factory will be used to construct interpolators for each adjacent pair of values from the output range. If *factory* is not specified, returns the scale's interpolator factory.
+If *factory* is specified, sets the scale's output interpolator using the specified *factory*. The interpolator factory defaults to [d3.interpolate](Transitions.md#d3_interpolate), and is used to map the normalized domain parameter *t* in [0,1] to the corresponding value in the output range. The interpolator factory will be used to construct interpolators for each adjacent pair of values from the output range. If *factory* is not specified, returns the scale's interpolator factory.
 
 <a name="pow_clamp" href="Quantitative-Scales#pow_clamp">#</a> pow.<b>clamp</b>([<i>boolean</i>])
 
@@ -188,9 +188,9 @@ Returns approximately *count* representative values from the scale's input domai
 
 <a name="pow_tickFormat" href="Quantitative-Scales#pow_tickFormat">#</a> pow.<b>tickFormat</b>([<i>count</i>, [<i>format</i>]])
 
-Returns a [[number format|Formatting#d3_format]] function suitable for displaying a tick value. The specified *count* should have the same value as the count that is used to generate the tick values. You don't have to use the scale's built-in tick format, but it automatically computes the appropriate precision based on the fixed interval between tick values.
+Returns a [number format](Formatting.md#d3_format) function suitable for displaying a tick value. The specified *count* should have the same value as the count that is used to generate the tick values. You don't have to use the scale's built-in tick format, but it automatically computes the appropriate precision based on the fixed interval between tick values.
 
-The optional *format* argument allows a [[format specifier|Formatting#d3_format]] to be specified. If the format specifier doesn’t have a defined precision, the precision will be set automatically by the scale, returning the appropriate format. This provides a convenient, declarative way of specifying a format whose
+The optional *format* argument allows a [format specifier](Formatting.md#d3_format) to be specified. If the format specifier doesn’t have a defined precision, the precision will be set automatically by the scale, returning the appropriate format. This provides a convenient, declarative way of specifying a format whose
 precision will be automatically set by the scale.
 
 <a name="pow_copy" href="#pow_copy">#</a> pow.<b>copy</b>()
@@ -217,7 +217,7 @@ Note: some [interpolators](#log_interpolate) **reuse return values**. For exampl
 
 Returns the value in the input domain *x* for the corresponding value in the output range *y*. This represents the inverse mapping from range to domain. For a valid value *y* in the output range, log(log.invert(<i>y</i>)) equals *y*; similarly, for a valid value *x* in the input domain, log.invert(log(<i>x</i>)) equals *x*. Equivalently, you can construct the invert operator by building a new scale while swapping the domain and range. The invert operator is particularly useful for interaction, say to determine the value in the input domain that corresponds to the pixel location under the mouse.
 
-Note: the invert operator is only supported if the output range is numeric! D3 allows the output range to be any type; under the hood, [[d3.interpolate|Transitions#d3_interpolate]] or a custom interpolator of your choice is used to map the normalized parameter *t* to a value in the output range. Thus, the output range may be colors, strings, or even arbitrary objects. As there is no facility to "uninterpolate" arbitrary types, the invert operator is currently supported only on numeric ranges.
+Note: the invert operator is only supported if the output range is numeric! D3 allows the output range to be any type; under the hood, [d3.interpolate](Transitions.md#d3_interpolate) or a custom interpolator of your choice is used to map the normalized parameter *t* to a value in the output range. Thus, the output range may be colors, strings, or even arbitrary objects. As there is no facility to "uninterpolate" arbitrary types, the invert operator is currently supported only on numeric ranges.
 
 <a name="log_domain" href="Quantitative-Scales#log_domain">#</a> log.<b>domain</b>([<i>numbers</i>])
 
@@ -231,7 +231,7 @@ If *values* is specified, sets the scale's output range to the specified array o
 
 <a name="log_rangeRound" href="Quantitative-Scales#log_rangeRound">#</a> log.<b>rangeRound</b>(<i>values</i>)
 
-Sets the scale's output range to the specified array of values, while also setting the scale's interpolator to [[d3.interpolateRound|Transitions#d3_interpolateRound]]. This is a convenience routine for when the values output by the scale should be exact integers, such as to avoid antialiasing artifacts. It is also possible to round the output values manually after the scale is applied.
+Sets the scale's output range to the specified array of values, while also setting the scale's interpolator to [d3.interpolateRound](Transitions.md#d3_interpolateRound). This is a convenience routine for when the values output by the scale should be exact integers, such as to avoid antialiasing artifacts. It is also possible to round the output values manually after the scale is applied.
 
 <a name="log_base" href="Quantitative-Scales#log_base">#</a> log.<b>base</b>([<i>base</i>])
 
@@ -239,7 +239,7 @@ If *base* is specified, sets the base for this logarithmic scale. If *base* is n
 
 <a name="log_interpolate" href="Quantitative-Scales#log_interpolate">#</a> log.<b>interpolate</b>([<i>factory</i>])
 
-If *factory* is specified, sets the scale's output interpolator using the specified *factory*. The interpolator factory defaults to [[d3.interpolate|Transitions#d3_interpolate]], and is used to map the normalized domain parameter *t* in [0,1] to the corresponding value in the output range. The interpolator factory will be used to construct interpolators for each adjacent pair of values from the output range. If *factory* is not specified, returns the scale's interpolator factory.
+If *factory* is specified, sets the scale's output interpolator using the specified *factory*. The interpolator factory defaults to [d3.interpolate](Transitions.md#d3_interpolate), and is used to map the normalized domain parameter *t* in [0,1] to the corresponding value in the output range. The interpolator factory will be used to construct interpolators for each adjacent pair of values from the output range. If *factory* is not specified, returns the scale's interpolator factory.
 
 <a name="log_clamp" href="Quantitative-Scales#log_clamp">#</a> log.<b>clamp</b>([<i>boolean</i>])
 
@@ -255,7 +255,7 @@ Returns representative values from the scale's input domain. The returned tick v
 
 <a name="log_tickFormat" href="Quantitative-Scales#log_tickFormat">#</a> log.<b>tickFormat</b>([<i>count</i>, [<i>format</i>]])
 
-Returns a [[number format|Formatting#d3_format]] function suitable for displaying a tick value. The returned tick format is implemented as `d.toPrecision(1)`. If a *count* is specified, then some of the tick labels may not be displayed; this is useful if there is not enough room to fit all of the tick labels. However, note that the tick marks will still be displayed (so that the log scale distortion remains visible). When specifying a count, you may also override the *format* function; you can also specify a format specifier as a string, and it will automatically be wrapped with [d3.format](Formatting.md). For example, to get a tick formatter that will display 20 ticks of a currency:
+Returns a [number format](Formatting.md#d3_format) function suitable for displaying a tick value. The returned tick format is implemented as `d.toPrecision(1)`. If a *count* is specified, then some of the tick labels may not be displayed; this is useful if there is not enough room to fit all of the tick labels. However, note that the tick marks will still be displayed (so that the log scale distortion remains visible). When specifying a count, you may also override the *format* function; you can also specify a format specifier as a string, and it will automatically be wrapped with [d3.format](Formatting.md). For example, to get a tick formatter that will display 20 ticks of a currency:
 
 ```js
 scale.tickFormat(20, "$,.2f");
@@ -327,7 +327,7 @@ If *values* is specified, sets the discrete values in the output range. The arra
 
 <a name="quantile_quantiles" href="Quantitative-Scales#quantile_quantiles">#</a> quantile.<b>quantiles</b>()
 
-Returns the quantile thresholds. If the output range contains *n* discrete values, the returned threshold array will contain *n* - 1 values. Values less than the first element in the thresholds array, quantiles()[0], are considered in the first quantile; greater values less than the second threshold are in the second quantile, and so on. Internally, the thresholds array is used with [[d3.bisect|Arrays#d3_bisect]] to find the output quantile associated with the given input value.
+Returns the quantile thresholds. If the output range contains *n* discrete values, the returned threshold array will contain *n* - 1 values. Values less than the first element in the thresholds array, quantiles()[0], are considered in the first quantile; greater values less than the second threshold are in the second quantile, and so on. Internally, the thresholds array is used with [d3.bisect](Arrays.md#d3_bisect) to find the output quantile associated with the given input value.
 
 <a name="quantile_copy" href="#quantile_copy">#</a> quantile.<b>copy</b>()
 

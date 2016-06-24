@@ -2,7 +2,7 @@
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
-Enclosure diagrams use containment (nesting) to represent the hierarchy. The size of each leaf node’s circle reveals a quantitative dimension of each data point. The enclosing circles show the approximate cumulative size of each subtree, but note that because of wasted space there is some distortion between levels; only the leaf nodes can be compared accurately. Although [circle packing](http://en.wikipedia.org/wiki/Circle_packing) does not use space as efficiently as a [[treemap|Treemap-Layout]], the “wasted” space more prominently reveals the hierarchy.
+Enclosure diagrams use containment (nesting) to represent the hierarchy. The size of each leaf node’s circle reveals a quantitative dimension of each data point. The enclosing circles show the approximate cumulative size of each subtree, but note that because of wasted space there is some distortion between levels; only the leaf nodes can be compared accurately. Although [circle packing](http://en.wikipedia.org/wiki/Circle_packing) does not use space as efficiently as a [treemap](Treemap-Layout.md), the “wasted” space more prominently reveals the hierarchy.
 
 This layout is based on [Visualization of large hierarchical data by circle packing](https://dl.acm.org/citation.cfm?id=1124851) by Wang et al.
 

@@ -15,7 +15,7 @@ zero(2); // "0002"
 zero(123); // "0123"
 ```
 
-In addition to numbers, D3 also supports formatting and parsing [[dates|Time-Formatting]], and [[comma-separated values|CSV]].
+In addition to numbers, D3 also supports formatting and parsing [dates](Time-Formatting.md), and [comma-separated values](CSV.md).
 
 ## Numbers
 
@@ -113,4 +113,4 @@ d3.requote("[]"); // "\[\]"
 
 ## Dates
 
-See the [[d3.time|Time-Formatting]] module.
+See the [d3.time](Time-Formatting.md) module.
