@@ -1,10 +1,10 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Scales]] ▸ **Ordinal Scales**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Scales]] ▸ **Ordinal Scales**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
 **Scales** are functions that map from an input domain to an output range. **Ordinal** scales have a discrete domain, such as a set of names or categories. There are also [[quantitative scales|Quantitative-Scales]], which have a continuous domain, such as the set of real numbers. Scales are an optional feature in D3; you don't have to use them, if you prefer to do the math yourself. However, using scales can greatly simplify the code needed to map a dimension of data to a visual representation.
 
-A scale object, such as that returned by [d3.scale.ordinal](Ordinal-Scales#ordinal), is both an object and a function. That is: you can call the scale like any other function, and the scale has additional methods that change its behavior. Like other classes in D3, scales follow the method chaining pattern where setter methods return the scale itself, allowing multiple setters to be invoked in a concise statement.
+A scale object, such as that returned by [d3.scale.ordinal](Ordinal-Scales.md#ordinal), is both an object and a function. That is: you can call the scale like any other function, and the scale has additional methods that change its behavior. Like other classes in D3, scales follow the method chaining pattern where setter methods return the scale itself, allowing multiple setters to be invoked in a concise statement.
 
 <a name="ordinal" href="Ordinal-Scales#ordinal">#</a> d3.scale.<b>ordinal</b>()
 
@@ -26,7 +26,7 @@ Setting the domain on an ordinal scale is optional. If no domain is set, a [rang
 
 If *values* is specified, sets the output range of the ordinal scale to the specified array of values. The first element in the domain will be mapped to the first element in *values*, the second domain value to the second range value, and so on. If there are fewer elements in the range than in the domain, the scale will recycle values from the start of the range. If *values* is not specified, this method returns the current output range.
 
-This method is intended for when the set of discrete output values is computed explicitly, such as a set of categorical colors. In other cases, such as determining the layout of an ordinal scatterplot or bar chart, you may find the [rangePoints](Ordinal-Scales#ordinal_rangePoints) or [rangeBands](Ordinal-Scales#ordinal_rangeBands) operators more convenient.
+This method is intended for when the set of discrete output values is computed explicitly, such as a set of categorical colors. In other cases, such as determining the layout of an ordinal scatterplot or bar chart, you may find the [rangePoints](Ordinal-Scales.md#ordinal_rangePoints) or [rangeBands](Ordinal-Scales.md#ordinal_rangeBands) operators more convenient.
 
 <a name="ordinal_rangePoints" href="Ordinal-Scales#ordinal_rangePoints">#</a> ordinal.<b>rangePoints</b>(<i>interval</i>[, <i>padding</i>])
 
@@ -86,7 +86,7 @@ o.rangeExtent(); // [0, 100]
 
 <a name="ordinal_rangeRoundBands" href="Ordinal-Scales#ordinal_rangeRoundBands">#</a> ordinal.<b>rangeRoundBands</b>(<i>interval</i>[, <i>padding</i>[, <i>outerPadding</i>]])
 
-Like [rangeBands](Ordinal-Scales#ordinal_rangeBands), except guarantees that range values and band width are integers so as to avoid antialiasing artifacts.
+Like [rangeBands](Ordinal-Scales.md#ordinal_rangeBands), except guarantees that range values and band width are integers so as to avoid antialiasing artifacts.
 
 ```js
 var o = d3.scale.ordinal()

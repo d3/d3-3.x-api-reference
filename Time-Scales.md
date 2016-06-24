@@ -1,10 +1,10 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Time]] ▸ **Time Scales**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Time]] ▸ **Time Scales**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
-D3's **time scale** is an extension of [d3.scale.linear](Quantitative-Scales#linear) that uses JavaScript [Date](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date) objects as the domain representation. Thus, unlike the normal linear scale, domain values are coerced to dates rather than numbers; similarly, the [invert](Time-Scales#invert) function returns a date. Most conveniently, the time scale also provides suitable [ticks](Time-Scales#ticks) based on [time intervals](Time-Intervals), taking the pain out of generating axes for nearly any time-based domain.
+D3's **time scale** is an extension of [d3.scale.linear](Quantitative-Scales.md#linear) that uses JavaScript [Date](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date) objects as the domain representation. Thus, unlike the normal linear scale, domain values are coerced to dates rather than numbers; similarly, the [invert](Time-Scales.md#invert) function returns a date. Most conveniently, the time scale also provides suitable [ticks](Time-Scales.md#ticks) based on [time intervals](Time-Intervals.md), taking the pain out of generating axes for nearly any time-based domain.
 
-A scale object, such as that returned by [d3.time.scale](Time-Scales#scale), is both an object and a function. That is: you can call the scale like any other function, and the scale has additional methods that change its behavior. Like other classes in D3, scales follow the method chaining pattern where setter methods return the scale itself, allowing multiple setters to be invoked in a concise statement.
+A scale object, such as that returned by [d3.time.scale](Time-Scales.md#scale), is both an object and a function. That is: you can call the scale like any other function, and the scale has additional methods that change its behavior. Like other classes in D3, scales follow the method chaining pattern where setter methods return the scale itself, allowing multiple setters to be invoked in a concise statement.
 
 <a name="scale" href="Time-Scales#scale">#</a> d3.time.<b>scale</b>()
 
@@ -29,13 +29,13 @@ If *dates* is specified, sets the scale's input domain to the specified array of
 <a name="nice" href="#nice">#</a> scale.<b>nice</b>([<i>interval</i>[, <i>step</i>]])
 <br><a name="nice" href="#nice">#</a> scale.<b>nice</b>([<i>count</i>])
 
-Extends the domain so that it starts and ends on nice round values as determined by the specified [time *interval*](Time-Intervals) and optional *step* count. As an alternative to specifying an explicit time interval, a numeric *count* can be specified, and a time interval will be chosen automatically to be consistent with [scale.ticks](#ticks). If *count* is not specified, it defaults to 10.
+Extends the domain so that it starts and ends on nice round values as determined by the specified [time *interval*](Time-Intervals.md) and optional *step* count. As an alternative to specifying an explicit time interval, a numeric *count* can be specified, and a time interval will be chosen automatically to be consistent with [scale.ticks](#ticks). If *count* is not specified, it defaults to 10.
 
 This method typically extends the scale's domain, and may only extend the bounds to the nearest round value. Nicing is useful if the domain is computed from data and may be irregular. For example, for a domain of [2009-07-13T00:02, 2009-07-13T23:48], the nice domain is [2009-07-13, 2009-07-14]. If the domain has more than two values, nicing the domain only affects the first and last value.
 
 <a name="range" href="Time-Scales#range">#</a> scale.<b>range</b>([<i>values</i>])
 
-If *values* is specified, sets the scale's output range to the specified array of values. The array must contain two or more values, to match the cardinality of the input domain. The elements in the given array need not be numbers; any value that is supported by the underlying [interpolator](Time-Scales#interpolate) will work. However, numeric ranges are required for the invert operator. If *values* is not specified, returns the scale's current output range.
+If *values* is specified, sets the scale's output range to the specified array of values. The array must contain two or more values, to match the cardinality of the input domain. The elements in the given array need not be numbers; any value that is supported by the underlying [interpolator](Time-Scales.md#interpolate) will work. However, numeric ranges are required for the invert operator. If *values* is not specified, returns the scale's current output range.
 
 <a name="rangeRound" href="Time-Scales#rangeRound">#</a> scale.<b>rangeRound</b>([<i>values</i>])
 
@@ -54,7 +54,7 @@ If *boolean* is specified, enables or disables clamping accordingly. By default,
 
 Returns representative dates from the scale's input domain. The returned tick dates are uniformly spaced (modulo irregular time intervals, such as months and leap years), have human-readable values (such as midnights), and are guaranteed to be within the extent of the input domain. Ticks are often used to display reference lines, or tick marks, in conjunction with the visualized data.
 
-If *count* is a number, then approximately *count* ticks will be returned. If *count* is not specified, it defaults to 10. The specified *count* is only a hint; the scale may return more or fewer values depending on the input domain. If a [time *interval*](Time-Intervals) is specified, then the time interval’s [range function](Time-Intervals#interval_range) will be used to generate ticks, being passed the optional *step* argument, if any. For example, to create ten default ticks, say:
+If *count* is a number, then approximately *count* ticks will be returned. If *count* is not specified, it defaults to 10. The specified *count* is only a hint; the scale may return more or fewer values depending on the input domain. If a [time *interval*](Time-Intervals.md) is specified, then the time interval’s [range function](Time-Intervals.md#interval_range) will be used to generate ticks, being passed the optional *step* argument, if any. For example, to create ten default ticks, say:
 
 ```javascript
 scale.ticks(10);
@@ -70,13 +70,13 @@ Note: for UTC scales, be sure to use the appropriate UTC range method (such as d
 
 The following time intervals are considered for automatic ticks:
 
-* 1-, 5-, 15- and 30-[second](Time-Intervals#second).
-* 1-, 5-, 15- and 30-[minute](Time-Intervals#minute).
-* 1-, 3-, 6- and 12-[hour](Time-Intervals#hour).
-* 1- and 2-[day](Time-Intervals#day).
-* 1-[week](Time-Intervals#week).
-* 1- and 3-[month](Time-Intervals#month).
-* 1-[year](Time-Intervals#year).
+* 1-, 5-, 15- and 30-[second](Time-Intervals.md#second).
+* 1-, 5-, 15- and 30-[minute](Time-Intervals.md#minute).
+* 1-, 3-, 6- and 12-[hour](Time-Intervals.md#hour).
+* 1- and 2-[day](Time-Intervals.md#day).
+* 1-[week](Time-Intervals.md#week).
+* 1- and 3-[month](Time-Intervals.md#month).
+* 1-[year](Time-Intervals.md#year).
 
 This set of time intervals is somewhat arbitrary and additional values may be added in the future.
 
@@ -95,7 +95,7 @@ The following time formats are considered:
 * :%S - for second boundaries, such as ":45".
 * .%L - milliseconds for all other times, such as ".012".
 
-By using multi-scale time formats, the default tick format provides both local and global context for each time interval. For example, by showing the sequence [11 PM, Mon 07, 01 AM], the tick formatter reveals information about hours, dates, and day simultaneously—rather than just the hours. If you'd prefer single-scale time formatting, you can always use your own [d3.time.format](Time-Formatting). You can also roll your own [custom multi-scale time format](http://bl.ocks.org/mbostock/4149176).
+By using multi-scale time formats, the default tick format provides both local and global context for each time interval. For example, by showing the sequence [11 PM, Mon 07, 01 AM], the tick formatter reveals information about hours, dates, and day simultaneously—rather than just the hours. If you'd prefer single-scale time formatting, you can always use your own [d3.time.format](Time-Formatting.md). You can also roll your own [custom multi-scale time format](http://bl.ocks.org/mbostock/4149176).
 
 <a name="copy" href="#copy">#</a> scale.<b>copy</b>()
 

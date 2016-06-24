@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[SVG]] ▸ **SVG Controls**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[SVG]] ▸ **SVG Controls**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
@@ -22,21 +22,21 @@ Constructs a new brush with no default *x*- and *y*-scale, and an empty extent.
 
 <a name="_brush" href="#_brush">#</a> <b>brush</b>(<i>selection</i>)
 
-Draws or redraws this brush into the specified *selection* of elements. The brush may be drawn into multiple elements simultaneously, but note that these brushes would share the same backing extent; typically, a brush is drawn into only one element at a time. The *selection* can also be a [transition](Transitions), in which case the brush will perform an [automatic transition](http://bl.ocks.org/mbostock/6216724). Use [brush.event](#brush_event) to dispatch brush events during the transition for animated brushing.
+Draws or redraws this brush into the specified *selection* of elements. The brush may be drawn into multiple elements simultaneously, but note that these brushes would share the same backing extent; typically, a brush is drawn into only one element at a time. The *selection* can also be a [transition](Transitions.md), in which case the brush will perform an [automatic transition](http://bl.ocks.org/mbostock/6216724). Use [brush.event](#brush_event) to dispatch brush events during the transition for animated brushing.
 
 <a name="brush_x" href="#brush_x">#</a> brush.<b>x</b>([<i>scale</i>])
 
-Gets or sets the *x*-scale associated with the brush. If *scale* is specified, sets the *x*-scale to the specified scale and returns the brush; if *scale* is not specified, returns the current *x*-scale, which defaults to null. The scale is typically defined as a [quantitative scale](Quantitative-Scales), in which case the [extent](#extent) is in data space from the scale's [domain](Quantitative-Scales#linear_domain); however, it may instead be defined as an [ordinal scale](Ordinal-Scales), where the extent is in pixel space from the scale's [range extent](Ordinal-Scales#ordinal_rangeExtent).
+Gets or sets the *x*-scale associated with the brush. If *scale* is specified, sets the *x*-scale to the specified scale and returns the brush; if *scale* is not specified, returns the current *x*-scale, which defaults to null. The scale is typically defined as a [quantitative scale](Quantitative-Scales.md), in which case the [extent](#extent) is in data space from the scale's [domain](Quantitative-Scales.md#linear_domain); however, it may instead be defined as an [ordinal scale](Ordinal-Scales.md), where the extent is in pixel space from the scale's [range extent](Ordinal-Scales.md#ordinal_rangeExtent).
 
 <a name="brush_y" href="#brush_y">#</a> brush.<b>y</b>([<i>scale</i>])
 
-Gets or sets the *y*-scale associated with the brush. If *scale* is specified, sets the *y*-scale to the specified scale and returns the brush; if *scale* is not specified, returns the current *y*-scale, which defaults to null. The scale is typically defined as a [quantitative scale](Quantitative-Scales), in which case the [extent](#extent) is in data space from the scale's [domain](Quantitative-Scales#linear_domain); however, it may instead be defined as an [ordinal scale](Ordinal-Scales), where the extent is in pixel space from the scale's [range extent](Ordinal-Scales#ordinal_rangeExtent).
+Gets or sets the *y*-scale associated with the brush. If *scale* is specified, sets the *y*-scale to the specified scale and returns the brush; if *scale* is not specified, returns the current *y*-scale, which defaults to null. The scale is typically defined as a [quantitative scale](Quantitative-Scales.md), in which case the [extent](#extent) is in data space from the scale's [domain](Quantitative-Scales.md#linear_domain); however, it may instead be defined as an [ordinal scale](Ordinal-Scales.md), where the extent is in pixel space from the scale's [range extent](Ordinal-Scales.md#ordinal_rangeExtent).
 
 <a name="brush_extent" href="#brush_extent">#</a> brush.<b>extent</b>([<i>values</i>])
 
 Gets or sets the current brush extent. If *values* is specified, sets the extent to the specified values and returns the brush; if *values* is not specified, returns the current extent. The definition of the extent depends on the associated scales. If both an *x*- and *y*-scale are available, then the extent is the two-dimensional array [‍​[<i>x0</i>, <i>y0</i>], [<i>x1</i>, <i>y1</i>]​], where *x0* and *y0* are the lower bounds of the extent, and *x1* and *y1* are the upper bounds of the extent. If only the *x*-scale is available, then the extent is defined as the one-dimensional array [<i>x0</i>, <i>x1</i>]; likewise, if only the *y*-scale is available, then the extent is [<i>y0</i>, <i>y1</i>]. If neither scale is available, then the extent is null.
 
-When the extent is set to *values*, the resulting extent is preserved exactly. However, as soon as the brush is moved by the user (on mousemove following a mousedown), then the extent will be recomputed by calling [scale.invert](Quantitative-Scales#linear_invert). Note that, in this case, the values may be slightly imprecise due to the limited precision of pixels.
+When the extent is set to *values*, the resulting extent is preserved exactly. However, as soon as the brush is moved by the user (on mousemove following a mousedown), then the extent will be recomputed by calling [scale.invert](Quantitative-Scales.md#linear_invert). Note that, in this case, the values may be slightly imprecise due to the limited precision of pixels.
 
 Note that this does not automatically redraw the brush or dispatch any events to listeners. To redraw the brush, call [brush](#_brush) on a selection or transition; to dispatch events, use [brush.event](#brush_event).
 
@@ -64,4 +64,4 @@ Note that when clicking on the background, a mousedown also triggers a "brush" e
 
 <a name="brush_event" href="#brush_event">#</a> brush.<b>event</b>(<i>selection</i>)
 
-If *selection* is a selection, it dispatches a brush gesture to registered listeners as a three event sequence: _brushstart_, _brush_ and _brushend_. This can be useful in triggering listeners after setting the [brush extent](#brush_extent) programatically. If *selection* is a transition, registers the appropriate tweens so that the brush dispatches events over the course of the transition: a _brushstart_ event when the transition starts from the previously-set extent, _brush_ events for each tick of the transition, and finally a _brushend_ event when the transition ends. Note that the transition will be [interrupted](Selections#interrupt) if the user starts brushing before the transition ends.
+If *selection* is a selection, it dispatches a brush gesture to registered listeners as a three event sequence: _brushstart_, _brush_ and _brushend_. This can be useful in triggering listeners after setting the [brush extent](#brush_extent) programatically. If *selection* is a transition, registers the appropriate tweens so that the brush dispatches events over the course of the transition: a _brushstart_ event when the transition starts from the previously-set extent, _brush_ events for each tick of the transition, and finally a _brushend_ event when the transition ends. Note that the transition will be [interrupted](Selections.md#interrupt) if the user starts brushing before the transition ends.

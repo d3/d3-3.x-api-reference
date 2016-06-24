@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Geo]] ▸ **Geo Paths**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Geo]] ▸ **Geo Paths**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
@@ -13,11 +13,11 @@ Some other tools you may be interested in:
 * [ColorBrewer](http://colorbrewer2.org) - color scales for maps.
 * [PostGIS](http://postgis.refractions.net/) - a geospatial database.
 
-The primary mechanism for displaying geographic data is [d3.geo.path](#path). This class is similar to [d3.svg.line](SVG-Shapes#line) and the other SVG shape generators: given a geometry or feature object, it generates the path data string suitable for the "d" attribute of an SVG path element. The d3.geo.path class can [render directly to Canvas](http://bl.ocks.org/mbostock/3783604), which may offer better performance when animating the projection.
+The primary mechanism for displaying geographic data is [d3.geo.path](#path). This class is similar to [d3.svg.line](SVG-Shapes.md#line) and the other SVG shape generators: given a geometry or feature object, it generates the path data string suitable for the "d" attribute of an SVG path element. The d3.geo.path class can [render directly to Canvas](http://bl.ocks.org/mbostock/3783604), which may offer better performance when animating the projection.
 
 <a name="path" href="#path">#</a> d3.geo.<b>path</b>()
 
-Creates a new geographic path generator with the default settings: the [albersUsa](Geo-Projections#albersUsa) projection and a point radius of 4.5 pixels.
+Creates a new geographic path generator with the default settings: the [albersUsa](Geo-Projections.md#albersUsa) projection and a point radius of 4.5 pixels.
 
 <a name="_path" href="#_path">#</a> <b>path</b>(<i>feature</i>[, <i>index</i>])
 
@@ -33,7 +33,7 @@ Returns the path data string for the given *feature*, which may be any GeoJSON f
 * Feature - a feature containing one of the above geometry objects.
 * FeatureCollection - an array of feature objects.
 
-The type "Sphere" is also supported, which is useful for rendering the outline of the globe. A sphere has no coordinates. An optional *index* may be specified, which is passed along to the [pointRadius](Geo-Paths#pointRadius) accessor; the *index* is passed automatically when the path generator is invoked by [selection.attr](Selections#attr).
+The type "Sphere" is also supported, which is useful for rendering the outline of the globe. A sphere has no coordinates. An optional *index* may be specified, which is passed along to the [pointRadius](Geo-Paths.md#pointRadius) accessor; the *index* is passed automatically when the path generator is invoked by [selection.attr](Selections.md#attr).
 
 **Important:** the *inside* of a polygon is all points that the polygon winds around in a clockwise order. If your GeoJSON input has polygons in the wrong winding order, you must reverse them, say via [ST_ForceRHR](http://www.postgis.org/docs/ST_ForceRHR.html); you can also convert your GeoJSON to [TopoJSON](https://github.com/mbostock/topojson), and this will happen automatically.
 
@@ -58,7 +58,7 @@ Using distinct path elements is typically slower than a single path element for 
 
 <a name="path_projection" href="#path_projection">#</a> path.<b>projection</b>([<i>projection</i>])
 
-If *projection* is specified, sets the projection used by the path generator to the specified projection function. If *projection* is not specified, returns the current projection, which defaults to [albersUsa](Geo-Projections#albersUsa). The projection is typically one of D3's built-in [geographic projections](Geo-Projections); however, any function can be used. A projection function takes a two-element array of numbers representing the coordinates of a location, [<i>longitude</i>, <i>latitude</i>], and returns a similar two-element array of numbers representing the projected pixel position [<i>x</i>, <i>y</i>]. For example, a rudimentary spherical Mercator projection:
+If *projection* is specified, sets the projection used by the path generator to the specified projection function. If *projection* is not specified, returns the current projection, which defaults to [albersUsa](Geo-Projections.md#albersUsa). The projection is typically one of D3's built-in [geographic projections](Geo-Projections.md); however, any function can be used. A projection function takes a two-element array of numbers representing the coordinates of a location, [<i>longitude</i>, <i>latitude</i>], and returns a similar two-element array of numbers representing the projected pixel position [<i>x</i>, <i>y</i>]. For example, a rudimentary spherical Mercator projection:
 
 ```javascript
 function mercator(coordinates) {
@@ -69,9 +69,9 @@ function mercator(coordinates) {
 }
 ```
 
-Internally, this point projection function is wrapped with a fallback [stream transformation](Geo-Streams) that performs [adaptive resampling](http://bl.ocks.org/mbostock/3795544). However, the fallback stream does not perform any clipping or cutting.
+Internally, this point projection function is wrapped with a fallback [stream transformation](Geo-Streams.md) that performs [adaptive resampling](http://bl.ocks.org/mbostock/3795544). However, the fallback stream does not perform any clipping or cutting.
 
-For more control over the stream transformation, the *projection* may be specified as an object that implements the *stream* method. ([See example.](http://bl.ocks.org/mbostock/5663666)) The stream method takes an output stream as input, and returns a wrapped stream that projects the input geometry; in other words, it implements [projection.stream](Geo-Projections#stream).
+For more control over the stream transformation, the *projection* may be specified as an object that implements the *stream* method. ([See example.](http://bl.ocks.org/mbostock/5663666)) The stream method takes an output stream as input, and returns a wrapped stream that projects the input geometry; in other words, it implements [projection.stream](Geo-Projections.md#stream).
 
 If *projection* is null, the path uses the identity transformation, where the input geometry is not projected and is instead rendered directly in raw coordinates. This can be useful for fast rendering of already-projected geometry, or for fast rendering of the equirectangular projection.
 
@@ -101,7 +101,7 @@ Computes the projected bounding box (in pixels) for the specified *feature*. The
 
 <a name="path_pointRadius" href="#path_pointRadius">#</a> path.<b>pointRadius</b>([<i>radius</i>])
 
-If *radius* is specified, sets the radius used to display Point and MultiPoint features to the specified number. If *radius* is not specified, returns the current radius. While the radius is commonly specified as a number constant, it may also be specified as a function which is computed per feature, being passed the *feature* and *index* arguments from the [path](Geo-Paths#_path) function. For example, if your GeoJSON data has additional properties, you might access those properties inside the radius function to vary the point size; alternatively, you could [d3.svg.symbol](SVG-Shapes#symbol) and a [projection](Geo-Projections) for more control over the display.
+If *radius* is specified, sets the radius used to display Point and MultiPoint features to the specified number. If *radius* is not specified, returns the current radius. While the radius is commonly specified as a number constant, it may also be specified as a function which is computed per feature, being passed the *feature* and *index* arguments from the [path](Geo-Paths.md#_path) function. For example, if your GeoJSON data has additional properties, you might access those properties inside the radius function to vary the point size; alternatively, you could [d3.svg.symbol](SVG-Shapes.md#symbol) and a [projection](Geo-Projections.md) for more control over the display.
 
 ## Shape Generators
 

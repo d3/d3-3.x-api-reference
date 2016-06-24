@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Layouts]] ▸ **Chord Layout**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Layouts]] ▸ **Chord Layout**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
@@ -8,11 +8,11 @@
 
 A chord diagram visualizes these relationships by drawing quadratic Bézier curves between arcs. The source and target arcs represents two mirrored subsets of the total population, such as the number of people with black hair that prefer blonde hair, and the number of people with blonde hair that prefer black hair. As another example, consider this chord diagram of [software dependencies](http://bl.ocks.org/mbostock/1046712).
 
-The chord layout is designed to work in conjunction with the [chord shape](SVG-Shapes#chord) and the [arc shape](SVG-Shapes#arc). The layout is used to generate data objects which describe the chords, serving as input to the chord shape. The layout also generates descriptions for the groups, which can be used as input to the arc shape.
+The chord layout is designed to work in conjunction with the [chord shape](SVG-Shapes.md#chord) and the [arc shape](SVG-Shapes.md#arc). The layout is used to generate data objects which describe the chords, serving as input to the chord shape. The layout also generates descriptions for the groups, which can be used as input to the arc shape.
 
 <a name="chord" href="Chord-Layout#chord">#</a> d3.layout.<b>chord</b>()
 
-Constructs a new chord layout. By default, the input data is not sorted, and there is no padding between groups. Unlike some of the other layouts, the chord layout is not a function to be applied to data; instead, data is specified by setting the associated [matrix](Chord-Layout#matrix), and retrieved using the [chords](Chord-Layout#chords) and [groups](Chord-Layout#groups) accessors.
+Constructs a new chord layout. By default, the input data is not sorted, and there is no padding between groups. Unlike some of the other layouts, the chord layout is not a function to be applied to data; instead, data is specified by setting the associated [matrix](Chord-Layout.md#matrix), and retrieved using the [chords](Chord-Layout.md#chords) and [groups](Chord-Layout.md#groups) accessors.
 
 <a name="matrix" href="Chord-Layout#matrix">#</a> chord.<b>matrix</b>([<i>matrix</i>])
 
@@ -33,7 +33,7 @@ If *padding* is specified, sets the angular padding between groups to the specif
 
 <a name="sortGroups" href="Chord-Layout#sortGroups">#</a> chord.<b>sortGroups</b>([<i>comparator</i>])
 
-If *comparator* is specified, sets the sort order of groups (rows) for the layout using the specified comparator function. The comparator function is invoked for pairs of rows, being passed the sum of row *i* and row *j*. Typically, the comparator should be specified as either [d3.ascending](Arrays#d3_ascending) or [d3.descending](Arrays#d3_descending). If *comparator* is not specified, returns the current group sort order, which defaults to null for no sorting.
+If *comparator* is specified, sets the sort order of groups (rows) for the layout using the specified comparator function. The comparator function is invoked for pairs of rows, being passed the sum of row *i* and row *j*. Typically, the comparator should be specified as either [d3.ascending](Arrays.md#d3_ascending) or [d3.descending](Arrays.md#d3_descending). If *comparator* is not specified, returns the current group sort order, which defaults to null for no sorting.
 
 <a name="sortSubgroups" href="Chord-Layout#sortSubgroups">#</a> chord.<b>sortSubgroups</b>([<i>comparator</i>])
 
@@ -58,7 +58,7 @@ These objects, in turn, describe the underlying entity:
 * endAngle - the end angle of the arc, in radians.
 * value - the value of the associated cell *ij*, a number.
 
-Note that these objects conveniently match the default accessors for the [chord](SVG-Shapes#chord) generator; however, you can still override the accessors to tweak the layout, or simply manipulate the returned objects.
+Note that these objects conveniently match the default accessors for the [chord](SVG-Shapes.md#chord) generator; however, you can still override the accessors to tweak the layout, or simply manipulate the returned objects.
 
 <a name="groups" href="Chord-Layout#groups">#</a> chord.<b>groups</b>()
 
@@ -69,4 +69,4 @@ Returns the computed group objects, given the layout's current configuration and
 * endAngle - the end angle of the arc, in radians.
 * value - the sum of the associated row *i*, a number.
 
-Note that these objects conveniently match the default accessors for the [arc](SVG-Shapes#arc) generator; however, you can still override the accessors to tweak the layout, or simply manipulate the returned objects.
+Note that these objects conveniently match the default accessors for the [arc](SVG-Shapes.md#arc) generator; however, you can still override the accessors to tweak the layout, or simply manipulate the returned objects.

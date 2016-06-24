@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Time]] ▸ **Time Formatting**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Time]] ▸ **Time Formatting**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
@@ -6,7 +6,7 @@ D3 includes a helper module for parsing and formatting dates modeled after the v
 
 <a name="format" href="Time-Formatting#format">#</a> d3.time.<b>format</b>(<i>specifier</i>)
 
-Constructs a new local time formatter using the given *specifier*. (Equivalent to [locale.timeFormat](Localization#locale_timeFormat) for the default U.S. English locale.) The specifier string may contain the following directives.
+Constructs a new local time formatter using the given *specifier*. (Equivalent to [locale.timeFormat](Localization.md#locale_timeFormat) for the default U.S. English locale.) The specifier string may contain the following directives.
 
 * `%a` - abbreviated weekday name.
 * `%A` - full weekday name.
@@ -35,7 +35,7 @@ Constructs a new local time formatter using the given *specifier*. (Equivalent t
 
 For %U, all days in a new year preceding the first Sunday are considered to be in week 0. For %W, all days in a new year preceding the first Monday are considered to be in week 0. In some implementations of strftime and strptime (as in Python), a directive may include an optional field width or precision; this feature is not yet implemented in D3, but may be added in the future.
 
-For locale-specific date and time formatters, see [locale.timeFormat](Localization#locale_timeFormat).
+For locale-specific date and time formatters, see [locale.timeFormat](Localization.md#locale_timeFormat).
 
 The % sign indicating a directive may be immediately followed by a padding modifier:
 
@@ -64,7 +64,7 @@ monthNameFormat(new Date(2014, 4, 1));  //returns string "May" (remember javascr
 dayNameFormat(new Date(2014, 4, 1));  //returns string "Thursday"
 ```
 
-Note that when dates are used in conjunction with [quantitative scales](Quantitative-Scales), the dates are implicitly coerced to numbers representing the number of milliseconds since [UNIX epoch](http://en.wikipedia.org/wiki/Unix_time). To convert between numbers and dates, you can use the following code:
+Note that when dates are used in conjunction with [quantitative scales](Quantitative-Scales.md), the dates are implicitly coerced to numbers representing the number of milliseconds since [UNIX epoch](http://en.wikipedia.org/wiki/Unix_time). To convert between numbers and dates, you can use the following code:
 
 ```javascript
 time = +date; // convert a Date object to time in milliseconds
@@ -81,7 +81,7 @@ The `%d` and `%e` format specifiers are considered equivalent for parsing.
 
 <a name="format_multi" href="#format_multi">#</a> d3.time.format.<b>multi</b>(<i>formats</i>)
 
-Returns a new multi-resolution time format given the specified array of predicated *formats*. Each format is a two-element array consisting of a format specifier string (such as that passed to the [d3.time.format](#format) constructor) and a predicate function. For any date that is passed to the returned time format, the first predicate function that returns true will determine how the specified date is formatted. For example, the default time format used by [d3.time.scale](Time-Scales) is implemented as:
+Returns a new multi-resolution time format given the specified array of predicated *formats*. Each format is a two-element array consisting of a format specifier string (such as that passed to the [d3.time.format](#format) constructor) and a predicate function. For any date that is passed to the returned time format, the first predicate function that returns true will determine how the specified date is formatted. For example, the default time format used by [d3.time.scale](Time-Scales.md) is implemented as:
 
 ```js
 var format = d3.time.format.multi([
@@ -98,11 +98,11 @@ var format = d3.time.format.multi([
 
 Thus, if the specified date is not a round second, the milliseconds format (`".%L"`) is used; otherwise, if the specified date is not a round minute, the seconds format (`":%S"`) is used, and so on. See [bl.ocks.org/4149176](http://bl.ocks.org/mbostock/4149176) for an example.
 
-The **multi** method is available on any d3.time.format constructor. For example, [d3.time.format.utc](#format_utc).multi returns a multi-resolution UTC time format, and [locale.timeFormat](Localization#timeFormat).multi returns a multi-resolution time format for the specified locale.
+The **multi** method is available on any d3.time.format constructor. For example, [d3.time.format.utc](#format_utc).multi returns a multi-resolution UTC time format, and [locale.timeFormat](Localization.md#timeFormat).multi returns a multi-resolution time format for the specified locale.
 
 <a name="format_utc" href="Time-Formatting#format_utc">#</a> d3.time.format.<b>utc</b>(<i>specifier</i>)
 
-Constructs a new UTC time formatter using the given *specifier*. (Equivalent to [locale.timeFormat.utc](Localization#locale_timeFormat_utc) for the default U.S. English locale.) The specifier may contain the same directives as the local time [format](Time-Formatting#format). Internally, this time formatter is implemented using the UTC methods on the Date object, such as [getUTCDate](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date/getUTCDate) and [setUTCDate](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date/setUTCDate) in place of [getDate](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date/getDate) and [setDate](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date/setDate).
+Constructs a new UTC time formatter using the given *specifier*. (Equivalent to [locale.timeFormat.utc](Localization.md#locale_timeFormat_utc) for the default U.S. English locale.) The specifier may contain the same directives as the local time [format](Time-Formatting.md#format). Internally, this time formatter is implemented using the UTC methods on the Date object, such as [getUTCDate](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date/getUTCDate) and [setUTCDate](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date/setUTCDate) in place of [getDate](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date/getDate) and [setDate](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date/setDate).
 
 <a name="format_iso" href="Time-Formatting#format_iso">#</a> d3.time.format.<b>iso</b>
 

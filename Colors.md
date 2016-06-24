@@ -1,10 +1,10 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Core]] ▸ **Colors**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Core]] ▸ **Colors**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
 Constructing visualizations often involves working with colors. Even though your browser understands a lot about colors, it doesn't offer much help in manipulating colors through JavaScript. So D3 provides representations for various color spaces, including [RGB](http://en.wikipedia.org/wiki/RGB_color_model), [HSL](http://en.wikipedia.org/wiki/HSL_and_HSV), [LAB](http://en.wikipedia.org/wiki/Lab_color_space) and [HCL](https://en.wikipedia.org/wiki/CIELUV_color_space#Cylindrical_representation), allowing specification, interpolation, conversion and manipulation (such as making colors brighter or darker).
 
-Note: while you can work with colors directly, you might also want to take a look at D3's built-in color interpolation, such as [interpolateRgb](Transitions#d3_interpolateRgb), [interpolateHsl](Transitions#d3_interpolateHsl) and [scales](Scales). If you are looking for **color palettes**, see the [ordinal scales](Ordinal-Scales) reference.
+Note: while you can work with colors directly, you might also want to take a look at D3's built-in color interpolation, such as [interpolateRgb](Transitions.md#d3_interpolateRgb), [interpolateHsl](Transitions.md#d3_interpolateHsl) and [scales](Scales.md). If you are looking for **color palettes**, see the [ordinal scales](Ordinal-Scales.md) reference.
 
 ## RGB
 
@@ -144,7 +144,7 @@ Converts this L\*a\*b\* color to an RGB hexadecimal string, such as "#f7eaba".
 
 ## Color
 
-A d3.color base type is provided if you want to extend D3 with additional color spaces. This type enables automatic RGB interpolation by [d3.interpolate](Transitions#d3_interpolate) (detected via `instanceof d3.color`).
+A d3.color base type is provided if you want to extend D3 with additional color spaces. This type enables automatic RGB interpolation by [d3.interpolate](Transitions.md#d3_interpolate) (detected via `instanceof d3.color`).
 
 <a name="d3_color" href="#d3_color">#</a> d3.<b>color</b>()
 

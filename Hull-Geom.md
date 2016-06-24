@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Geometry]] ▸ **Hull Geom**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Geometry]] ▸ **Hull Geom**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
@@ -10,7 +10,7 @@ Create a new hull layout with the default *x*- and *y*-accessors.
 
 <a name="_hull" href="Hull-Geom#_hull">#</a> <b>hull</b>(<i>vertices</i>)
 
-Returns the convex hull for the specified *vertices* array, using the current x- and y-coordinate accessors. The returned convex hull is represented as an array containing a subset of the input vertices, arranged in counterclockwise order (for consistency with [polygon.clip](Polygon-Geom#clip)).
+Returns the convex hull for the specified *vertices* array, using the current x- and y-coordinate accessors. The returned convex hull is represented as an array containing a subset of the input vertices, arranged in counterclockwise order (for consistency with [polygon.clip](Polygon-Geom.md#clip)).
 
 Assumes the *vertices* array is greater than three in length. If *vertices* is of length <= 3, returns [].
 

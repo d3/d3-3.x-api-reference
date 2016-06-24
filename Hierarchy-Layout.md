@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Layouts]] ▸ **Hierarchy Layout**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Layouts]] ▸ **Hierarchy Layout**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
@@ -10,7 +10,7 @@ The hierarchy layout is an *abstract* layout that is not used directly, but inst
 * [[Tree|Tree-Layout]] - position a tree of nodes tidily.
 * [[Treemap|Treemap-Layout]] - use recursive spatial subdivision to display a tree of nodes.
 
-Although not a hierarchy layout, the [bundle layout](Bundle-Layout) is also designed to work in conjunction with hierarchies.
+Although not a hierarchy layout, the [bundle layout](Bundle-Layout.md) is also designed to work in conjunction with hierarchies.
 
 <a name="hierarchy" href="#hierarchy">#</a> d3.layout.<b>hierarchy</b>()
 
@@ -34,7 +34,7 @@ Given the specified array of *nodes* returns an array of objects representing th
 * source - the parent node (as described above).
 * target - the child node.
 
-This method is useful for retrieving a set of link descriptions suitable for display, often in conjunction with the [diagonal](SVG-Shapes#diagonal) shape generator. For example:
+This method is useful for retrieving a set of link descriptions suitable for display, often in conjunction with the [diagonal](SVG-Shapes.md#diagonal) shape generator. For example:
 
 ```javascript
 svg.selectAll("path")
@@ -53,7 +53,7 @@ function children(d) {
 }
 ```
 
-Often, it is convenient to load the node hierarchy using [d3.json](Requests#d3_json), and represent the input hierarchy as a nested [JSON](http://json.org) object. For example:
+Often, it is convenient to load the node hierarchy using [d3.json](Requests.md#d3_json), and represent the input hierarchy as a nested [JSON](http://json.org) object. For example:
 
 ```javascript
 {
@@ -95,7 +95,7 @@ function comparator(a, b) {
 }
 ```
 
-The comparator function is invoked for pairs of nodes, being passed the input data for each node. A null comparator disables sorting and uses tree traversal order. Comparator functions may also be implemented using [d3.ascending](Arrays#d3_ascending) or [d3.descending](Arrays#d3_descending).
+The comparator function is invoked for pairs of nodes, being passed the input data for each node. A null comparator disables sorting and uses tree traversal order. Comparator functions may also be implemented using [d3.ascending](Arrays.md#d3_ascending) or [d3.descending](Arrays.md#d3_descending).
 
 <a name="value" href="#value">#</a> hierarchy.<b>value</b>([<i>value</i>])
 
@@ -111,4 +111,4 @@ The value accessor is invoked for each input data element, and must return a num
 
 <a name="revalue" href="#revalue">#</a> hierarchy.<b>revalue</b>(<i>root</i>)
 
-Re-evaluates the values of each node in the specified tree starting at *root*, without re-sorting or recomputing the child nodes. This method can be used to recompute the values of each node without making any structural changes to the hierarchy. Primarily, it exists to support [sticky treemaps](Treemap-Layout#sticky).
+Re-evaluates the values of each node in the specified tree starting at *root*, without re-sorting or recomputing the child nodes. This method can be used to recompute the values of each node without making any structural changes to the hierarchy. Primarily, it exists to support [sticky treemaps](Treemap-Layout.md#sticky).

@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Geo]] ▸ **Geo Projections**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Geo]] ▸ **Geo Projections**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
@@ -86,7 +86,7 @@ A *precision* of `0` disables adaptive resampling.
 
 <a name="stream" href="#stream">#</a> projection.<b>stream</b>(<i>listener</i>)
 
-Returns a projecting [stream](Geo-Streams) wrapper for the specified *listener*. Any geometry streamed to the wrapper is projected before being streamed to the wrapped listener. A typical projection involves several stream transformations: the input geometry is first converted to radians, rotated on three axes, clipped to the small circle or cut along the antimeridian, and lastly projected to the Cartesian plane with adaptive resampling, scale and translation.
+Returns a projecting [stream](Geo-Streams.md) wrapper for the specified *listener*. Any geometry streamed to the wrapper is projected before being streamed to the wrapped listener. A typical projection involves several stream transformations: the input geometry is first converted to radians, rotated on three axes, clipped to the small circle or cut along the antimeridian, and lastly projected to the Cartesian plane with adaptive resampling, scale and translation.
 
 <a name="projectionMutator" href="#projectionMutator">#</a> d3.geo.<b>projectionMutator</b>(<i>rawFactory</i>)
 

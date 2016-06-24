@@ -1,8 +1,8 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Layouts]] ▸ [Hierarchy](Hierarchy-Layout) ▸ **Treemap Layout**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Layouts]] ▸ [Hierarchy](Hierarchy-Layout.md) ▸ **Treemap Layout**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
-Introduced by [Ben Shneiderman](http://www.cs.umd.edu/hcil/treemap-history/) in 1991, a **treemap** recursively subdivides area into rectangles. As with [adjacency diagrams](Partition-Layout), the size of any node in the tree is quickly revealed. “Squarified” treemaps use approximately-square rectangles, which offer better readability and size estimation than naïve “slice-and-dice” subdivision. Fancier algorithms such as [Voronoi](http://portal.acm.org/citation.cfm?id=1056018.1056041) and [jigsaw](http://hint.fm/papers/158-wattenberg-final3.pdf) treemaps also exist but are less common.
+Introduced by [Ben Shneiderman](http://www.cs.umd.edu/hcil/treemap-history/) in 1991, a **treemap** recursively subdivides area into rectangles. As with [adjacency diagrams](Partition-Layout.md), the size of any node in the tree is quickly revealed. “Squarified” treemaps use approximately-square rectangles, which offer better readability and size estimation than naïve “slice-and-dice” subdivision. Fancier algorithms such as [Voronoi](http://portal.acm.org/citation.cfm?id=1056018.1056041) and [jigsaw](http://hint.fm/papers/158-wattenberg-final3.pdf) treemaps also exist but are less common.
 
 [![treemap](treemap.png)](http://bl.ocks.org/mbostock/4063582)
 
@@ -15,7 +15,7 @@ Creates a new treemap layout with the default settings: the default sort order i
 <a name="_treemap" href="#_treemap">#</a> <b>treemap</b>(<i>root</i>)
 <br><a name="nodes" href="#nodes">#</a> treemap.<b>nodes</b>(<i>root</i>)
 
-Runs the treemap layout, returning the array of nodes associated with the specified *root* node. The treemap layout is part of D3's family of [hierarchical layouts](Hierarchy-Layout). These layouts follow the same basic structure: the input argument to the layout is the root node of the hierarchy, and the output return value is an array representing the computed positions of all nodes. Several attributes are populated on each node:
+Runs the treemap layout, returning the array of nodes associated with the specified *root* node. The treemap layout is part of D3's family of [hierarchical layouts](Hierarchy-Layout.md). These layouts follow the same basic structure: the input argument to the layout is the root node of the hierarchy, and the output return value is an array representing the computed positions of all nodes. Several attributes are populated on each node:
 
 * parent - the parent node, or null for the root.
 * children - the array of child nodes, or null for leaf nodes.
@@ -35,12 +35,12 @@ Although the layout has a size in *x* and *y*, this represents an arbitrary coor
 
 <a name="links" href="#links">#</a> treemap.<b>links</b>(<i>nodes</i>)
 
-Given the specified array of *nodes*, such as those returned by [nodes](Treemap-Layout#nodes), returns an array of objects representing the links from parent to child for each node. Leaf nodes will not have any links. Each link is an object with two attributes:
+Given the specified array of *nodes*, such as those returned by [nodes](Treemap-Layout.md#nodes), returns an array of objects representing the links from parent to child for each node. Leaf nodes will not have any links. Each link is an object with two attributes:
 
 * source - the parent node (as described above).
 * target - the child node.
 
-This method is useful for retrieving a set of link descriptions suitable for display, often in conjunction with the [diagonal](SVG-Shapes#diagonal) shape generator. For example:
+This method is useful for retrieving a set of link descriptions suitable for display, often in conjunction with the [diagonal](SVG-Shapes.md#diagonal) shape generator. For example:
 
 ```javascript
 svg.selectAll("path")
@@ -59,7 +59,7 @@ function children(d, depth) {
 }
 ```
 
-Often, it is convenient to load the node hierarchy using [d3.json](Requests#d3_json), and represent the input hierarchy as a nested [JSON](http://json.org) object. For example:
+Often, it is convenient to load the node hierarchy using [d3.json](Requests.md#d3_json), and represent the input hierarchy as a nested [JSON](http://json.org) object. For example:
 
 ```javascript
 {
@@ -101,7 +101,7 @@ function comparator(a, b) {
 }
 ```
 
-The comparator function is invoked for pairs of nodes, being passed the input data for each node. A null comparator disables sorting and uses tree traversal order. Comparator functions may also be implemented using [d3.ascending](Arrays#d3_ascending) or [d3.descending](Arrays#d3_descending).
+The comparator function is invoked for pairs of nodes, being passed the input data for each node. A null comparator disables sorting and uses tree traversal order. Comparator functions may also be implemented using [d3.ascending](Arrays.md#d3_ascending) or [d3.descending](Arrays.md#d3_descending).
 
 <a name="value" href="#value">#</a> treemap.<b>value</b>([<i>value</i>])
 

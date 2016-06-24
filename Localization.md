@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Core]] ▸ **Localization**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Core]] ▸ **Localization**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
@@ -66,12 +66,12 @@ A locale for Russian (ru_RU) might be defined as:
 
 <a name="locale_numberFormat" href="#locale_numberFormat">#</a> locale.<b>numberFormat</b>(<i>specifier</i>)
 
-The locale’s equivalent of [d3.format](Formatting#d3_format).
+The locale’s equivalent of [d3.format](Formatting.md#d3_format).
 
 <a name="locale_timeFormat" href="#locale_timeFormat">#</a> locale.<b>timeFormat</b>(<i>specifier</i>)
 
-The locale’s equivalent of [d3.time.format](Time-Formatting#format).
+The locale’s equivalent of [d3.time.format](Time-Formatting.md#format).
 
 <a name="locale_timeFormat_utc" href="#locale_timeFormat_utc">#</a> locale.timeFormat.<b>utc</b>(<i>specifier</i>)
 
-The locale’s equivalent of [d3.time.format.utc](Time-Formatting#format_utc).
+The locale’s equivalent of [d3.time.format.utc](Time-Formatting.md#format_utc).

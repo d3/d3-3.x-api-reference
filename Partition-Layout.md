@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Layouts]] ▸ [Hierarchy](Hierarchy-Layout) ▸ **Partition Layout**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Layouts]] ▸ [Hierarchy](Hierarchy-Layout.md) ▸ **Partition Layout**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
@@ -30,12 +30,12 @@ Although the layout has a size in *x* and *y*, this represents an arbitrary coor
 
 <a name="links" href="#links">#</a> partition.<b>links</b>(<i>nodes</i>)
 
-Given the specified array of *nodes*, such as those returned by [nodes](Partition-Layout#nodes), returns an array of objects representing the links from parent to child for each node. Leaf nodes will not have any links. Each link is an object with two attributes:
+Given the specified array of *nodes*, such as those returned by [nodes](Partition-Layout.md#nodes), returns an array of objects representing the links from parent to child for each node. Leaf nodes will not have any links. Each link is an object with two attributes:
 
 * source - the parent node (as described above).
 * target - the child node.
 
-This method is useful for retrieving a set of link descriptions suitable for display, often in conjunction with the [diagonal](SVG-Shapes#diagonal) shape generator. For example:
+This method is useful for retrieving a set of link descriptions suitable for display, often in conjunction with the [diagonal](SVG-Shapes.md#diagonal) shape generator. For example:
 
 ```javascript
 svg.selectAll("path")
@@ -54,7 +54,7 @@ function children(d) {
 }
 ```
 
-Often, it is convenient to load the node hierarchy using [d3.json](Requests#d3_json), and represent the input hierarchy as a nested [JSON](http://json.org) object. For example:
+Often, it is convenient to load the node hierarchy using [d3.json](Requests.md#d3_json), and represent the input hierarchy as a nested [JSON](http://json.org) object. For example:
 
 ```javascript
 {
@@ -96,7 +96,7 @@ function comparator(a, b) {
 }
 ```
 
-The comparator function is invoked for pairs of nodes, being passed the input data for each node. A null comparator disables sorting and uses tree traversal order. Comparator functions may also be implemented using [d3.ascending](Arrays#d3_ascending) or [d3.descending](Arrays#d3_descending).
+The comparator function is invoked for pairs of nodes, being passed the input data for each node. A null comparator disables sorting and uses tree traversal order. Comparator functions may also be implemented using [d3.ascending](Arrays.md#d3_ascending) or [d3.descending](Arrays.md#d3_descending).
 
 <a name="value" href="#value">#</a> partition.<b>value</b>([<i>value</i>])
 

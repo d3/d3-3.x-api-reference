@@ -1,10 +1,10 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Time]] ▸ **Time Intervals**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Time]] ▸ **Time Intervals**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
 **Time intervals** are irregular! For example, there are 60 seconds in a minute, but 24 hours in a day. Even more confusing, some days have 23 or 25 hours due to [daylight saving time](http://en.wikipedia.org/wiki/Daylight_saving_time), and the standard [Gregorian calendar](http://en.wikipedia.org/wiki/Gregorian_calendar) uses months of differing lengths. And then there are leap years!
 
-To simplify manipulation of and iteration over time intervals, D3 provides a handful of time utilities in addition to the time [scale](Time-Scales) and [format](Time-Formatting). The utilities support both local time and UTC time. Local time is determined by the browser's JavaScript runtime; arbitrary time zone support would be nice, but requires access to the Olson zoneinfo files.
+To simplify manipulation of and iteration over time intervals, D3 provides a handful of time utilities in addition to the time [scale](Time-Scales.md) and [format](Time-Formatting.md). The utilities support both local time and UTC time. Local time is determined by the browser's JavaScript runtime; arbitrary time zone support would be nice, but requires access to the Olson zoneinfo files.
 
 ## Interval
 
@@ -154,7 +154,7 @@ Alias for d3.time.[year](#year).[range](#interval_range). Returns the year bound
 
 <a name="dayOfYear" href="#dayOfYear">#</a> d3.time.<b>dayOfYear</b>(<i>date</i>)
 
-Returns the day number for the given date. The first day of the year (January 1) is always the 0th day. Unlike the [d3.time.format](Time-Formatting)'s %j directive, dayOfYear is 0-based rather than 1-based.
+Returns the day number for the given date. The first day of the year (January 1) is always the 0th day. Unlike the [d3.time.format](Time-Formatting.md)'s %j directive, dayOfYear is 0-based rather than 1-based.
 
 <a name="weekOfYear" href="#weekOfYear">#</a> d3.time.<b>weekOfYear</b>(<i>date</i>)
 <br><a name="sundayOfYear" href="#sundayOfYear">#</a> d3.time.<b>sundayOfYear</b>(<i>date</i>)
@@ -165,4 +165,4 @@ Returns the day number for the given date. The first day of the year (January 1)
 <br><a name="fridayOfYear" href="#fridayOfYear">#</a> d3.time.<b>fridayOfYear</b>(<i>date</i>)
 <br><a name="saturdayOfYear" href="#saturdayOfYear">#</a> d3.time.<b>saturdayOfYear</b>(<i>date</i>)
 
-Returns the week number for the given date, where weeks start with the given <i>day</i>. The first day of the year (January 1) is always the 0th week. weekOfYear is an alias for sundayOfYear, which is equivalent to [d3.time.format](Time-Formatting)'s %U directive. mondayOfYear is equivalent to [d3.time.format](Time-Formatting)'s %W directive.
+Returns the week number for the given date, where weeks start with the given <i>day</i>. The first day of the year (January 1) is always the 0th week. weekOfYear is an alias for sundayOfYear, which is equivalent to [d3.time.format](Time-Formatting.md)'s %U directive. mondayOfYear is equivalent to [d3.time.format](Time-Formatting.md)'s %W directive.

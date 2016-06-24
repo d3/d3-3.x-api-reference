@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Layouts]] ▸ [Hierarchy](Hierarchy-Layout) ▸ **Pack Layout**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Layouts]] ▸ [Hierarchy](Hierarchy-Layout.md) ▸ **Pack Layout**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
@@ -21,7 +21,7 @@ Creates a new pack layout with the default settings: the default sort order is b
 <a name="_pack" href="#_pack">#</a> <b>pack</b>(<i>root</i>)
 <br><a name="nodes" href="#nodes">#</a> pack.<b>nodes</b>(<i>root</i>)
 
-Runs the pack layout, returning the array of nodes associated with the specified *root* node. The cluster layout is part of D3's family of [hierarchical layouts](Hierarchy-Layout). These layouts follow the same basic structure: the input argument to the layout is the *root* node of the hierarchy, and the output return value is an array representing the computed positions of all nodes.  Several attributes are populated on each node:
+Runs the pack layout, returning the array of nodes associated with the specified *root* node. The cluster layout is part of D3's family of [hierarchical layouts](Hierarchy-Layout.md). These layouts follow the same basic structure: the input argument to the layout is the *root* node of the hierarchy, and the output return value is an array representing the computed positions of all nodes.  Several attributes are populated on each node:
 
 * `parent` - the parent node, or null for the root.
 * `children` - the array of child nodes, or null for leaf nodes.
@@ -33,12 +33,12 @@ Runs the pack layout, returning the array of nodes associated with the specified
 
 <a name="links" href="#links">#</a> pack.<b>links</b>(<i>nodes</i>)
 
-Given the specified array of *nodes*, such as those returned by [nodes](Pack-Layout#nodes), returns an array of objects representing the links from parent to child for each node. Leaf nodes will not have any links. Each link is an object with two attributes:
+Given the specified array of *nodes*, such as those returned by [nodes](Pack-Layout.md#nodes), returns an array of objects representing the links from parent to child for each node. Leaf nodes will not have any links. Each link is an object with two attributes:
 
 * source - the parent node (as described above).
 * target - the child node.
 
-This method is useful for retrieving a set of link descriptions suitable for display, often in conjunction with the [diagonal](SVG-Shapes#diagonal) shape generator. For example:
+This method is useful for retrieving a set of link descriptions suitable for display, often in conjunction with the [diagonal](SVG-Shapes.md#diagonal) shape generator. For example:
 
 ```javascript
 svg.selectAll("path")
@@ -57,7 +57,7 @@ function children(d) {
 }
 ```
 
-Often, it is convenient to load the node hierarchy using [d3.json](Requests#d3_json), and represent the input hierarchy as a nested [JSON](http://json.org) object. For example:
+Often, it is convenient to load the node hierarchy using [d3.json](Requests.md#d3_json), and represent the input hierarchy as a nested [JSON](http://json.org) object. For example:
 
 ```javascript
 {
@@ -99,7 +99,7 @@ function comparator(a, b) {
 }
 ```
 
-The comparator function is invoked for pairs of nodes, being passed the input data for each node. A null comparator disables sorting and uses tree traversal order. Comparator functions may also be implemented using [d3.ascending](Arrays#d3_ascending) or [d3.descending](Arrays#d3_descending).
+The comparator function is invoked for pairs of nodes, being passed the input data for each node. A null comparator disables sorting and uses tree traversal order. Comparator functions may also be implemented using [d3.ascending](Arrays.md#d3_ascending) or [d3.descending](Arrays.md#d3_descending).
 
 <a name="value" href="#value">#</a> pack.<b>value</b>([<i>value</i>])
 

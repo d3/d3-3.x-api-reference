@@ -1,8 +1,8 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Geo]] ▸ **Geo Streams**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Geo]] ▸ **Geo Streams**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
-For fast transformations of geometry without temporary copies of geometry objects, D3 uses **geometry streams**. The main [d3.geo.stream](#d3_geo_stream) method converts a GeoJSON input object to a stream: a series of method calls on a *stream listener*. In addition, D3 provides several stream transformations that wrap listeners and transform the geometry. For example, the [projection.stream](Geo-Projections#stream) interface transforms spherical coordinates to Cartesian coordinates, and [d3.geo.path](Geo-Paths) serializes geometry to either SVG or Canvas. Internally, clipping and rotating are also implemented as stream transformations.
+For fast transformations of geometry without temporary copies of geometry objects, D3 uses **geometry streams**. The main [d3.geo.stream](#d3_geo_stream) method converts a GeoJSON input object to a stream: a series of method calls on a *stream listener*. In addition, D3 provides several stream transformations that wrap listeners and transform the geometry. For example, the [projection.stream](Geo-Projections.md#stream) interface transforms spherical coordinates to Cartesian coordinates, and [d3.geo.path](Geo-Paths.md) serializes geometry to either SVG or Canvas. Internally, clipping and rotating are also implemented as stream transformations.
 
 <a name="stream" href="#stream">#</a> d3.geo.<b>stream</b>(<i>object</i>, <i>listener</i>)
 
@@ -14,7 +14,7 @@ Stream listeners must implement several methods to traverse geometry. Listeners 
 
 <a name="stream_point" href="#stream_point">#</a> listener.<b>point</b>(<i>x</i>, <i>y</i>[, <i>z</i>])
 
-Indicates a point with the specified coordinates *x* and *y* (and optionally *z*). The coordinate system is unspecified and implementation-dependent; for example, [projection streams](Geo-Projections#stream) require spherical coordinates in degrees as input. Outside the context of a polygon or line, a point indicates a point geometry object ([Point](http://www.geojson.org/geojson-spec.html#point) or [MultiPoint](http://www.geojson.org/geojson-spec.html#multipoint)). Within a line or polygon ring, the point indicates a control point.
+Indicates a point with the specified coordinates *x* and *y* (and optionally *z*). The coordinate system is unspecified and implementation-dependent; for example, [projection streams](Geo-Projections.md#stream) require spherical coordinates in degrees as input. Outside the context of a polygon or line, a point indicates a point geometry object ([Point](http://www.geojson.org/geojson-spec.html#point) or [MultiPoint](http://www.geojson.org/geojson-spec.html#multipoint)). Within a line or polygon ring, the point indicates a control point.
 
 <a name="stream_lineStart" href="#stream_lineStart">#</a> listener.<b>lineStart</b>()
 
@@ -60,7 +60,7 @@ Indicates the sphere (the globe; the unit sphere centered at ⟨0,0,0⟩).
 
 ## Stream Transforms
 
-A stream transform wraps a stream listener, transforming the geometry before passing it along to the wrapped listener. A [geographic projection](Geo-Projections) is one example of a stream transform. The [d3.geo.transform](#transform) class provides an easy way of implementing a custom stream transform.
+A stream transform wraps a stream listener, transforming the geometry before passing it along to the wrapped listener. A [geographic projection](Geo-Projections.md) is one example of a stream transform. The [d3.geo.transform](#transform) class provides an easy way of implementing a custom stream transform.
 
 <a name="transform" href="#transform">#</a> d3.geo.<b>transform</b>(<i>methods</i>)
 
@@ -74,7 +74,7 @@ function matrix(a, b, c, d, tx, ty) {
 }
 ```
 
-This transform can then be used in conjunction with [d3.geo.path](Geo-Paths). For example, to implement a 2D affine transform that flips the <i>y</i>-axis:
+This transform can then be used in conjunction with [d3.geo.path](Geo-Paths.md). For example, to implement a 2D affine transform that flips the <i>y</i>-axis:
 
 ```js
 var path = d3.geo.path()
@@ -87,7 +87,7 @@ Given the specified stream *listener*, returns a wrapped stream listener that ap
 
 <a name="clipExtent" href="#clipExtent">#</a> d3.geo.<b>clipExtent</b>()
 
-Create a new stream [transform](#transform) that implements axis-aligned rectangle clipping. This is typically used to clip geometry to the viewport after [projecting](Geo-Projections).
+Create a new stream [transform](#transform) that implements axis-aligned rectangle clipping. This is typically used to clip geometry to the viewport after [projecting](Geo-Projections.md).
 
 <a name="clipExtent_extent" href="#clipExtent_extent">#</a> clipExtent.<b>extent</b>([<i>extent</i>])
 

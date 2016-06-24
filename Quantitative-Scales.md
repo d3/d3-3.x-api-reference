@@ -1,10 +1,10 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Scales]] ▸ **Quantitative Scales**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Scales]] ▸ **Quantitative Scales**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
 **Scales** are functions that map from an input domain to an output range. **Quantitative** scales have a continuous domain, such as the set of real numbers, or dates. There are also [[ordinal scales|Ordinal-Scales]], which have a discrete domain, such as a set of names or categories. Scales are an optional feature in D3; you don't have to use them, if you prefer to do the math yourself. However, using scales can greatly simplify the code needed to map a dimension of data to a visual representation.
 
-A scale object, such as that returned by [d3.scale.linear](Quantitative-Scales#linear), is both an object and a function. That is: you can call the scale like any other function, and the scale has additional methods that change its behavior. Like other classes in D3, scales follow the method chaining pattern where setter methods return the scale itself, allowing multiple setters to be invoked in a concise statement.
+A scale object, such as that returned by [d3.scale.linear](Quantitative-Scales.md#linear), is both an object and a function. That is: you can call the scale like any other function, and the scale has additional methods that change its behavior. Like other classes in D3, scales follow the method chaining pattern where setter methods return the scale itself, allowing multiple setters to be invoked in a concise statement.
 
 ## Linear Scales
 
@@ -20,7 +20,7 @@ Constructs a new linear scale with the default domain [0,1] and the default rang
 
 Given a value *x* in the input domain, returns the corresponding value in the output range.
 
-Note: some [interpolators](#linear_interpolate) **reuse return values**. For example, if the domain values are arbitrary objects, then [d3.interpolateObject](Transitions#d3_interpolateObject) is automatically applied and the scale reuses the returned object. Often, the return value of a scale is immediately used to set an [attribute](Selections#attr) or [style](Selections#style), and you don’t have to worry about this; however, if you need to store the scale’s return value, use string coercion or create a copy as appropriate.
+Note: some [interpolators](#linear_interpolate) **reuse return values**. For example, if the domain values are arbitrary objects, then [d3.interpolateObject](Transitions.md#d3_interpolateObject) is automatically applied and the scale reuses the returned object. Often, the return value of a scale is immediately used to set an [attribute](Selections.md#attr) or [style](Selections.md#style), and you don’t have to worry about this; however, if you need to store the scale’s return value, use string coercion or create a copy as appropriate.
 
 <a name="linear_invert" href="Quantitative-Scales#linear_invert">#</a> linear.<b>invert</b>(<i>y</i>)
 
@@ -30,7 +30,7 @@ Note: the invert operator is only supported if the output range is numeric! D3 a
 
 <a name="linear_domain" href="Quantitative-Scales#linear_domain">#</a> linear.<b>domain</b>([<i>numbers</i>])
 
-If *numbers* is specified, sets the scale's input domain to the specified array of numbers. The array must contain two or more numbers. If the elements in the given array are not numbers, they will be coerced to numbers; this coercion happens similarly when the scale is called. Thus, a linear scale can be used to encode types such as [[date objects|https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date]] that can be converted to numbers; however, it is often more convenient to use [d3.time.scale](Time-Scales) for dates. (You can implement your own convertible number objects using [[valueOf|https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/valueOf]].) If *numbers* is not specified, returns the scale's current input domain.
+If *numbers* is specified, sets the scale's input domain to the specified array of numbers. The array must contain two or more numbers. If the elements in the given array are not numbers, they will be coerced to numbers; this coercion happens similarly when the scale is called. Thus, a linear scale can be used to encode types such as [[date objects|https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date]] that can be converted to numbers; however, it is often more convenient to use [d3.time.scale](Time-Scales.md) for dates. (You can implement your own convertible number objects using [[valueOf|https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/valueOf]].) If *numbers* is not specified, returns the scale's current input domain.
 
 Although linear scales typically have just two numeric values in their domain, you can specify more than two values for a *polylinear* scale. In this case, there must be an equivalent number of values in the output range. A polylinear scale represents multiple piecewise linear scales that divide a continuous domain and range. This is particularly useful for defining diverging quantitative scales. For example, to interpolate between white and red for negative values, and white and green for positive values, say:
 
@@ -44,7 +44,7 @@ The resulting value of color(-.5) is rgb(255, 128, 128), and the value of color(
 
 <a name="linear_range" href="Quantitative-Scales#linear_range">#</a> linear.<b>range</b>([<i>values</i>])
 
-If *values* is specified, sets the scale's output range to the specified array of values. The array must contain two or more values, to match the cardinality of the input domain, otherwise the longer of the two is truncated to match the other. The elements in the given array need not be numbers; any value that is supported by the underlying [interpolator](Quantitative-Scales#linear_interpolate) will work. However, numeric ranges are required for the invert operator. If *values* is not specified, returns the scale's current output range.
+If *values* is specified, sets the scale's output range to the specified array of values. The array must contain two or more values, to match the cardinality of the input domain, otherwise the longer of the two is truncated to match the other. The elements in the given array need not be numbers; any value that is supported by the underlying [interpolator](Quantitative-Scales.md#linear_interpolate) will work. However, numeric ranges are required for the invert operator. If *values* is not specified, returns the scale's current output range.
 
 <a name="linear_rangeRound" href="Quantitative-Scales#linear_rangeRound">#</a> linear.<b>rangeRound</b>(<i>values</i>)
 
@@ -79,9 +79,9 @@ var x = d3.scale.linear().domain([-1, 1]);
 console.log(x.ticks(5).map(x.tickFormat(5, "+%"))); // ["-100%", "-50%", "+0%", "+50%", "+100%"]
 ```
 
-Likewise, if *format* uses the format type `s`, the scale will compute a SI-prefix based on the largest value in the domain, and use that SI-prefix for [all tick values](http://bl.ocks.org/mbostock/9764126). If the *format* already specifies a precision, this method is equivalent to [d3.format](Formatting#d3_format).
+Likewise, if *format* uses the format type `s`, the scale will compute a SI-prefix based on the largest value in the domain, and use that SI-prefix for [all tick values](http://bl.ocks.org/mbostock/9764126). If the *format* already specifies a precision, this method is equivalent to [d3.format](Formatting.md#d3_format).
 
-Note that when using a log scale in conjunction with an axis, you typically want to use [axis.ticks](SVG-Axes#ticks) rather than [axis.tickFormat](SVG-Axes#tickFormat) to take advantage of the log scale’s custom tick format, as in [bl.ocks.org/5537697](http://bl.ocks.org/mbostock/5537697).
+Note that when using a log scale in conjunction with an axis, you typically want to use [axis.ticks](SVG-Axes.md#ticks) rather than [axis.tickFormat](SVG-Axes.md#tickFormat) to take advantage of the log scale’s custom tick format, as in [bl.ocks.org/5537697](http://bl.ocks.org/mbostock/5537697).
 
 <a name="linear_copy" href="#linear_copy">#</a> linear.<b>copy</b>()
 
@@ -89,7 +89,7 @@ Returns an exact copy of this linear scale. Changes to this scale will not affec
 
 ### Identity Scales
 
-Identity scales are a special case of linear scales where the domain and range are identical; the scale and its invert method are both the identity function. These scales are occasionally useful when working with pixel coordinates, say in conjunction with the [axis](SVG-Axes) and [brush](SVG-Controls#brush) components.
+Identity scales are a special case of linear scales where the domain and range are identical; the scale and its invert method are both the identity function. These scales are occasionally useful when working with pixel coordinates, say in conjunction with the [axis](SVG-Axes.md) and [brush](SVG-Controls.md#brush) components.
 
 <a name="identity" href="#identity">#</a> d3.scale.<b>identity</b>()
 
@@ -111,7 +111,7 @@ Returns approximately *count* representative values from the scale's input domai
 
 <a name="identity_tickFormat" href="#identity_tickFormat">#</a> identity.<b>tickFormat</b>(<i>count</i>, [<i>format</i>])
 
-Returns a [number format](Formatting#d3_format) function suitable for displaying a tick value. The specified *count* should have the same value as the count that is used to generate the tick values. You don't have to use the scale's built-in tick format, but it automatically computes the appropriate precision based on the fixed interval between tick values.
+Returns a [number format](Formatting.md#d3_format) function suitable for displaying a tick value. The specified *count* should have the same value as the count that is used to generate the tick values. You don't have to use the scale's built-in tick format, but it automatically computes the appropriate precision based on the fixed interval between tick values.
 
 The optional *format* argument allows a [[format specifier|Formatting#d3_format]] to be specified. If the format specifier doesn’t have a defined precision, the precision will be set automatically by the scale, returning the appropriate format. This provides a convenient, declarative way of specifying a format whose
 precision will be automatically set by the scale.
@@ -142,7 +142,7 @@ Constructs a new power scale with the default domain [0,1], the default range [0
 
 Given a value *x* in the input domain, returns the corresponding value in the output range.
 
-Note: some [interpolators](#pow_interpolate) **reuse return values**. For example, if the domain values are arbitrary objects, then [d3.interpolateObject](Transitions#d3_interpolateObject) is automatically applied and the scale reuses the returned object. Often, the return value of a scale is immediately used to set an [attribute](Selections#attr) or [style](Selections#style), and you don’t have to worry about this; however, if you need to store the scale’s return value, use string coercion or create a copy as appropriate.
+Note: some [interpolators](#pow_interpolate) **reuse return values**. For example, if the domain values are arbitrary objects, then [d3.interpolateObject](Transitions.md#d3_interpolateObject) is automatically applied and the scale reuses the returned object. Often, the return value of a scale is immediately used to set an [attribute](Selections.md#attr) or [style](Selections.md#style), and you don’t have to worry about this; however, if you need to store the scale’s return value, use string coercion or create a copy as appropriate.
 
 <a name="pow_invert" href="Quantitative-Scales#pow_invert">#</a> pow.<b>invert</b>(<i>y</i>)
 
@@ -154,11 +154,11 @@ Note: the invert operator is only supported if the output range is numeric! D3 a
 
 If *numbers* is specified, sets the scale's input domain to the specified array of numbers. The array must contain two or more numbers. If the elements in the given array are not numbers, they will be coerced to numbers; this coercion happens similarly when the scale is called. Thus, a power scale can be used to encode any type that can be converted to numbers. If *numbers* is not specified, returns the scale's current input domain.
 
-As with linear scales (see [linear.domain](Quantitative-Scales#linear_domain)), power scales can also accept more than two values for the domain and range, thus resulting in polypower scale.
+As with linear scales (see [linear.domain](Quantitative-Scales.md#linear_domain)), power scales can also accept more than two values for the domain and range, thus resulting in polypower scale.
 
 <a name="pow_range" href="Quantitative-Scales#pow_range">#</a> pow.<b>range</b>([<i>values</i>])
 
-If *values* is specified, sets the scale's output range to the specified array of values. The array must contain two or more values, to match the cardinality of the input domain, otherwise the longer of the two is truncated to match the other. The elements in the given array need not be numbers; any value that is supported by the underlying [interpolator](Quantitative-Scales#pow_interpolate) will work. However, numeric ranges are required for the invert operator. If *values* is not specified, returns the scale's current output range.
+If *values* is specified, sets the scale's output range to the specified array of values. The array must contain two or more values, to match the cardinality of the input domain, otherwise the longer of the two is truncated to match the other. The elements in the given array need not be numbers; any value that is supported by the underlying [interpolator](Quantitative-Scales.md#pow_interpolate) will work. However, numeric ranges are required for the invert operator. If *values* is not specified, returns the scale's current output range.
 
 <a name="pow_rangeRound" href="Quantitative-Scales#pow_rangeRound">#</a> pow.<b>rangeRound</b>(<i>values</i>)
 
@@ -211,7 +211,7 @@ Constructs a new log scale with the default domain [1,10], the default range [0,
 
 Given a value *x* in the input domain, returns the corresponding value in the output range.
 
-Note: some [interpolators](#log_interpolate) **reuse return values**. For example, if the domain values are arbitrary objects, then [d3.interpolateObject](Transitions#d3_interpolateObject) is automatically applied and the scale reuses the returned object. Often, the return value of a scale is immediately used to set an [attribute](Selections#attr) or [style](Selections#style), and you don’t have to worry about this; however, if you need to store the scale’s return value, use string coercion or create a copy as appropriate.
+Note: some [interpolators](#log_interpolate) **reuse return values**. For example, if the domain values are arbitrary objects, then [d3.interpolateObject](Transitions.md#d3_interpolateObject) is automatically applied and the scale reuses the returned object. Often, the return value of a scale is immediately used to set an [attribute](Selections.md#attr) or [style](Selections.md#style), and you don’t have to worry about this; however, if you need to store the scale’s return value, use string coercion or create a copy as appropriate.
 
 <a name="log_invert" href="Quantitative-Scales#log_invert">#</a> log.<b>invert</b>(<i>y</i>)
 
@@ -223,11 +223,11 @@ Note: the invert operator is only supported if the output range is numeric! D3 a
 
 If *numbers* is specified, sets the scale's input domain to the specified array of numbers. The array must contain two or more numbers. If the elements in the given array are not numbers, they will be coerced to numbers; this coercion happens similarly when the scale is called. Thus, a log scale can be used to encode any type that can be converted to numbers. If *numbers* is not specified, returns the scale's current input domain.
 
-As with linear scales (see [linear.domain](Quantitative-Scales#linear_domain)), log scales can also accept more than two values for the domain and range, thus resulting in polylog scale.
+As with linear scales (see [linear.domain](Quantitative-Scales.md#linear_domain)), log scales can also accept more than two values for the domain and range, thus resulting in polylog scale.
 
 <a name="log_range" href="Quantitative-Scales#log_range">#</a> log.<b>range</b>([<i>values</i>])
 
-If *values* is specified, sets the scale's output range to the specified array of values. The array must contain two or more values, to match the cardinality of the input domain, otherwise the longer of the two is truncated to match the other. The elements in the given array need not be numbers; any value that is supported by the underlying [interpolator](Quantitative-Scales#log_interpolate) will work. However, numeric ranges are required for the invert operator. If *values* is not specified, returns the scale's current output range.
+If *values* is specified, sets the scale's output range to the specified array of values. The array must contain two or more values, to match the cardinality of the input domain, otherwise the longer of the two is truncated to match the other. The elements in the given array need not be numbers; any value that is supported by the underlying [interpolator](Quantitative-Scales.md#log_interpolate) will work. However, numeric ranges are required for the invert operator. If *values* is not specified, returns the scale's current output range.
 
 <a name="log_rangeRound" href="Quantitative-Scales#log_rangeRound">#</a> log.<b>rangeRound</b>(<i>values</i>)
 
@@ -255,7 +255,7 @@ Returns representative values from the scale's input domain. The returned tick v
 
 <a name="log_tickFormat" href="Quantitative-Scales#log_tickFormat">#</a> log.<b>tickFormat</b>([<i>count</i>, [<i>format</i>]])
 
-Returns a [[number format|Formatting#d3_format]] function suitable for displaying a tick value. The returned tick format is implemented as `d.toPrecision(1)`. If a *count* is specified, then some of the tick labels may not be displayed; this is useful if there is not enough room to fit all of the tick labels. However, note that the tick marks will still be displayed (so that the log scale distortion remains visible). When specifying a count, you may also override the *format* function; you can also specify a format specifier as a string, and it will automatically be wrapped with [d3.format](Formatting). For example, to get a tick formatter that will display 20 ticks of a currency:
+Returns a [[number format|Formatting#d3_format]] function suitable for displaying a tick value. The returned tick format is implemented as `d.toPrecision(1)`. If a *count* is specified, then some of the tick labels may not be displayed; this is useful if there is not enough room to fit all of the tick labels. However, note that the tick marks will still be displayed (so that the log scale distortion remains visible). When specifying a count, you may also override the *format* function; you can also specify a format specifier as a string, and it will automatically be wrapped with [d3.format](Formatting.md). For example, to get a tick formatter that will display 20 ticks of a currency:
 
 ```js
 scale.tickFormat(20, "$,.2f");

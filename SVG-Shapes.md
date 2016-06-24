@@ -1,10 +1,10 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[SVG]] ▸ **SVG Shapes**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[SVG]] ▸ **SVG Shapes**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
 SVG has a number of built-in simple shapes, such as axis-aligned rectangles and circles. For greater flexibility, you can use SVG's [[path|http://www.w3.org/TR/SVG/paths.html#PathElement]] element in conjunction with D3's path data generators.
 
-A shape generator, such as that returned by [d3.svg.arc](SVG-Shapes#arc), is both an object and a function. That is: you can call the shape like any other function, and the shape has additional methods that change its behavior. Like other classes in D3, shapes follow the method chaining pattern where setter methods return the shape itself, allowing multiple setters to be invoked in a concise statement.
+A shape generator, such as that returned by [d3.svg.arc](SVG-Shapes.md#arc), is both an object and a function. That is: you can call the shape like any other function, and the shape has additional methods that change its behavior. Like other classes in D3, shapes follow the method chaining pattern where setter methods return the shape itself, allowing multiple setters to be invoked in a concise statement.
 
 ## SVG Elements
 
@@ -28,11 +28,11 @@ The [[line|http://www.w3.org/TR/SVG/shapes.html#LineElement]] element defines a 
 
 <a name="svg_polyline" href="SVG-Shapes#svg_polyline">#</a> svg:<b>polyline</b> points=""
 
-The [[polyline|http://www.w3.org/TR/SVG/shapes.html#PolylineElement]] element defines a set of connected straight line segments. Typically, polyline elements define open shapes. The points that make up the polyline are specified using the *points* attribute. Note: in D3, it is typically more convenient and flexible to use the [d3.svg.line](SVG-Shapes#line) path generator in conjunction with a path element.
+The [[polyline|http://www.w3.org/TR/SVG/shapes.html#PolylineElement]] element defines a set of connected straight line segments. Typically, polyline elements define open shapes. The points that make up the polyline are specified using the *points* attribute. Note: in D3, it is typically more convenient and flexible to use the [d3.svg.line](SVG-Shapes.md#line) path generator in conjunction with a path element.
 
 <a name="svg_polygon" href="SVG-Shapes#svg_polygon">#</a> svg:<b>polygon</b> points=""
 
-The [[polygon|http://www.w3.org/TR/SVG/shapes.html#PolygonElement]] element defines a closed shape consisting of a set of connected straight line segments. The points that make up the polygon are specified using the *points* attribute. Note: in D3, it is typically more convenient and flexible to use the [d3.svg.line](SVG-Shapes#line) path generator in conjunction with a path element. The line can be closed using the [[closepath|http://www.w3.org/TR/SVG/paths.html#PathDataClosePathCommand]] "Z" command.
+The [[polygon|http://www.w3.org/TR/SVG/shapes.html#PolygonElement]] element defines a closed shape consisting of a set of connected straight line segments. The points that make up the polygon are specified using the *points* attribute. Note: in D3, it is typically more convenient and flexible to use the [d3.svg.line](SVG-Shapes.md#line) path generator in conjunction with a path element. The line can be closed using the [[closepath|http://www.w3.org/TR/SVG/paths.html#PathDataClosePathCommand]] "Z" command.
 
 <a name="svg_text" href="SVG-Shapes#svg_text">#</a> svg:<b>text</b> x="0" y="0" dx="0" dy="0" text-anchor="start"
 
@@ -91,7 +91,7 @@ g.append("path")
     .attr("d", function(d) { return line(d) + "Z"; });
 ```
 
-The line generator is designed to work in conjunction with the [area](SVG-Shapes#area) generator. For example, when producing an area chart, you might use an area generator with a fill style, and a line generator with a stroke style to emphasize the top edge of the area. Since the line generator is only used to set the *d* attribute, you can control the appearance of the line using standard SVG styles and attributes, such as *fill*, *stroke* and *stroke-width*.
+The line generator is designed to work in conjunction with the [area](SVG-Shapes.md#area) generator. For example, when producing an area chart, you might use an area generator with a fill style, and a line generator with a stroke style to emphasize the top edge of the area. Since the line generator is only used to set the *d* attribute, you can control the appearance of the line using standard SVG styles and attributes, such as *fill*, *stroke* and *stroke-width*.
 
 <a name="_line" href="SVG-Shapes#_line">#</a> <b>line</b>(<i>data</i>)
 
@@ -130,7 +130,7 @@ function y(d) {
 }
 ```
 
-For an example of how to specify a *y*-accessor, see the similar [x](SVG-Shapes#line_x) accessor. Note that, like most other graphics libraries, SVG uses the top-left corner as the origin and thus higher values of *y* are *lower* on the screen. For visualization we often want the origin in the bottom-left corner instead; one easy way to accomplish this is to invert the range of the *y*-scale by using range([h, 0]) instead of range([0, h]).
+For an example of how to specify a *y*-accessor, see the similar [x](SVG-Shapes.md#line_x) accessor. Note that, like most other graphics libraries, SVG uses the top-left corner as the origin and thus higher values of *y* are *lower* on the screen. For visualization we often want the origin in the bottom-left corner instead; one easy way to accomplish this is to invert the range of the *y*-scale by using range([h, 0]) instead of range([0, h]).
 
 <a name="line_interpolate" href="SVG-Shapes#line_interpolate">#</a> line.<b>interpolate</b>([<i>interpolate</i>])
 
@@ -150,7 +150,7 @@ If *interpolate* is specified, sets the interpolation mode to the specified stri
 * cardinal-closed - a closed Cardinal spline, as in a loop.
 * monotone - [cubic interpolation](http://en.wikipedia.org/wiki/Monotone_cubic_interpolation) that preserves monotonicity in *y*.
 
-The behavior of some of these interpolation modes may be further customized by specifying a [tension](SVG-Shapes#line_tension).
+The behavior of some of these interpolation modes may be further customized by specifying a [tension](SVG-Shapes.md#line_tension).
 
 If *interpolate* is a function, then this function will be invoked to convert an array of points of the form [​[x0, y0], [x1, y1], …], returning an [SVG path data string](http://www.w3.org/TR/SVG/paths.html#PathData) that will be used to display the line. The "M" at the start of the string is implied and should not be returned. For example, linear interpolation is implemented as:
 
@@ -202,7 +202,7 @@ If a datum is defined but surrounded by undefined data (or the end of the array)
 
 <a name="line_radial" href="SVG-Shapes#line_radial">#</a> d3.svg.line.<b>radial</b>()
 
-Constructs a new radial line generator with the default *radius*- and *angle*-accessor functions (that assume the input data is a two-element array of numbers; see below for details), and linear interpolation. The returned function generates path data for an open piecewise linear curve, or polyline, as with the Cartesian [line](SVG-Shapes#line) generator.
+Constructs a new radial line generator with the default *radius*- and *angle*-accessor functions (that assume the input data is a two-element array of numbers; see below for details), and linear interpolation. The returned function generates path data for an open piecewise linear curve, or polyline, as with the Cartesian [line](SVG-Shapes.md#line) generator.
 
 <a name="_line_radial" href="SVG-Shapes#_line_radial">#</a> <b>line</b>(<i>data</i>)
 
@@ -218,7 +218,7 @@ function radius(d) {
 }
 ```
 
-This method is a transformation of the Cartesian [line.x](SVG-Shapes#line_x) method.
+This method is a transformation of the Cartesian [line.x](SVG-Shapes.md#line_x) method.
 
 <a name="line_radial_angle" href="SVG-Shapes#line_radial_angle">#</a> line.<b>angle</b>([<i>angle</i>])
 
@@ -230,19 +230,19 @@ function angle(d) {
 }
 ```
 
-This method is a transformation of the Cartesian [line.y](SVG-Shapes#line_y) method.
+This method is a transformation of the Cartesian [line.y](SVG-Shapes.md#line_y) method.
 
 <a name="line_radial_interpolate" href="SVG-Shapes#line_radial_interpolate">#</a> line.<b>interpolate</b>([<i>interpolate</i>])
 
-See the Cartesian [line.interpolate](SVG-Shapes#line_interpolate) method.  The interpolation occurs after projecting to Cartesian space.
+See the Cartesian [line.interpolate](SVG-Shapes.md#line_interpolate) method.  The interpolation occurs after projecting to Cartesian space.
 
 <a name="line_radial_tension" href="SVG-Shapes#line_radial_tension">#</a> line.<b>tension</b>([<i>tension</i>])
 
-See the Cartesian [line.tension](SVG-Shapes#line_tension) method.  The interpolation occurs after projecting to Cartesian space.
+See the Cartesian [line.tension](SVG-Shapes.md#line_tension) method.  The interpolation occurs after projecting to Cartesian space.
 
 <a name="line_radial_defined" href="SVG-Shapes#line_radial_defined">#</a> line.<b>defined</b>([<i>defined</i>])
 
-See the Cartesian [line.defined](SVG-Shapes#line_defined) method.
+See the Cartesian [line.defined](SVG-Shapes.md#line_defined) method.
 
 <a name="area" href="SVG-Shapes#area">#</a> d3.svg.<b>area</b>()
 
@@ -250,11 +250,11 @@ Constructs a new area generator with the default *x*-, *y0*- and *y1*-accessor f
 
 ![area](area.png)
 
-Conceptually, the polygon is formed using two [lines](SVG-Shapes#line): the top line is formed using the *x*- and *y1*-accessor functions, and proceeds from left-to-right; the bottom line is added to this line, using the *x*- and *y0*-accessor functions, and proceeds from right-to-left. By setting the [transform](http://www.w3.org/TR/SVG/coords.html#TransformAttribute) attribute to rotate the path element by 90 degrees, you can also generate vertical areas. By changing the interpolation, you can also generate splines and step functions.
+Conceptually, the polygon is formed using two [lines](SVG-Shapes.md#line): the top line is formed using the *x*- and *y1*-accessor functions, and proceeds from left-to-right; the bottom line is added to this line, using the *x*- and *y0*-accessor functions, and proceeds from right-to-left. By setting the [transform](http://www.w3.org/TR/SVG/coords.html#TransformAttribute) attribute to rotate the path element by 90 degrees, you can also generate vertical areas. By changing the interpolation, you can also generate splines and step functions.
 
-The area generator is designed to work in conjunction with the [line](SVG-Shapes#line) generator. For example, when producing an area chart, you might use an area generator with a fill style, and a line generator with a stroke style to emphasize the top edge of the area. Since the area generator is only used to set the *d* attribute, you can control the appearance of the area using standard SVG styles and attributes, such as *fill*.
+The area generator is designed to work in conjunction with the [line](SVG-Shapes.md#line) generator. For example, when producing an area chart, you might use an area generator with a fill style, and a line generator with a stroke style to emphasize the top edge of the area. Since the area generator is only used to set the *d* attribute, you can control the appearance of the area using standard SVG styles and attributes, such as *fill*.
 
-To create [streamgraphs](http://mbostock.github.com/d3/ex/stream.html) (stacked area charts), use the [stack](Stack-Layout) layout. This layout sets the y0 attribute for each value in a series, which can be used from the *y0*- and *y1*-accessors. Note that each series must have the same number of values per series, and each value must have the same *x*-coordinate; if you have missing data or inconsistent *x*-coordinates per series, you must resample and interpolate your data before computing the stacked layout.
+To create [streamgraphs](http://mbostock.github.com/d3/ex/stream.html) (stacked area charts), use the [stack](Stack-Layout.md) layout. This layout sets the y0 attribute for each value in a series, which can be used from the *y0*- and *y1*-accessors. Note that each series must have the same number of values per series, and each value must have the same *x*-coordinate; if you have missing data or inconsistent *x*-coordinates per series, you must resample and interpolate your data before computing the stacked layout.
 
 <a name="_area" href="SVG-Shapes#_area">#</a> <b>area</b>(<i>data</i>)
 
@@ -298,7 +298,7 @@ The *x*-accessor is invoked in the same manner as other value functions in D3. T
 
 <a name="area_y0" href="SVG-Shapes#area_y0">#</a> area.<b>y0</b>([<i>y0</i>])
 
-If *y0* is specified, sets the *y0*-accessor to the specified function or constant. If *y0* is not specified, returns the current *y0*-accessor. This accessor is invoked for each element in the data array passed to the area generator. The default accessor is the constant zero, thus using a fixed baseline at *y* = 0. For an example of how to specify a *y0*-accessor, see the similar [x](SVG-Shapes#area_x) accessor.
+If *y0* is specified, sets the *y0*-accessor to the specified function or constant. If *y0* is not specified, returns the current *y0*-accessor. This accessor is invoked for each element in the data array passed to the area generator. The default accessor is the constant zero, thus using a fixed baseline at *y* = 0. For an example of how to specify a *y0*-accessor, see the similar [x](SVG-Shapes.md#area_x) accessor.
 
 <a name="area_y1" href="SVG-Shapes#area_y1">#</a> area.<b>y1</b>([<i>y1</i>])
 
@@ -310,7 +310,7 @@ function y1(d) {
 }
 ```
 
-For an example of how to specify a *y1*-accessor, see the similar [x](SVG-Shapes#area_x) accessor. Note that, like most other graphics libraries, SVG uses the top-left corner as the origin and thus higher values of *y* are *lower* on the screen. For visualization we often want the origin in the bottom-left corner instead; one easy way to accomplish this is to invert the range of the *y*-scale by using range([h, 0]) instead of range([0, h]).
+For an example of how to specify a *y1*-accessor, see the similar [x](SVG-Shapes.md#area_x) accessor. Note that, like most other graphics libraries, SVG uses the top-left corner as the origin and thus higher values of *y* are *lower* on the screen. For visualization we often want the origin in the bottom-left corner instead; one easy way to accomplish this is to invert the range of the *y*-scale by using range([h, 0]) instead of range([0, h]).
 
 <a name="area_interpolate" href="SVG-Shapes#area_interpolate">#</a> area.<b>interpolate</b>([<i>interpolate</i>])
 
@@ -326,7 +326,7 @@ If *interpolate* is specified, sets the interpolation mode to the specified stri
 * cardinal-open - an open Cardinal spline; may not intersect the start or end, but will intersect other control points.
 * monotone - [cubic interpolation](http://en.wikipedia.org/wiki/Monotone_cubic_interpolation) that preserves monotonicity in *y*.
 
-The behavior of some of these interpolation modes may be further customized by specifying a [tension](SVG-Shapes#area_tension). Technically, the basis-closed and cardinal-closed interpolation modes are also supported, but these make more sense in the context of a line rather than an area.
+The behavior of some of these interpolation modes may be further customized by specifying a [tension](SVG-Shapes.md#area_tension). Technically, the basis-closed and cardinal-closed interpolation modes are also supported, but these make more sense in the context of a line rather than an area.
 
 If *interpolate* is a function, then this function will be invoked to convert an array of points of the form [​[x0, y0], [x1, y1], …], returning an [SVG path data string](http://www.w3.org/TR/SVG/paths.html#PathData) that will be used to display the area. The "M" at the start of the string is implied and should not be returned. For example, linear interpolation is implemented as:
 
@@ -445,7 +445,7 @@ function padRadius(innerRadius, outerRadius) {
 }
 ```
 
-This implementation is designed to preserve the approximate relative area of arcs in conjunction with [pie.padAngle](Pie-Layout#padAngle).
+This implementation is designed to preserve the approximate relative area of arcs in conjunction with [pie.padAngle](Pie-Layout.md#padAngle).
 
 The pad radius is the radius at which the [pad angle](#arc_padAngle) is applied: the nominal padding distance between parallel edges of adjacent arcs is defined as padRadius * padAngle. (The padding distance may be smaller if the inner radius is small relative to the pad angle.) The pad radius typically does not need to be changed from “auto”, but can be useful to ensure parallel edges between arcs with differing inner or outer radii, as when [extending an arc on hover](http://bl.ocks.org/mbostock/32bd93b1cc0fbccc9bf9).
 
@@ -463,7 +463,7 @@ function startAngle(d) {
 
 Angles are specified in radians; 0 corresponds to 12 o’clock (negative *y*) and proceeds clockwise, repeating at 2π. If the start angle is specified as an accessor function, the arc generator arguments (typically `d` and `i`) and context (`this`) are passed through to the accessor function.
 
-For constructing pie or donut charts, you will need to compute the start angle of each arc as the end angle of the previous arc. This can be done conveniently using the [pie layout](Pie-Layout), which takes an array of input data and returns arc objects with `startAngle` and `endAngle` attributes compatible with the default arc accessors.
+For constructing pie or donut charts, you will need to compute the start angle of each arc as the end angle of the previous arc. This can be done conveniently using the [pie layout](Pie-Layout.md), which takes an array of input data and returns arc objects with `startAngle` and `endAngle` attributes compatible with the default arc accessors.
 
 <a name="arc_endAngle" href="SVG-Shapes#arc_endAngle">#</a> arc.<b>endAngle</b>([<i>angle</i>])
 
@@ -477,7 +477,7 @@ function endAngle(d) {
 
 Angles are specified in radians; 0 corresponds to 12 o’clock (negative *y*) and proceeds clockwise, repeating at 2π. If the end angle is specified as an accessor function, the arc generator arguments (typically `d` and `i`) and context (`this`) are passed through to the accessor function.
 
-For constructing pie or donut charts, you will need to compute the end angle of each arc as appropriate. This can be done conveniently using the [pie layout](Pie-Layout), which takes an array of input data and returns arc objects with `startAngle` and `endAngle` attributes compatible with the default arc accessors.
+For constructing pie or donut charts, you will need to compute the end angle of each arc as appropriate. This can be done conveniently using the [pie layout](Pie-Layout.md), which takes an array of input data and returns arc objects with `startAngle` and `endAngle` attributes compatible with the default arc accessors.
 
 <a name="arc_padAngle" href="#arc_padAngle">#</a> arc.<b>padAngle</b>([<i>angle</i>])
 
@@ -491,7 +491,7 @@ function padAngle(d) {
 
 Angles are specified in radians. If the pad angle is specified as an accessor function, the arc generator arguments (typically `d` and `i`) and context (`this`) are passed through to the accessor function.
 
-Although the pad angle can be specified as a constant, it is preferable to use the default pad angle accessor and instead use [pie.padAngle](Pie-Layout#padAngle) to compute the appropriate pad angle, and to recompute the start and end angles of each arc so as to preserve approximate relative areas.
+Although the pad angle can be specified as a constant, it is preferable to use the default pad angle accessor and instead use [pie.padAngle](Pie-Layout.md#padAngle) to compute the appropriate pad angle, and to recompute the start and end angles of each arc so as to preserve approximate relative areas.
 
 <a name="arc_centroid" href="SVG-Shapes#arc_centroid">#</a> arc.<b>centroid</b>(<i>arguments…</i>)
 
@@ -540,13 +540,13 @@ If *type* is specified, sets the *type*-accessor to the specified function or co
 * triangle-down - a downward-pointing [equilateral triangle](http://en.wikipedia.org/wiki/Equilateral_triangle).
 * triangle-up - an upward-pointing equilateral triangle.
 
-Types are normalized to have the same area in square pixels, according to the specified [size](SVG-Shapes#symbol_size). However, note that different types' sizes may be affected by the stroke and stroke width in different ways. All of the types are designed to be visible when only a fill style is used, although they generally look better when both a fill and stroke is used.
+Types are normalized to have the same area in square pixels, according to the specified [size](SVG-Shapes.md#symbol_size). However, note that different types' sizes may be affected by the stroke and stroke width in different ways. All of the types are designed to be visible when only a fill style is used, although they generally look better when both a fill and stroke is used.
 
 The *type*-accessor is invoked in the same manner as other value functions in D3. The *this* context of the function is the current element in the selection. (Technically, the same *this* context that invokes the arc function; however, in the common case that the symbol generator is passed to the [[attr|Selections#attr]] operator, the *this* context will be the associated DOM element.) The function is passed two arguments, the current datum (d) and the current index (i). It is also possible to specify the *type*-accessor as a constant rather than a function.
 
 <a name="symbol_size" href="SVG-Shapes#symbol_size">#</a> symbol.<b>size</b>([<i>size</i>])
 
-If *size* is specified, sets the *size*-accessor to the specified function or constant in square pixels. If *size* is not specified, returns the current *size*-accessor.  The default is 64. This accessor is invoked on the argument passed to the symbol generator. Typically, a *size*-accessor is specified as a function when you want the size of the symbol to encode a [quantitative dimension](Quantitative-Scales) of data, or a constant it you simply want to make all the dots bigger or smaller. If you want to specify a radius rather than the size, you must do so indirectly, for example using a [pow](Quantitative-Scales#pow) scale with exponent 2.
+If *size* is specified, sets the *size*-accessor to the specified function or constant in square pixels. If *size* is not specified, returns the current *size*-accessor.  The default is 64. This accessor is invoked on the argument passed to the symbol generator. Typically, a *size*-accessor is specified as a function when you want the size of the symbol to encode a [quantitative dimension](Quantitative-Scales.md) of data, or a constant it you simply want to make all the dots bigger or smaller. If you want to specify a radius rather than the size, you must do so indirectly, for example using a [pow](Quantitative-Scales.md#pow) scale with exponent 2.
 
 <a name="symbolTypes" href="SVG-Shapes#symbolTypes">#</a> d3.svg.<b>symbolTypes</b>
 
@@ -558,7 +558,7 @@ Constructs a new chord generator with the default accessor functions (that assum
 
 ![chord](chord.png)
 
-A chord generator is often used in conjunction with an [arc generator](SVG-Shapes#arc), so as to draw annular segments at the start and end of the chords. In addition, the [chord layout](Chord-Layout) is useful for generating objects that describe a set of grouped chords from a matrix, compatible with the default accessors.
+A chord generator is often used in conjunction with an [arc generator](SVG-Shapes.md#arc), so as to draw annular segments at the start and end of the chords. In addition, the [chord layout](Chord-Layout.md) is useful for generating objects that describe a set of grouped chords from a matrix, compatible with the default accessors.
 
 <a name="_chord" href="SVG-Shapes#_chord">#</a> <b>chord</b>(<i>datum</i>[, <i>index</i>])
 
@@ -566,7 +566,7 @@ Returns the path data string for the specified *datum*. An optional *index* may 
 
 <a name="chord_source" href="SVG-Shapes#chord_source">#</a> chord.<b>source</b>([<i>source</i>])
 
-If *source* is specified, sets the *source*-accessor to the specified function or constant. If *source* is not specified, returns the current *source*-accessor. The purpose of the *source* accessor is to return an object that describes the starting arc of the chord. The returned object is subsequently passed to the [radius](SVG-Shapes#chord_radius), [startAngle](SVG-Shapes#chord_startAngle) and [endAngle](SVG-Shapes#chord_endAngle) accessors. This allows these other accessors to be reused for both the source and target arc descriptions. The default accessor assumes that the input data is an object with suitably-named attributes:
+If *source* is specified, sets the *source*-accessor to the specified function or constant. If *source* is not specified, returns the current *source*-accessor. The purpose of the *source* accessor is to return an object that describes the starting arc of the chord. The returned object is subsequently passed to the [radius](SVG-Shapes.md#chord_radius), [startAngle](SVG-Shapes.md#chord_startAngle) and [endAngle](SVG-Shapes.md#chord_endAngle) accessors. This allows these other accessors to be reused for both the source and target arc descriptions. The default accessor assumes that the input data is an object with suitably-named attributes:
 
 ```javascript
 function source(d) {
@@ -578,7 +578,7 @@ The *source*-accessor is invoked in the same manner as other value functions in 
 
 <a name="chord_target" href="SVG-Shapes#chord_target">#</a> chord.<b>target</b>([<i>target</i>])
 
-If *target* is specified, sets the *target*-accessor to the specified function or constant. If *target* is not specified, returns the current *target*-accessor. The purpose of the *target* accessor is to return an object that describes the ending arc of the chord. The returned object is subsequently passed to the [radius](SVG-Shapes#chord_radius), [startAngle](SVG-Shapes#chord_startAngle) and [endAngle](SVG-Shapes#chord_endAngle) accessors. This allows these other accessors to be reused for both the source and target arc descriptions. The default accessor assumes that the input data is an object with suitably-named attributes:
+If *target* is specified, sets the *target*-accessor to the specified function or constant. If *target* is not specified, returns the current *target*-accessor. The purpose of the *target* accessor is to return an object that describes the ending arc of the chord. The returned object is subsequently passed to the [radius](SVG-Shapes.md#chord_radius), [startAngle](SVG-Shapes.md#chord_startAngle) and [endAngle](SVG-Shapes.md#chord_endAngle) accessors. This allows these other accessors to be reused for both the source and target arc descriptions. The default accessor assumes that the input data is an object with suitably-named attributes:
 
 ```javascript
 function target(d) {
@@ -630,7 +630,7 @@ Constructs a new diagonal generator with the default accessor functions (that as
 
 ![diagonal](diagonal.png)
 
-Although diagonals default to Cartesian (axis-aligned) orientations, they can be used in radial and other orientations using a [projection](SVG-Shapes#diagonal_projection).
+Although diagonals default to Cartesian (axis-aligned) orientations, they can be used in radial and other orientations using a [projection](SVG-Shapes.md#diagonal_projection).
 
 <a name="_diagonal" href="SVG-Shapes#_diagonal">#</a> <b>diagonal</b>(<i>datum</i>[, <i>index</i>])
 
@@ -638,7 +638,7 @@ Returns the path data string for the specified *datum*. An optional *index* may 
 
 <a name="diagonal_source" href="SVG-Shapes#diagonal_source">#</a> diagonal.<b>source</b>([<i>source</i>])
 
-If *source* is specified, sets the *source*-accessor to the specified function or constant. If *source* is not specified, returns the current *source*-accessor. The purpose of the *source* accessor is to return an object of the form `{x, y}` that describes the starting point of the diagonal. (The returned object is subsequently passed to the [projection](SVG-Shapes#diagonal_projection).) The default accessor assumes that the input data is an object with suitably-named attributes:
+If *source* is specified, sets the *source*-accessor to the specified function or constant. If *source* is not specified, returns the current *source*-accessor. The purpose of the *source* accessor is to return an object of the form `{x, y}` that describes the starting point of the diagonal. (The returned object is subsequently passed to the [projection](SVG-Shapes.md#diagonal_projection).) The default accessor assumes that the input data is an object with suitably-named attributes:
 
 ```javascript
 function source(d) {
@@ -650,7 +650,7 @@ The *source*-accessor is invoked in the same manner as other value functions in 
 
 <a name="diagonal_target" href="SVG-Shapes#diagonal_target">#</a> diagonal.<b>target</b>([<i>target</i>])
 
-If *target* is specified, sets the *target*-accessor to the specified function or constant. If *target* is not specified, returns the current *target*-accessor. The purpose of the *target* accessor is to return an object of the form `{x, y}` that describes the ending point of the diagonal. (The returned object is subsequently passed to the [projection](SVG-Shapes#diagonal_projection).) The default accessor assumes that the input data is an object with suitably-named attributes:
+If *target* is specified, sets the *target*-accessor to the specified function or constant. If *target* is not specified, returns the current *target*-accessor. The purpose of the *target* accessor is to return an object of the form `{x, y}` that describes the ending point of the diagonal. (The returned object is subsequently passed to the [projection](SVG-Shapes.md#diagonal_projection).) The default accessor assumes that the input data is an object with suitably-named attributes:
 
 ```javascript
 function target(d) {
@@ -670,7 +670,7 @@ function projection(d) {
 }
 ```
 
-The default accessor is thus compatible with D3's various node layouts, including [tree](Tree-Layout), [partition](Partition-Layout) and [cluster](Cluster-Layout). For example, to produce a radial diagonal, assuming that the *y* attribute defines the radius in pixels, and the *x* attribute defines the angle in degrees:
+The default accessor is thus compatible with D3's various node layouts, including [tree](Tree-Layout.md), [partition](Partition-Layout.md) and [cluster](Cluster-Layout.md). For example, to produce a radial diagonal, assuming that the *y* attribute defines the radius in pixels, and the *x* attribute defines the angle in degrees:
 
 ```javascript
 function projection(d) {

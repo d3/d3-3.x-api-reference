@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Behaviors]] ▸ **Zoom Behavior**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Behaviors]] ▸ **Zoom Behavior**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
@@ -48,7 +48,7 @@ If *center* is specified, sets the [focal point](http://bl.ocks.org/mbostock/622
 
 <a name="size" href="#size">#</a> zoom.<b>size</b>([<i>size</i>])
 
-If *size* is specified, sets the viewport size to the specified dimensions [<i>width</i>, <i>height</i>] and returns this zoom behavior. If *size* is not specified, returns the current viewport size which defaults to [960, 500]. A *size* is needed to support [smooth zooming](Transitions#d3_interpolateZoom) during transitions.
+If *size* is specified, sets the viewport size to the specified dimensions [<i>width</i>, <i>height</i>] and returns this zoom behavior. If *size* is not specified, returns the current viewport size which defaults to [960, 500]. A *size* is needed to support [smooth zooming](Transitions.md#d3_interpolateZoom) during transitions.
 
 <a name="x" href="#x">#</a> zoom.<b>x</b>([<i>x</i>])
 
@@ -77,4 +77,4 @@ When fired, the d3.event object will contain the following properties:
 
 <a name="event" href="#event">#</a> zoom.<b>event</b>(<i>selection</i>)
 
-If *selection* is a selection, immediately dispatches a zoom gesture to registered listeners, as the three event sequence _zoomstart_, _zoom_ and _zoomend_. This can be useful in triggering listeners after setting the [translate](#translate) or [scale](#scale) programatically. If *selection* is a transition, registers the appropriate tweens so that the zoom behavior dispatches events over the course of the transition: a _zoomstart_ event when the transition starts from the previously-set view, _zoom_ events for each tick of the transition, and finally a _zoomend_ event when the transition ends. Note that the transition will be [interrupted](Selections#interrupt) if the user starts zooming before the transition ends.
+If *selection* is a selection, immediately dispatches a zoom gesture to registered listeners, as the three event sequence _zoomstart_, _zoom_ and _zoomend_. This can be useful in triggering listeners after setting the [translate](#translate) or [scale](#scale) programatically. If *selection* is a transition, registers the appropriate tweens so that the zoom behavior dispatches events over the course of the transition: a _zoomstart_ event when the transition starts from the previously-set view, _zoom_ events for each tick of the transition, and finally a _zoomend_ event when the transition ends. Note that the transition will be [interrupted](Selections.md#interrupt) if the user starts zooming before the transition ends.

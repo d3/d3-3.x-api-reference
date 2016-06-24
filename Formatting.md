@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Core]] ▸ **Formatting**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Core]] ▸ **Formatting**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
@@ -21,7 +21,7 @@ In addition to numbers, D3 also supports formatting and parsing [[dates|Time-For
 
 <a name="d3_format" href="#d3_format">#</a> d3.<b>format</b>(<i>specifier</i>)
 
-Returns a new format function with the given string *specifier*. (Equivalent to [locale.numberFormat](Localization#locale_numberFormat) for the default U.S. English locale.) A format function takes a number as the only argument, and returns a string representing the formatted number. The format specifier is modeled after Python 3.1's built-in [[format specification mini-language|http://docs.python.org/release/3.1.3/library/string.html#formatspec]]. The general form of a specifier is:
+Returns a new format function with the given string *specifier*. (Equivalent to [locale.numberFormat](Localization.md#locale_numberFormat) for the default U.S. English locale.) A format function takes a number as the only argument, and returns a string representing the formatted number. The format specifier is modeled after Python 3.1's built-in [[format specification mini-language|http://docs.python.org/release/3.1.3/library/string.html#formatspec]]. The general form of a specifier is:
 ```
  [​[fill]align][sign][symbol][0][width][,][.precision][type]
 ```
@@ -99,7 +99,7 @@ d3.round(12.5, 0); // 13
 d3.round(12, -1); // 10
 ```
 
-Note that the resulting number when converted to a string may be imprecise due to IEEE floating point precision; to format a number to a string with a fixed number of decimal points, use [d3.format](Formatting#d3_format) instead.
+Note that the resulting number when converted to a string may be imprecise due to IEEE floating point precision; to format a number to a string with a fixed number of decimal points, use [d3.format](Formatting.md#d3_format) instead.
 
 ## Strings
 

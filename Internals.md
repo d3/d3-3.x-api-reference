@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Core]] ▸ **Internals**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Core]] ▸ **Internals**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
@@ -16,7 +16,7 @@ Copies the methods with the specified *names* from *source* to *target*, and ret
 
 ## Events
 
-D3’s behaviors and higher level components, such as the [brush](SVG-Controls#brush), use d3.dispatch to broadcast custom events.
+D3’s behaviors and higher level components, such as the [brush](SVG-Controls.md#brush), use d3.dispatch to broadcast custom events.
 
 [![dispatching events](http://bl.ocks.org/mbostock/raw/5872848/thumbnail.png)](http://bl.ocks.org/mbostock/5872848)
 

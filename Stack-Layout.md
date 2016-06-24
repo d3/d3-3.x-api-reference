@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Layouts]] ▸ **Stack Layout**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Layouts]] ▸ **Stack Layout**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
@@ -8,7 +8,7 @@ Several baseline algorithms are supported, along with sorting heuristics to impr
 
 [![stack](stack.png)](http://bl.ocks.org/mbostock/4060954)
 
-The stack layout operates in an arbitrary two-dimensional *x* and *y* coordinate space, similar to D3's other layouts, including [tree](Tree-Layout). Thus, layers can be stacked vertically, horizontally, or even [radially](http://hint.fm/projects/flickr/). While the "zero" offset is the default, a streamgraph can be generated using the "wiggle" offset, which attempts to minimize change in slope weighted by layer thickness.
+The stack layout operates in an arbitrary two-dimensional *x* and *y* coordinate space, similar to D3's other layouts, including [tree](Tree-Layout.md). Thus, layers can be stacked vertically, horizontally, or even [radially](http://hint.fm/projects/flickr/). While the "zero" offset is the default, a streamgraph can be generated using the "wiggle" offset, which attempts to minimize change in slope weighted by layer thickness.
 
 <a name="stack" href="Stack-Layout#stack">#</a> d3.layout.<b>stack</b>()
 
@@ -18,10 +18,10 @@ Constructs a new stack layout with the default offset (zero) and order (null). T
 
 Computes the *y*-coordinate baseline for each layer in the *layers* array, and then propagates that baseline to the other layers. In the simplest case, *layers* is a two-dimensional array of *point objects*, all having the same length, and each having a vertical  and horizontal ordinate value to define the *y*-thickness of each layer at the given *x*-position.
 
-More complex structures are accepted by the layout, but only if an *accessor* function is passed to [values](Stack-Layout#values), which abstracts the structure back to the simple case described above.  In any case, the complexity is limited to an array of layer objects, each having a points array as a member.  It is not possible, for example to use a series hash table (object) containing key value pairs representing the coordinates.  Such a structure could be abstracted into the required format using an accessor function but, the object returned by the layout would not have the added offset state, as there is currently no means to abstract the output *with layer awareness*.
+More complex structures are accepted by the layout, but only if an *accessor* function is passed to [values](Stack-Layout.md#values), which abstracts the structure back to the simple case described above.  In any case, the complexity is limited to an array of layer objects, each having a points array as a member.  It is not possible, for example to use a series hash table (object) containing key value pairs representing the coordinates.  Such a structure could be abstracted into the required format using an accessor function but, the object returned by the layout would not have the added offset state, as there is currently no means to abstract the output *with layer awareness*.
 
 The default layout expects the point objects to carry *x* and *y* members, to which it will add a *y0* member, to store the offset values produced by the selected baseline algorithm.
-If the coordinate properties (raw or [abstracted](Stack-Layout#values)) are not named *x* and *y*, then [x](Stack-Layout#x) and [y](Stack-Layout#y) *accessors* must be provided to complete the abstraction and deliver the above structure.
+If the coordinate properties (raw or [abstracted](Stack-Layout.md#values)) are not named *x* and *y*, then [x](Stack-Layout.md#x) and [y](Stack-Layout.md#y) *accessors* must be provided to complete the abstraction and deliver the above structure.
 
 Thus, each *point object* has the following abstract structure:
 
@@ -31,11 +31,11 @@ Thus, each *point object* has the following abstract structure:
 
 The last two being physically added onto the point objects if required.
 
-The optional *index* argument is not consumed by the default layout, but is made available to custom [order](Stack-Layout#order) and [offset](Stack-Layout#offset) objects.
+The optional *index* argument is not consumed by the default layout, but is made available to custom [order](Stack-Layout.md#order) and [offset](Stack-Layout.md#offset) objects.
 
 <a name="values" href="Stack-Layout#values">#</a> stack.<b>values</b>([<i>accessor</i>])
 
-Specifies how to extract the *points* array from the *layer* elements of the *layers* array; *accessor* is a function which is invoked on each input layer passed to [stack](Stack-Layout#_stack), equivalent to calling *layers.map(accessor)* before computing the stack layout. The default values function is the identity function. If *accessor* is not specified, returns the current values accessor.
+Specifies how to extract the *points* array from the *layer* elements of the *layers* array; *accessor* is a function which is invoked on each input layer passed to [stack](Stack-Layout.md#_stack), equivalent to calling *layers.map(accessor)* before computing the stack layout. The default values function is the identity function. If *accessor* is not specified, returns the current values accessor.
 
 The values accessor can be used to associate additional data per-layer, rather than per-point. For example, say your data were structured as follows:
 
@@ -114,7 +114,7 @@ function order(data) {
 }
 ```
 
-See also [d3.range](Arrays#d3_range).
+See also [d3.range](Arrays.md#d3_range).
 
 <a name="x" href="Stack-Layout#x">#</a> stack.<b>x</b>([<i>accessor</i>])
 
@@ -140,7 +140,7 @@ function y(d) {
 }
 ```
 
-The *y*-accessor is invoked for each input value, for each input layer, being passed the current data (d) and index (i). The return value of the accessor must be a number. With the exception of the "expand" offset, the stack layout does not perform any automatic scaling of data. To simplify scaling, use this layout in conjunction with a [linear scale](Quantitative-Scales#linear) or similar.
+The *y*-accessor is invoked for each input value, for each input layer, being passed the current data (d) and index (i). The return value of the accessor must be a number. With the exception of the "expand" offset, the stack layout does not perform any automatic scaling of data. To simplify scaling, use this layout in conjunction with a [linear scale](Quantitative-Scales.md#linear) or similar.
 
 <a name="out" href="Stack-Layout#out">#</a> stack.<b>out</b>([<i>setter</i>])
 
@@ -153,4 +153,4 @@ function out(d, y0, y) {
 }
 ```
 
-The *setter* is invoked for each input value, for each input layer, being passed the current data (d), the computed *y0* value, and the computed *y*-thickness. In all cases except the "expand" offset, the *y*-thickness is the same as the input value returned by [y](Stack-Layout#y), and thus may be ignored.
+The *setter* is invoked for each input value, for each input layer, being passed the current data (d), the computed *y0* value, and the computed *y*-thickness. In all cases except the "expand" offset, the *y*-thickness is the same as the input value returned by [y](Stack-Layout.md#y), and thus may be ignored.

@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ [[API Reference]] ▸ [[Geometry]] ▸ **Voronoi Geom**
+> [Wiki](Home.md) ▸ [[API Reference]] ▸ [[Geometry]] ▸ **Voronoi Geom**
 
 **The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
 
@@ -38,7 +38,7 @@ If *extent* is specified, sets the clip extent of the Voronoi layout to the spec
 
 See [this example](http://bl.ocks.org/mbostock/4237768). Use of a clip extent is strongly recommended, as unclipped polygons may have large coordinates which do not display correctly.
 
-Alternatively, you can also employ custom clipping without specifying a size, either in SVG or by post-processing with [polygon.clip](Polygon-Geom#clip).
+Alternatively, you can also employ custom clipping without specifying a size, either in SVG or by post-processing with [polygon.clip](Polygon-Geom.md#clip).
 
 <a name="links" href="#links">#</a> voronoi.<b>links</b>(<i>data</i>)
 
