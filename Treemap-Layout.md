@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Layouts]] ▸ [Hierarchy](Hierarchy-Layout) ▸ **Treemap Layout**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 Introduced by [Ben Shneiderman](http://www.cs.umd.edu/hcil/treemap-history/) in 1991, a **treemap** recursively subdivides area into rectangles. As with [adjacency diagrams](Partition-Layout), the size of any node in the tree is quickly revealed. “Squarified” treemaps use approximately-square rectangles, which offer better readability and size estimation than naïve “slice-and-dice” subdivision. Fancier algorithms such as [Voronoi](http://portal.acm.org/citation.cfm?id=1056018.1056041) and [jigsaw](http://hint.fm/papers/158-wattenberg-final3.pdf) treemaps also exist but are less common.
 
 [![treemap](treemap.png)](http://bl.ocks.org/mbostock/4063582)

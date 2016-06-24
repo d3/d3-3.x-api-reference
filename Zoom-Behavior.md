@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Behaviors]] ▸ **Zoom Behavior**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 [![Pan+Zoom](http://bl.ocks.org/mbostock/raw/3892919/thumbnail.png)](http://bl.ocks.org/mbostock/3892919)
 [![Zoomable Area](http://bl.ocks.org/mbostock/raw/4015254/thumbnail.png)](http://bl.ocks.org/mbostock/4015254)
 [![Geometric Zooming](http://bl.ocks.org/mbostock/raw/3680999/thumbnail.png)](http://bl.ocks.org/mbostock/3680999)

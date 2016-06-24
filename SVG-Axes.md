@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[SVG]] ▸ **SVG Axes**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 D3’s [axis component](http://bl.ocks.org/mbostock/1166403) displays reference lines for scales automatically. This lets you focus on displaying the data, while the axis component takes care of the tedious task of drawing axes and labeled ticks.
 
 [![Axis Component](http://bl.ocks.org/mbostock/raw/1166403/thumbnail.png)](http://bl.ocks.org/mbostock/1166403)

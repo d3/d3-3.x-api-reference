@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Layouts]] ▸ **Histogram Layout**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 A **histogram layout** shows the distribution of data by grouping discrete data points into bins. See [bl.ock 3048450](http://bl.ocks.org/mbostock/3048450) for example usage.
 
 <a name="histogram" href="Histogram-Layout#histogram">#</a> d3.layout.<b>histogram</b>()

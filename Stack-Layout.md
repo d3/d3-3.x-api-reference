@@ -1,7 +1,9 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Layouts]] ▸ **Stack Layout**
 
-The stack layout takes an array of layer objects, each having a series (array) of *point objects* as a member.  The point objects contain a pair of ordinates (as a minimum) that map the horizontal position of each point and its vertical thickness.  The output from the stack layout is the same array of layers, but with state added onto the *point objects* to facilitate the selected stacking strategy.  
-The layout computes a baseline for the first layer which it then propagates to the above layers, so as to produce a stacked data set.  
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
+The stack layout takes an array of layer objects, each having a series (array) of *point objects* as a member.  The point objects contain a pair of ordinates (as a minimum) that map the horizontal position of each point and its vertical thickness.  The output from the stack layout is the same array of layers, but with state added onto the *point objects* to facilitate the selected stacking strategy.
+The layout computes a baseline for the first layer which it then propagates to the above layers, so as to produce a stacked data set.
 Several baseline algorithms are supported, along with sorting heuristics to improve perception, as described in [“Stacked Graphs—Geometry & Aesthetics”](http://www.leebyron.com/else/streamgraph/download.php?file=stackedgraphs_byron_wattenberg.pdf) by Byron & Wattenberg.
 
 [![stack](stack.png)](http://bl.ocks.org/mbostock/4060954)
@@ -14,20 +16,20 @@ Constructs a new stack layout with the default offset (zero) and order (null). T
 
 <a name="_stack" href="Stack-Layout#_stack">#</a> <b>stack</b>(<i>layers</i>[, <i>index</i>])
 
-Computes the *y*-coordinate baseline for each layer in the *layers* array, and then propagates that baseline to the other layers. In the simplest case, *layers* is a two-dimensional array of *point objects*, all having the same length, and each having a vertical  and horizontal ordinate value to define the *y*-thickness of each layer at the given *x*-position.    
+Computes the *y*-coordinate baseline for each layer in the *layers* array, and then propagates that baseline to the other layers. In the simplest case, *layers* is a two-dimensional array of *point objects*, all having the same length, and each having a vertical  and horizontal ordinate value to define the *y*-thickness of each layer at the given *x*-position.
 
-More complex structures are accepted by the layout, but only if an *accessor* function is passed to [values](Stack-Layout#values), which abstracts the structure back to the simple case described above.  In any case, the complexity is limited to an array of layer objects, each having a points array as a member.  It is not possible, for example to use a series hash table (object) containing key value pairs representing the coordinates.  Such a structure could be abstracted into the required format using an accessor function but, the object returned by the layout would not have the added offset state, as there is currently no means to abstract the output *with layer awareness*.  
+More complex structures are accepted by the layout, but only if an *accessor* function is passed to [values](Stack-Layout#values), which abstracts the structure back to the simple case described above.  In any case, the complexity is limited to an array of layer objects, each having a points array as a member.  It is not possible, for example to use a series hash table (object) containing key value pairs representing the coordinates.  Such a structure could be abstracted into the required format using an accessor function but, the object returned by the layout would not have the added offset state, as there is currently no means to abstract the output *with layer awareness*.
 
-The default layout expects the point objects to carry *x* and *y* members, to which it will add a *y0* member, to store the offset values produced by the selected baseline algorithm.  
+The default layout expects the point objects to carry *x* and *y* members, to which it will add a *y0* member, to store the offset values produced by the selected baseline algorithm.
 If the coordinate properties (raw or [abstracted](Stack-Layout#values)) are not named *x* and *y*, then [x](Stack-Layout#x) and [y](Stack-Layout#y) *accessors* must be provided to complete the abstraction and deliver the above structure.
 
-Thus, each *point object* has the following abstract structure:  
+Thus, each *point object* has the following abstract structure:
 
 * x - the *x*-position of the value.
 * y - the *y*-thickness of the value.
 * y0 - the minimum *y*-position of the value (baseline).
 
-The last two being physically added onto the point objects if required.  
+The last two being physically added onto the point objects if required.
 
 The optional *index* argument is not consumed by the default layout, but is made available to custom [order](Stack-Layout#order) and [offset](Stack-Layout#offset) objects.
 
@@ -46,7 +48,7 @@ var layers = [
       { "x": 1, "y": 290}
     ]
   },
-  {  
+  {
     "name": "oranges",
     "values": [
       { "x": 0, "y":  9},

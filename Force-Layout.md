@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Layouts]] ▸ **Force Layout**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 A flexible force-directed graph layout implementation using position [Verlet integration](http://en.wikipedia.org/wiki/Verlet_integration) to allow [simple constraints](http://www.csse.monash.edu.au/~tdwyer/Dwyer2009FastConstraints.pdf). For more on physical simulations, see [Thomas Jakobsen](http://www.gamasutra.com/resource_guide/20030121/jacobson_pfv.htm). This implementation uses a [quadtree](Quadtree-Geom) to accelerate charge interaction using the [Barnes–Hut approximation](http://en.wikipedia.org/wiki/Barnes%E2%80%93Hut_simulation). In addition to the repulsive [charge](Force-Layout#charge) force, a pseudo-[gravity](Force-Layout#gravity) force keeps nodes centered in the visible area and avoids expulsion of disconnected subgraphs, while links are fixed-[distance](Force-Layout#distance) geometric constraints. Additional custom forces and constraints may be applied on the "tick" event, simply by updating the *x* and *y* attributes of nodes.
 
 [![force](force.png)](http://bl.ocks.org/mbostock/4062045)
@@ -158,7 +160,7 @@ If you do not initialize the positions manually, the force layout will initializ
 
 <a name="on" href="Force-Layout#on">#</a> force.<b>on</b>(<i>type</i>, <i>listener</i>)
 
-Registers the specified *listener* to receive events of the specified *type* from the force layout. Currently, only "start", "tick", and "end" events are supported. 
+Registers the specified *listener* to receive events of the specified *type* from the force layout. Currently, only "start", "tick", and "end" events are supported.
 
 The event objects that will be passed to the listener functions are custom objects created using the [`d3.dispatch()`](https://github.com/mbostock/d3/wiki/Internals#events) process.  Each event object has two properties: the `type` (a string, either `"start"`, `"tick"`, or `"end"`), and `alpha`, which is the current value of the alpha cooling parameter (a number between 0 and 1). The <code><i>event</i>.alpha</code> property can be used to monitor layout progress or to control your own custom adjustments.
 

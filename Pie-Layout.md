@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Layouts]] ▸ **Pie Layout**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 The pie layout is a convenience for computing the start and end angles of arcs that comprise a pie or donut chart:
 
 ![pie](pie.png)

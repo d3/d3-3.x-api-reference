@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Geo]] ▸ **Geo Paths**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 For cartographic visualizations, D3 supports a handful of components for displaying and manipulating **geographic data**. These components use the [GeoJSON format](http://geojson.org/geojson-spec.html)—a standard way of representing geographic features in JavaScript. (See also the [TopoJSON format](/mbostock/topojson), an extension of GeoJSON that is significantly more compact.) To convert shapefiles to GeoJSON, use ogr2ogr, part of the [GDAL package](http://www.gdal.org/).
 
 <a href="http://bl.ocks.org/mbostock/4060606"><img src="http://bl.ocks.org/mbostock/raw/4060606/thumbnail.png" height="120"></a>
@@ -95,7 +97,7 @@ Computes the projected centroid (in pixels) for the specified *feature*. This is
 
 <a name="path_bounds" href="#path_bounds">#</a> path.<b>bounds</b>(<i>feature</i>)
 
-Computes the projected bounding box (in pixels) for the specified *feature*. The bounding box is represented by a two-dimensional array: [\[<i>left</i>, <i>top</i>], [<i>right</i>, <i>bottom</i>]] , different from GIS [geo.bounds](https://github.com/mbostock/d3/wiki/Geo-Paths#bounds)' convention. This is handy for, say, zooming in to a particular feature. This method observes any clipping and resampling performed by the projection stream. 
+Computes the projected bounding box (in pixels) for the specified *feature*. The bounding box is represented by a two-dimensional array: [\[<i>left</i>, <i>top</i>], [<i>right</i>, <i>bottom</i>]] , different from GIS [geo.bounds](https://github.com/mbostock/d3/wiki/Geo-Paths#bounds)' convention. This is handy for, say, zooming in to a particular feature. This method observes any clipping and resampling performed by the projection stream.
 
 <a name="path_pointRadius" href="#path_pointRadius">#</a> path.<b>pointRadius</b>([<i>radius</i>])
 

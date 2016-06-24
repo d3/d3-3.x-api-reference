@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Behaviors]] ▸ **Drag Behavior**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 This behavior automatically creates event listeners to handle drag gestures on an element. Both mouse events and touch events are supported.
 
 <a name="drag" href="Drag-Behavior#drag">#</a> d3.behavior.<b>drag</b>()

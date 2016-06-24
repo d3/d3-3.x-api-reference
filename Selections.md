@@ -1,5 +1,7 @@
  > [Wiki](Home) ▸ [[API Reference]] ▸ [[Core]] ▸ **Selections**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 A **selection** is an array of elements pulled from the current document. D3 uses [CSS3](http://www.w3.org/TR/css3-selectors/ "|http://www.w3.org/TR/css3-selectors/") to select elements. For example, you can select by tag  ("div"), class (".awesome"), unique identifier ("#foo"), attribute ("[color=red]"), or containment ("parent child"). Selectors can also be intersected (".this.that" for logical AND) or unioned (".this, .that" for logical OR). If your browser doesn't support selectors natively, you can include [Sizzle](http://sizzlejs.com/ "http://sizzlejs.com/") before D3 for backwards-compatibility.
 
 After selecting elements, you apply **operators** to them to do stuff. These operators can get or set [attributes](Selections#attr), [styles](Selections#style), [properties](Selections#property), [HTML](Selections#html) and [text](Selections#text) content. Attribute values and such are specified as either constants or functions; the latter are evaluated for each element. You can also join selections to [data](Selections#data); this data is available to operators for data-driven transformations. In addition, joining to data produces [enter](Selections#enter) and [exit](Selections#enter) subselections, so that you may [add](Selections#append) or [remove](Selections#remove) elements in response to changes in data.
@@ -52,7 +54,7 @@ This operator is a convenience routine for setting the "class" attribute; it und
 
 If *value* is specified, sets whether or not the specified class is associated with the selected elements. If *value* is a constant and truthy, then all elements are assigned the specified class, if not already assigned; if falsey, then the class is removed from all selected elements, if assigned. If *value* is a function, then the function is evaluated for each selected element (in order), being passed the current datum `d` and the current index `i`, with the `this` context as the current DOM element. The function's return value is then used to assign or unassign the specified class on each element.
 
-If you want to set several classes at once, use an object literal like so: `selection.classed({'foo': true, 'bar': false})`, or use a space-separated list of class names like so: `selection.classed('foo bar', true)`. 
+If you want to set several classes at once, use an object literal like so: `selection.classed({'foo': true, 'bar': false})`, or use a space-separated list of class names like so: `selection.classed('foo bar', true)`.
 
 If *value* is not specified, returns true if and only if the first non-null element in this selection has the specified class. This is generally useful only if you know the selection contains exactly one element.
 
@@ -60,7 +62,7 @@ If *value* is not specified, returns true if and only if the first non-null elem
 
 If *value* is specified, sets the CSS style property with the specified name to the specified value on all selected elements. If *value* is a constant, then all elements are given the same style value; otherwise, if *value* is a function, then the function is evaluated for each selected element (in order), being passed the current datum `d` and the current index `i`, with the `this` context as the current DOM element. The function's return value is then used to set each element's style property. A null value will remove the style property. An optional *priority* may also be specified, either as null or the string "important" (without the exclamation point).
 
-If you want to set several style properties at once, use an object literal. For example: 
+If you want to set several style properties at once, use an object literal. For example:
 
 ```js
 selection.style({stroke: "black", "stroke-width": "2px"});
@@ -107,7 +109,7 @@ The *name* may be specified either as a constant string or as a function that re
 selection.enter().append(function(d) {
     return document.createElementNS("http://www.w3.org/2000/svg", d.type)
 })
-```  
+```
 When the *name* is specified as a string, it may have a namespace prefix of the form "namespace:tag". For example, "svg:text" will create a "text" element in the SVG namespace. By default, D3 supports svg, xhtml, xlink, xml and xmlns namespaces. Additional namespaces can be registered by adding to [d3.ns.prefix](Namespaces#prefix). If no namespace is specified, then the namespace will be inherited from the enclosing element; or, if the name is one of the known prefixes, the corresponding namespace will be used (for example, "svg" implies "svg:svg").
 
 <a name="insert" href="Selections#insert">#</a> selection.<b>insert</b>(<i>name</i>[, <i>before</i>])
@@ -132,15 +134,15 @@ The result of the `data` method is the *update* selection; this represents the s
 
 A *key* function **key**([ *d* [, *i* ]]) may be specified to control how data is joined to elements (this replaces the default by-index behavior). The key function returns a string which is used to join a datum with its corresponding element, based on the previously-bound data. For example, if each datum has a unique field `name`, the join might be specified as `.data(data, function(d) { return d.name; })`
 
-The key function is called twice during the data binding process, which proceeds in two phases.  
+The key function is called twice during the data binding process, which proceeds in two phases.
 
-1.    The *key* function is evaluated on the nodes to form `nodeByKeyValue` (an associative array of nodes) with the `this` context as the node, `d` as the node `__data__` member and the second argument `i` as the selection group index.  
+1.    The *key* function is evaluated on the nodes to form `nodeByKeyValue` (an associative array of nodes) with the `this` context as the node, `d` as the node `__data__` member and the second argument `i` as the selection group index.
 
-1.    The *key* function is evaluated on each element of the *values* array - this time with *values* as the `this` context, *values*[`i`] as the first argument `d` and the *values* index `i` as the second argument - and the results are then used to attempt to look up the nodes in the `nodeByKeyValue` collection.  If the lookup is successful, the node is added to the _update selection_, any nodes not queried are added to the exit selection.  Any data elements that failed to find a matching node are used to form the enter selection.  
+1.    The *key* function is evaluated on each element of the *values* array - this time with *values* as the `this` context, *values*[`i`] as the first argument `d` and the *values* index `i` as the second argument - and the results are then used to attempt to look up the nodes in the `nodeByKeyValue` collection.  If the lookup is successful, the node is added to the _update selection_, any nodes not queried are added to the exit selection.  Any data elements that failed to find a matching node are used to form the enter selection.
 
 If a key function is specified, the `data` operator also affects the index of nodes; this index is passed as the second argument `i` to any operator function arguments. However, note that existing DOM elements are not automatically reordered; use [sort](#sort) or [order](#order) as needed. For a more detailed example of how the key function affects the data join, see the tutorial [A Bar Chart, Part 2](http://bost.ocks.org/mike/bar/2/ "http://bost.ocks.org/mike/bar/2/").
 
-The *values* array specifies the data **for each group** in the selection. Thus, if the selection has multiple groups (such as a [d3.selectAll](#d3_selectAll) followed by a [selection.selectAll](#selectAll)), then *data* should be specified as a function that returns an array (assuming that you want different data for each group). The function will be passed the current group data (or `undefined`) and the index, with the group as the `this` context. 
+The *values* array specifies the data **for each group** in the selection. Thus, if the selection has multiple groups (such as a [d3.selectAll](#d3_selectAll) followed by a [selection.selectAll](#selectAll)), then *data* should be specified as a function that returns an array (assuming that you want different data for each group). The function will be passed the current group data (or `undefined`) and the index, with the group as the `this` context.
 For example, you may bind a two-dimensional array to an initial selection, and then bind the contained inner arrays to each subselection. The *values* function in this case is the identity function: it is invoked for each group of child elements, being passed the data bound to the parent element, and returns this array of data.
 
 ```javascript
@@ -257,7 +259,7 @@ If you want the document traversal order to match the selection data order, you 
 
 <a name="filter" href="Selections#filter">#</a> selection.<b>filter</b>(<i>selector</i>)
 
-Filters the selection, returning a new selection that contains only the elements for which the specified *selector* is true. The *selector* may be specified either as a function or as a selector string, such as ".foo". As with other operators, the function is passed the current datum `d` and index `i`, with the `this` context as the current DOM element. Filter should only be called on selections with DOM elements bound, e.g. from [append](Selections#append) or [insert](Selections#insert). To bind elements to only a subset of the data, call the built-in array [filter](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/Filter "https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/Filter") on the argument to [data](Selections#data). Like the built-in function, D3's filter *does not* preserve the index of the original selection in the returned selection; it returns a copy with elements removed. If you want to preserve the index, use [select](Selections#select) instead. 
+Filters the selection, returning a new selection that contains only the elements for which the specified *selector* is true. The *selector* may be specified either as a function or as a selector string, such as ".foo". As with other operators, the function is passed the current datum `d` and index `i`, with the `this` context as the current DOM element. Filter should only be called on selections with DOM elements bound, e.g. from [append](Selections#append) or [insert](Selections#insert). To bind elements to only a subset of the data, call the built-in array [filter](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/Filter "https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/Filter") on the argument to [data](Selections#data). Like the built-in function, D3's filter *does not* preserve the index of the original selection in the returned selection; it returns a copy with elements removed. If you want to preserve the index, use [select](Selections#select) instead.
 
 For example, to select every element with an odd index (relative to the zero-based index):
 
@@ -318,7 +320,7 @@ This can then be used, [for example](http://bl.ocks.org/1323729 "http://bl.ocks.
 
 Sorts the elements in the current selection according to the *comparator* function, and then re-inserts the document elements to match. Returns the selection.
 
-The comparator function, which defaults to [d3.ascending](https://github.com/mbostock/d3/wiki/Arrays#d3_ascending), is passed two elements' data *a* and *b* to compare. It should return either a negative, positive, or zero value. If negative, then *a* should be before *b*; if positive, then *a* should be after *b*; otherwise, *a* and *b* are considered equal and the order is arbitrary. 
+The comparator function, which defaults to [d3.ascending](https://github.com/mbostock/d3/wiki/Arrays#d3_ascending), is passed two elements' data *a* and *b* to compare. It should return either a negative, positive, or zero value. If negative, then *a* should be before *b*; if positive, then *a* should be after *b*; otherwise, *a* and *b* are considered equal and the order is arbitrary.
 
 Note that the sort is not guaranteed to be stable; however, it is guaranteed to have the same behavior as your browser's built-in [sort](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/sort "https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/sort") method on arrays.
 
@@ -330,7 +332,7 @@ Re-inserts elements into the document such that the document order matches the s
 
 <a name="on" href="#on">#</a> selection.<b>on</b>(<i>type</i>[, <i>listener</i>[, <i>capture</i>]])
 
-Adds or removes an event *listener* to each element in the current selection, for the specified *type*. The *type* is a string event type name, such as "click", "mouseover", or "submit". (Any [DOM event type](https://developer.mozilla.org/en-US/docs/Web/Events#Standard_events) supported by your browser may be used.) The *listener* is stored by decorating the selected DOM elements using the naming convention "__on*type*".  The specified *listener* is invoked in the same manner as other operator functions, being passed the current datum `d` and index `i`, with the `this` context as the current DOM element. To access the current event within a listener, use the global [d3.event](Selections#d3_event). The return value of the event listener is ignored. 
+Adds or removes an event *listener* to each element in the current selection, for the specified *type*. The *type* is a string event type name, such as "click", "mouseover", or "submit". (Any [DOM event type](https://developer.mozilla.org/en-US/docs/Web/Events#Standard_events) supported by your browser may be used.) The *listener* is stored by decorating the selected DOM elements using the naming convention "__on*type*".  The specified *listener* is invoked in the same manner as other operator functions, being passed the current datum `d` and index `i`, with the `this` context as the current DOM element. To access the current event within a listener, use the global [d3.event](Selections#d3_event). The return value of the event listener is ignored.
 
 If an event listener was already registered for the same type on the selected element, the existing listener is removed before the new listener is added. To register multiple listeners for the same event type, the type may be followed by an optional namespace, such as "click.foo" and "click.bar". The first part of the *type* ("click" for example) is used to register the event listener (using element.addEventListener()) and methods are added on the selected elements as __onclick.foo and __onclick.bar. To remove a listener, pass null as the *listener*. To remove all listeners for a particular event type, pass null as the *listener*, and `.type` as the *type*, e.g. `selection.on(".foo", null)`.
 
@@ -382,7 +384,7 @@ Whereas the top-level select methods query the entire document, a selection's [s
 
 For each element in the current selection, selects the first descendant element that matches the specified *selector* string. If no element matches the specified selector for the current element, the element at the current index will be null in the returned selection; operators (with the exception of [data](Selections#data)) automatically skip null elements, thereby preserving the index of the existing selection. If the current element has associated data, this data is inherited by the returned subselection, and automatically bound to the newly selected elements. If multiple elements match the selector, only the first matching element in document traversal order will be selected.
 
-The *selector* may also be specified as a function that returns an element, or null if there is no matching element. In this case, the specified *selector* is invoked in the same manner as other operator functions, being passed the current datum `d` and index `i`, with the `this` context as the current DOM element. 
+The *selector* may also be specified as a function that returns an element, or null if there is no matching element. In this case, the specified *selector* is invoked in the same manner as other operator functions, being passed the current datum `d` and index `i`, with the `this` context as the current DOM element.
 
 <a name="selectAll" href="Selections#selectAll">#</a> selection.<b>selectAll</b>(<i>selector</i>)
 
@@ -396,7 +398,7 @@ d3.select("body").selectAll("div")
 
 You can see the parent node of each group by inspecting the `parentNode` property of each group array, such as `selection[0].parentNode`.
 
-The *selector* may also be specified as a function that returns an array of elements (or a NodeList), or the empty array if there are no matching elements. In this case, the specified *selector* is invoked in the same manner as other operator functions, being passed the current datum `d` and index `i`, with the `this` context as the current DOM element. 
+The *selector* may also be specified as a function that returns an array of elements (or a NodeList), or the empty array if there are no matching elements. In this case, the specified *selector* is invoked in the same manner as other operator functions, being passed the current datum `d` and index `i`, with the `this` context as the current DOM element.
 
 ### Control
 

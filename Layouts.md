@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ **Layouts**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 A layout encapsulates a strategy for laying out data elements visually, relative to each other. It could be as simple as stacking bars in a chart (where the base of one bar depends on the height of any below it) or as complex as labeling a map (by shifting labels around until overlap with conflicting map features is minimized). Layouts take a set of input data, apply an algorithm or heuristic, and output the resulting positions/shapes for a cohesive display of the data.
 
 Layouts are not unlike [[d3.svg path generators|SVG-Shapes#path-data-generators]], in that they facilitate the conversion of data to display form. However, layouts typically operate across a collection of data as a whole, rather than individually. Furthermore, the results of a layout could be used anywhere, not just with SVG. Some layouts are even dynamic through time: for example, you `.start()` a `d3.layout.force()` instance and then listen for layout updates on `'tick'` events.

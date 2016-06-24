@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ **CSV**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 D3 provides built-in support for parsing [comma-separated values](http://en.wikipedia.org/wiki/Comma-separated_values), tab-separated values and arbitrary delimiter-separated values. These tabular formats are popular with spreadsheet programs such as Microsoft Excel. Tabular formats are often more space-efficient than JSON, which can improve loading times for large datasets.
 
 <a name="csv" href="#csv">#</a> d3.<b>csv</b>(<i>url</i>[[, <i>accessor</i>], <i>callback</i>])

@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Core]] ▸ **Localization**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 The formatting of numbers, dates and currencies varies by language and locale. While the default build of D3 is intended for U.S. English, you can change the behavior of D3’s formatters by loading new locales as needed.
 
 <a name="locale" href="#locale">#</a> d3.<b>locale</b>(<i>definition</i>)

@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[SVG]] ▸ **SVG Controls**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 ## Brush
 
 [![6452972](http://bl.ocks.org/mbostock/raw/6452972/thumbnail.png)](http://bl.ocks.org/mbostock/6452972)

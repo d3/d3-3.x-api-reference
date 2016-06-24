@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Core]] ▸ **Formatting**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 Formatting numbers is one of those things you don't normally think about until an ugly "0.30000000000000004" appears on your axis labels. Also, maybe you want to group thousands to improve readability, and use fixed precision, such as "$1,240.10". Or, maybe you want to display only the significant digits of a particular number. D3 makes this easy using a standard **number format**. For example, to create a function that zero-fills to four digits, say:
 
 ```javascript
@@ -27,7 +29,7 @@ The *fill* can be any character other than "{" or "}". The presence of a fill ch
 
 The *align* can be:
 
-* ("<") Forces the field to be left-aligned within the available space. 
+* ("<") Forces the field to be left-aligned within the available space.
 * (">") Forces the field to be right-aligned within the available space. (This is the default).
 * ("^") Forces the field to be centered within the available space.
 
@@ -39,7 +41,7 @@ The *sign* can be:
 
 The *symbol* can be:
 
-* currency ("$") - indicates that a currency symbol should be prefixed (or suffixed) per the locale. See [[Localization|https://github.com/mbostock/d3/wiki/Localization#locale]] for more information on how to set the locale currency symbol. 
+* currency ("$") - indicates that a currency symbol should be prefixed (or suffixed) per the locale. See [[Localization|https://github.com/mbostock/d3/wiki/Localization#locale]] for more information on how to set the locale currency symbol.
 * base ("#") - for binary, octal, or hexadecimal output, prefix by "0b", "0o", or "0x", respectively.
 
 The "0" option enables zero-padding.
@@ -66,7 +68,7 @@ The available *type* values are:
 * character ("c") - converts the integer to the corresponding unicode character before printing.
 * SI-prefix ("s") - like rounded, but with a unit suffixed such as "9.5M" for mega, or "1.00µ" for micro.
 
-The type "n" is also supported as shorthand for ",g". 
+The type "n" is also supported as shorthand for ",g".
 
 <a name="d3_formatPrefix" href="#d3_formatPrefix">#</a> d3.<b>formatPrefix</b>(<i>value</i>[, <i>precision</i>])
 

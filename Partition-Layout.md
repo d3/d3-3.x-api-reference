@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Layouts]] ▸ [Hierarchy](Hierarchy-Layout) ▸ **Partition Layout**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 The **partition layout** produces adjacency diagrams: a space-filling variant of a node-link tree diagram. Rather than drawing a link between parent and child in the hierarchy, nodes are drawn as solid areas (either arcs or rectangles), and their placement relative to other nodes reveals their position in the hierarchy. The size of the nodes encodes a quantitative dimension that would be difficult to show in a node-link diagram.
 
 [![partition](partition.png)](http://bl.ocks.org/mbostock/4063423)
@@ -110,14 +112,14 @@ The value accessor is invoked for each input data element, and must return a num
 
 <a name="size" href="#size">#</a> partition.<b>size</b>([<i>size</i>])
 
-If *size* is specified, sets the available layout size to the specified two-element array of numbers representing *x* and *y*. 
+If *size* is specified, sets the available layout size to the specified two-element array of numbers representing *x* and *y*.
 ```javascript
 var width = 1800, height = 2000;
 var partition = d3.layout.partition()
     .size([width, height])
     .value(function(d) { return d.size; });
 ```
-If *size* is not specified, returns the current size, which defaults to 1×1. Notice, that if the size is not explicitly specified, i.e. defaults to 1×1, the calculated coordinates for each element will be normalized, i.e. each coordinate will be < 1, whereas the sum of all the coordinates giving 1. Consequently, you will not see anything on UI ( since 1x1 is too small to see anything). A good way to use such a situation is to apply linear range scaling. The rendering result will be the same as in case of specifying explicitly the size of the diagram, however you will get a more flexible solution for further implementations: 
+If *size* is not specified, returns the current size, which defaults to 1×1. Notice, that if the size is not explicitly specified, i.e. defaults to 1×1, the calculated coordinates for each element will be normalized, i.e. each coordinate will be < 1, whereas the sum of all the coordinates giving 1. Consequently, you will not see anything on UI ( since 1x1 is too small to see anything). A good way to use such a situation is to apply linear range scaling. The rendering result will be the same as in case of specifying explicitly the size of the diagram, however you will get a more flexible solution for further implementations:
 ```javascript
 // first, declare scaling for X and Y axis
  var width = 1800, height = 2000,

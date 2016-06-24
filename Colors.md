@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Core]] ▸ **Colors**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 Constructing visualizations often involves working with colors. Even though your browser understands a lot about colors, it doesn't offer much help in manipulating colors through JavaScript. So D3 provides representations for various color spaces, including [RGB](http://en.wikipedia.org/wiki/RGB_color_model), [HSL](http://en.wikipedia.org/wiki/HSL_and_HSV), [LAB](http://en.wikipedia.org/wiki/Lab_color_space) and [HCL](https://en.wikipedia.org/wiki/CIELUV_color_space#Cylindrical_representation), allowing specification, interpolation, conversion and manipulation (such as making colors brighter or darker).
 
 Note: while you can work with colors directly, you might also want to take a look at D3's built-in color interpolation, such as [interpolateRgb](Transitions#d3_interpolateRgb), [interpolateHsl](Transitions#d3_interpolateHsl) and [scales](Scales). If you are looking for **color palettes**, see the [ordinal scales](Ordinal-Scales) reference.
@@ -87,7 +89,7 @@ Constructs a new HCL color by parsing the specified *color* string. If *color* i
 * rgb hexadecimal - "#ffeeaa"
 * rgb shorthand hexadecimal - "#fea"
 * named - "red", "white", "blue"
-        
+
 The resulting color is stored as hue in the range [0,360], and chroma and luminance values in the range [0,1]. These values are available as the h, c and l attributes of the returned object. The list of supported [named colors](http://www.w3.org/TR/SVG/types.html#ColorKeywords) is specified by CSS.
 
 <a name="hcl_brighter" href="#hcl_brighter">#</a> hcl.<b>brighter</b>([<i>k</i>])
@@ -121,7 +123,7 @@ Constructs a new L\*a\*b\* color by parsing the specified *color* string. If *co
 * rgb hexadecimal - "#ffeeaa"
 * rgb shorthand hexadecimal - "#fea"
 * named - "red", "white", "blue"
-    
+
 The resulting color is stored as lightness in the range [0,100], and corresponding a and b values. These values are available as the l, a, and b attributes of the returned object. The list of supported [named colors](http://www.w3.org/TR/SVG/types.html#ColorKeywords) is specified by CSS. If the color is specified in RGB space, it is converted to L\*a\*b\* by first being converted to XYZ space, then to RGB space.
 
 <a name="lab_brighter" href="#lab_brighter">#</a> lab.<b>brighter</b>([<i>k</i>])

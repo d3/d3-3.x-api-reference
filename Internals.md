@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Core]] ▸ **Internals**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 Various utilities for implementing reusable components.
 
 ## Functions
@@ -44,7 +46,7 @@ For details on how to pass arguments to listeners, see [dispatch](#dispatch).
 
 <a name="dispatch_on" href="Internals#dispatch_on">#</a> dispatch.<b>on</b>(<i>type</i>[, <i>listener</i>])
 
-Adds or removes an event *listener* for the specified *type*. The *type* is a string event type name, such as "start" or "end".  The specified *listener* is invoked with the context and arguments determined by the caller; see [dispatch](#dispatch). 
+Adds or removes an event *listener* for the specified *type*. The *type* is a string event type name, such as "start" or "end".  The specified *listener* is invoked with the context and arguments determined by the caller; see [dispatch](#dispatch).
 
 If an event listener was already registered for the same type, the existing listener is removed before the new listener is added. To register multiple listeners for the same event type, the type may be followed by an optional namespace, such as "click.foo" and "click.bar". Likewise, you can remove all registered listeners for a given namespace by saying `dispatch.on(".foo", null)`.
 

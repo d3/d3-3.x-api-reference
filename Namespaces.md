@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Core]] ▸ **Namespaces**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 SVG has a different namespace from HTML, so D3 provides a few tools to simplify dealing with namespaces.
 
 <a name="prefix" href="Namespaces#prefix">#</a> d3.ns.<b>prefix</b>

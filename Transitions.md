@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Core]] ▸ **Transitions**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 A transition is a special type of [[selection|Selections]] where the operators apply smoothly over time rather than instantaneously. You derive a transition from a selection using the [[transition|Selections#transition]] operator. While transitions generally support the same operators as selections (such as [attr](Transitions#attr) and [style](Transitions#style)), not all operators are supported; for example, you must append elements before a transition starts. A [remove](Transitions#remove) operator is provided for convenient removal of elements when the transition ends.
 
 Transitions may have per-element delays and durations, computed using functions of data similar to other operators. This makes it easy to stagger a transition for different elements, either based on data or index. For example, you can sort elements and then stagger the transition for better perception of element reordering during the transition. For more details on these techniques, see [["Animated Transitions in Statistical Data Graphics"|http://vis.berkeley.edu/papers/animated_transitions/]] by Heer & Robertson.
@@ -12,7 +14,7 @@ For more on transitions, read the [Working with Transitions](http://bost.ocks.or
 
 ## Starting Transitions
 
-Transitions are created using [d3.transition](#d3_transition) or [selection.transition](Selections#transition). Transitions start automatically upon creation after a [delay](#transition_delay), which defaults to zero. Note, however, that even a zero-delay transition starts asynchronously because it waits one tick (~17ms); the delay between the transition’s creation and its first tick gives you time to configure the transition by overriding default timing parameters and registering tweens. Transitions have a default [duration](#transition_duration) of 250ms.  
+Transitions are created using [d3.transition](#d3_transition) or [selection.transition](Selections#transition). Transitions start automatically upon creation after a [delay](#transition_delay), which defaults to zero. Note, however, that even a zero-delay transition starts asynchronously because it waits one tick (~17ms); the delay between the transition’s creation and its first tick gives you time to configure the transition by overriding default timing parameters and registering tweens. Transitions have a default [duration](#transition_duration) of 250ms.
 
 If another transition is active on a given element, a new zero-delay transition will **not** immediately (synchronously) interrupt the active transition: the old transition does not get pre-empted until the new transition starts on the subsequent tick, and the old transition is given a final tick. (Within a tick, active transitions are called back in the order they were scheduled.) Thus, the old transition may overwrite attribute or style values that were set synchronously when the new transition was created. Use [selection.interrupt](Selections#interrupt) to interrupt any active transition and prevent it receiving its final tick.
 

@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Time]] ▸ **Time Scales**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 D3's **time scale** is an extension of [d3.scale.linear](Quantitative-Scales#linear) that uses JavaScript [Date](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date) objects as the domain representation. Thus, unlike the normal linear scale, domain values are coerced to dates rather than numbers; similarly, the [invert](Time-Scales#invert) function returns a date. Most conveniently, the time scale also provides suitable [ticks](Time-Scales#ticks) based on [time intervals](Time-Intervals), taking the pain out of generating axes for nearly any time-based domain.
 
 A scale object, such as that returned by [d3.time.scale](Time-Scales#scale), is both an object and a function. That is: you can call the scale like any other function, and the scale has additional methods that change its behavior. Like other classes in D3, scales follow the method chaining pattern where setter methods return the scale itself, allowing multiple setters to be invoked in a concise statement.

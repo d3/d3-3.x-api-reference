@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Core]] ▸ **Arrays**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 When using D3—and doing data visualization in general—you tend to do a lot of **array manipulation**. That's because D3's canonical representation of data is an array. Some common forms of array manipulation include taking a contiguous slice (subset) of an array, filtering an array using a predicate function, and mapping an array to a parallel set of values using a transform function. Before looking at the set of utilities that D3 provides for arrays, you should familiarize yourself with the powerful [array methods built-in to JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype).
 
 JavaScript includes **mutator methods** that modify the array:
@@ -91,7 +93,7 @@ d3.quantile(a, 0.5); // 1
 d3.quantile(a, 1); // 3
 d3.quantile(a, 0.25); // 0.5
 d3.quantile(a, 0.75); // 2
-d3.quantile(a, 0.1); // 0.19999999999999996 
+d3.quantile(a, 0.1); // 0.19999999999999996
 ```
 
 <a name="d3_variance" href="#d3_variance">#</a> d3.**variance**(*array*[, *accessor*])
@@ -354,7 +356,7 @@ The nested form allows easy iteration and generation of hierarchical structures 
 
 For a longer introduction to d3.nest, see:
 
-* Phoebe Bright’s [D3 Nest Tutorial and examples](http://bl.ocks.org/phoebebright/raw/3176159/) 
+* Phoebe Bright’s [D3 Nest Tutorial and examples](http://bl.ocks.org/phoebebright/raw/3176159/)
 * Shan Carter’s [Mister Nester](http://bl.ocks.org/shancarter/raw/4748131/)
 
 <a name="d3_nest" href="#d3_nest">#</a> d3.**nest**()

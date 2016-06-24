@@ -1,12 +1,14 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Scales]] ▸ **Quantitative Scales**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 **Scales** are functions that map from an input domain to an output range. **Quantitative** scales have a continuous domain, such as the set of real numbers, or dates. There are also [[ordinal scales|Ordinal-Scales]], which have a discrete domain, such as a set of names or categories. Scales are an optional feature in D3; you don't have to use them, if you prefer to do the math yourself. However, using scales can greatly simplify the code needed to map a dimension of data to a visual representation.
 
 A scale object, such as that returned by [d3.scale.linear](Quantitative-Scales#linear), is both an object and a function. That is: you can call the scale like any other function, and the scale has additional methods that change its behavior. Like other classes in D3, scales follow the method chaining pattern where setter methods return the scale itself, allowing multiple setters to be invoked in a concise statement.
 
 ## Linear Scales
 
-Linear scales are the most common scale, and a good default choice to map a continuous input domain to a continuous output range. The mapping is *linear* in that the output range value *y* can be expressed as a linear function of the input domain value *x*: *y* = *mx* + *b*. The input domain is typically a dimension of the data that you want to visualize, such as the height of students (measured in meters) in a sample population. The output range is typically a dimension of the desired output visualization, such as the height of bars (measured in pixels) in a histogram.  
+Linear scales are the most common scale, and a good default choice to map a continuous input domain to a continuous output range. The mapping is *linear* in that the output range value *y* can be expressed as a linear function of the input domain value *x*: *y* = *mx* + *b*. The input domain is typically a dimension of the data that you want to visualize, such as the height of students (measured in meters) in a sample population. The output range is typically a dimension of the desired output visualization, such as the height of bars (measured in pixels) in a histogram.
 
 The state dimensions are [domain](#linear_domain), [range](#linear_range), [output interpolator](#linear_interpolate) and [clamping behavior](#linear_clamp).
 
@@ -340,7 +342,7 @@ Threshold scales are similar to quantize scales, except they allow you to map ar
 Constructs a new threshold scale with the default domain [.5] and the default range [0,1]. Thus, the default threshold scale is equivalent to the [[round|https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Math/round]] function for numbers; for example threshold(0.49) returns 0, and threshold(0.51) returns 1.
 
 ```javascript
-var t = d3.scale.threshold().domain([0, 1]).range(['a', 'b', 'c']); 
+var t = d3.scale.threshold().domain([0, 1]).range(['a', 'b', 'c']);
 t(-1) === 'a';
 t(0) === 'b';
 t(0.5) === 'b';

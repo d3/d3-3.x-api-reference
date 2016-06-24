@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[Geometry]] ▸ **Quadtree Geom**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 A **quadtree** is a two-dimensional recursive spatial subdivision. This implementation uses square partitions, dividing each square into four equally-sized squares. Each point exists in a unique node; if multiple points are in the same position, some points may be stored on internal nodes rather than leaf nodes. Quadtrees can be used to accelerate various spatial operations, such as the Barnes-Hut approximation for computing n-body forces, or collision detection.
 
 <a href="http://bl.ocks.org/mbostock/4343214"><img src="http://bl.ocks.org/mbostock/raw/4343214/thumbnail.png" width="202"></a>
@@ -12,8 +14,8 @@ A **quadtree** is a two-dimensional recursive spatial subdivision. This implemen
 
 Creates a new quadtree factory with the default [_x_-accessor](#x), [_y_-accessor](#y) and [extent](#extent). The [returned function](#_quadtree) can be used to create any number of quadtrees from data with the factory’s configuration.
 
-<a name="_quadtree" href="Quadtree-Geom#_quadtree">#</a> <b>quadtree</b>(<i>points</i>),  
-<a name="_quadtree" href="Quadtree-Geom#_quadtree">#</a> <b>quadtree</b>(<i>points</i>, <i>x2</i>, <i>y2</i>),  
+<a name="_quadtree" href="Quadtree-Geom#_quadtree">#</a> <b>quadtree</b>(<i>points</i>),
+<a name="_quadtree" href="Quadtree-Geom#_quadtree">#</a> <b>quadtree</b>(<i>points</i>, <i>x2</i>, <i>y2</i>),
 <a name="_quadtree" href="Quadtree-Geom#_quadtree">#</a> <b>quadtree</b>(<i>points</i>, <i>x1</i>, <i>y1</i>, <i>x2</i>, <i>y2</i>)
 
 

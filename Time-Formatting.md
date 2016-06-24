@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Time]] ▸ **Time Formatting**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 D3 includes a helper module for parsing and formatting dates modeled after the venerable [strptime](http://pubs.opengroup.org/onlinepubs/009695399/functions/strptime.html) and [strftime](http://pubs.opengroup.org/onlinepubs/007908799/xsh/strftime.html) C-library standards. These functions are also notably available in Python's [time](http://docs.python.org/library/time.html) module.
 
 <a name="format" href="Time-Formatting#format">#</a> d3.time.<b>format</b>(<i>specifier</i>)
@@ -53,7 +55,7 @@ format(new Date(2011, 0, 1)); // returns a string
 
 <a name="_format" href="Time-Formatting#_format">#</a> <b>format</b>(<i>date</i>)
 
-Formats the specified *date*, returning the corresponding string. The *date* must be a JavaScript [Date](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date) object. 
+Formats the specified *date*, returning the corresponding string. The *date* must be a JavaScript [Date](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date) object.
 
 ```javascript
 var monthNameFormat = d3.time.format("%B");

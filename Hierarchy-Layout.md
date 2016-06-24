@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Layouts]] ▸ **Hierarchy Layout**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 The hierarchy layout is an *abstract* layout that is not used directly, but instead allows code sharing between multiple hierarchical layouts. For an implementation, see one of:
 
 * [[Cluster|Cluster-Layout]] - cluster entities into a dendrogram.

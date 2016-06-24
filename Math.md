@@ -1,8 +1,10 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ [[Core]] ▸ **Math**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 ## Pseudorandom Number Generation
 
-You can use the built-in [Math.random](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Math/random) to generate uniform distributions. For example, to generate a random integer between 0 and 99 (inclusive), you can say `Math.floor(Math.random() * 100)`. 
+You can use the built-in [Math.random](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Math/random) to generate uniform distributions. For example, to generate a random integer between 0 and 99 (inclusive), you can say `Math.floor(Math.random() * 100)`.
 
 <a name="d3_random_normal" href="#d3_random_normal">#</a> d3.random.<b>normal</b>([<i>mean</i>, [<i>deviation</i>]])
 

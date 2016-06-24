@@ -1,5 +1,7 @@
 > [Wiki](Home) ▸ [[API Reference]] ▸ **Behaviors**
 
+**The [D3 4.0 API Reference](https://github.com/d3/d3/blob/master/API.md) has moved. This page describes the D3 3.x API.**
+
 Behaviors encapsulate a complex set of low-level DOM interactions (i.e. user gestures that vary between input methods) into a higher-level set of custom events (see [[d3.dispatch|Internals#d3_dispatch]]). Behaviors often allow some additional configuration by the user. D3 includes two built-in behaviors:
 
 * [[Drag|Drag-Behavior]] — tracks mouse or multitouch movement(s) relative to an origin
