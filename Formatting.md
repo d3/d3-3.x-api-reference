@@ -21,7 +21,7 @@ In addition to numbers, D3 also supports formatting and parsing [dates](Time-For
 
 <a name="d3_format" href="#d3_format">#</a> d3.<b>format</b>(<i>specifier</i>)
 
-Returns a new format function with the given string *specifier*. (Equivalent to [locale.numberFormat](Localization.md#locale_numberFormat) for the default U.S. English locale.) A format function takes a number as the only argument, and returns a string representing the formatted number. The format specifier is modeled after Python 3.1's built-in [[format specification mini-language|http://docs.python.org/release/3.1.3/library/string.html#formatspec]]. The general form of a specifier is:
+Returns a new format function with the given string *specifier*. (Equivalent to [locale.numberFormat](Localization.md#locale_numberFormat) for the default U.S. English locale.) A format function takes a number as the only argument, and returns a string representing the formatted number. The format specifier is modeled after Python 3.1's built-in [format specification mini-language](http://docs.python.org/release/3.1.3/library/string.html#formatspec). The general form of a specifier is:
 ```
  [​[fill]align][sign][symbol][0][width][,][.precision][type]
 ```
@@ -41,7 +41,7 @@ The *sign* can be:
 
 The *symbol* can be:
 
-* currency ("$") - indicates that a currency symbol should be prefixed (or suffixed) per the locale. See [[Localization|https://github.com/mbostock/d3/wiki/Localization#locale]] for more information on how to set the locale currency symbol.
+* currency ("$") - indicates that a currency symbol should be prefixed (or suffixed) per the locale. See [Localization](https://github.com/mbostock/d3/wiki/Localization#locale) for more information on how to set the locale currency symbol.
 * base ("#") - for binary, octal, or hexadecimal output, prefix by "0b", "0o", or "0x", respectively.
 
 The "0" option enables zero-padding.
@@ -54,10 +54,10 @@ The *precision* indicates how many digits should be displayed after the decimal 
 
 The available *type* values are:
 
-* exponent ("e") - use [[Number.toExponential|https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number/toExponential]].
-* general ("g") - use [[Number.toPrecision|https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number/toPrecision]].
-* fixed ("f") - use [[Number.toFixed|https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number/toFixed]].
-* integer ("d") - use [[Number.toString|https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number/toString]], but ignore any non-integer values.
+* exponent ("e") - use [Number.toExponential](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number/toExponential).
+* general ("g") - use [Number.toPrecision](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number/toPrecision).
+* fixed ("f") - use [Number.toFixed](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number/toFixed).
+* integer ("d") - use [Number.toString](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number/toString), but ignore any non-integer values.
 * rounded ("r") - round to *precision* significant digits, padding with zeroes where necessary in similar fashion to fixed ("f"). If no *precision* is specified, falls back to general notation.
 * percentage ("%") - like fixed, but multiply by 100 and suffix with "%".
 * rounded percentage ("p") - like rounded, but multiply by 100 and suffix with "%".
@@ -89,7 +89,7 @@ This method is used by d3.format for the `s` format.
 
 <a name="d3_round" href="Formatting#d3_round">#</a> d3.<b>round</b>(<i>x</i>[, <i>n</i>])
 
-Returns the value *x* rounded to *n* digits after the decimal point. If *n* is omitted, it defaults to zero. The result is a number. Values are rounded to the closest multiple of 10 to the power minus *n*; if two multiples are equally close, the value is rounded up in accordance with the built-in [[round|https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Math/round]] function. For example:
+Returns the value *x* rounded to *n* digits after the decimal point. If *n* is omitted, it defaults to zero. The result is a number. Values are rounded to the closest multiple of 10 to the power minus *n*; if two multiples are equally close, the value is rounded up in accordance with the built-in [round](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Math/round) function. For example:
 
 ```js
 d3.round(1.23); // 1

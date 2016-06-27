@@ -4,6 +4,6 @@
 
 See one of:
 
-* [[Time Formatting]] - convert between times and strings.
-* [[Time Scales]] - compute visual encodings of times.
-* [[Time Intervals]] - perform simple time arithmetic.
+* [Time Formatting](Time-Formatting.md) - convert between times and strings.
+* [Time Scales](Time-Scales.md) - compute visual encodings of times.
+* [Time Intervals](Time-Intervals.md) - perform simple time arithmetic.

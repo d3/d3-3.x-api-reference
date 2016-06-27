@@ -4,7 +4,7 @@
 
 A transition is a special type of [selection](Selections.md) where the operators apply smoothly over time rather than instantaneously. You derive a transition from a selection using the [transition](Selections.md#transition) operator. While transitions generally support the same operators as selections (such as [attr](Transitions.md#attr) and [style](Transitions.md#style)), not all operators are supported; for example, you must append elements before a transition starts. A [remove](Transitions.md#remove) operator is provided for convenient removal of elements when the transition ends.
 
-Transitions may have per-element delays and durations, computed using functions of data similar to other operators. This makes it easy to stagger a transition for different elements, either based on data or index. For example, you can sort elements and then stagger the transition for better perception of element reordering during the transition. For more details on these techniques, see [["Animated Transitions in Statistical Data Graphics"|http://vis.berkeley.edu/papers/animated_transitions/]] by Heer & Robertson.
+Transitions may have per-element delays and durations, computed using functions of data similar to other operators. This makes it easy to stagger a transition for different elements, either based on data or index. For example, you can sort elements and then stagger the transition for better perception of element reordering during the transition. For more details on these techniques, see ["Animated Transitions in Statistical Data Graphics"](http://vis.berkeley.edu/papers/animated_transitions/) by Heer & Robertson.
 
 D3 has many built-in interpolators to simplify the transitioning of arbitrary values. For instance, you can transition from the font string "500 12px sans-serif" to "300 42px sans-serif", and D3 will find the numbers embedded within the string, interpolating both font size and weight automatically. You can even interpolate arbitrary nested objects and arrays or SVG path data. D3 allows custom interpolators should you find the built-in ones insufficient, using the [attrTween](Transitions.md#attrTween) and [styleTween](Transitions.md#styleTween) operators. D3's interpolators provide the basis for [scales](Scales.md) and can be used outside of transitions; an interpolator is a function that maps a parametric value *t* in the domain [0,1] to a color, number or arbitrary value.
 
@@ -44,7 +44,7 @@ Specifies per-element *duration* in milliseconds. If *duration* is a constant, t
 
 <a name="ease" href="#ease">#</a> transition.<b>ease</b>([<i>value</i>[, <i>arguments</i>]])
 
-Specifies the transition [[easing function|http://www.robertpenner.com/easing/]]. If *value* is a function, it is used to ease the current parametric timing value *t*, which is typically in the range [0,1]. (At the end of a transition, *t* may be slightly greater than 1.) Otherwise, *value* is assumed to be a string and the arguments are passed to the [d3.ease](Transitions.md#d3_ease) method to generate an easing function. The default easing function is "cubic-in-out". Note that it is not possible to customize the easing function per-element or per-attribute; however, if you use the "linear" easing function, you can apply custom easing inside your interpolator using [attrTween](Transitions.md#attrTween) or [styleTween](Transitions.md#styleTween). If *ease* is not specified, returns the easing function bound to the first non-null element in the transition.
+Specifies the transition [easing function](http://www.robertpenner.com/easing/). If *value* is a function, it is used to ease the current parametric timing value *t*, which is typically in the range [0,1]. (At the end of a transition, *t* may be slightly greater than 1.) Otherwise, *value* is assumed to be a string and the arguments are passed to the [d3.ease](Transitions.md#d3_ease) method to generate an easing function. The default easing function is "cubic-in-out". Note that it is not possible to customize the easing function per-element or per-attribute; however, if you use the "linear" easing function, you can apply custom easing inside your interpolator using [attrTween](Transitions.md#attrTween) or [styleTween](Transitions.md#styleTween). If *ease* is not specified, returns the easing function bound to the first non-null element in the transition.
 
 ## Operating on Transitions
 
@@ -54,7 +54,7 @@ Specifies the transition [[easing function|http://www.robertpenner.com/easing/]]
 
 Transitions the value of the attribute with the specified *name* to the specified *value*. The starting value of the transition is the current attribute value(be sure to set an initial value beforehand if you don't want bad surprises), and the ending value is the specified *value*.  If *value* is a constant, then all elements are transitioned to the same attribute value; otherwise, if *value* is a function, then the function is evaluated for each selected element (in order), being passed the current datum `d` and the current index `i`, with the `this` context as the current DOM element. The function's return value is then used to transition each element's attribute. Null values are not supported because the interpolator would be undefined; if you want to remove the attribute after the transition finishes, use [remove](Transitions.md#remove).
 
-An interpolator is selected automatically based on the ending value. If the ending value is a number, the starting value is coerced to a number and [interpolateNumber](Transitions.md#d3_interpolateNumber) is used. If the ending value is a string, a check is performed to see if the string represents a color of the form `/^(#|rgb\(|hsl\()/`, or one of the [[CSS named colors|http://www.w3.org/TR/SVG/types.html#ColorKeywords]]; if so, the starting value is coerced to an RGB color and [interpolateRgb](Transitions.md#d3_interpolateRgb) is used. Otherwise, [interpolateString](Transitions.md#d3_interpolateString) is used, which interpolates numbers embedded within strings.
+An interpolator is selected automatically based on the ending value. If the ending value is a number, the starting value is coerced to a number and [interpolateNumber](Transitions.md#d3_interpolateNumber) is used. If the ending value is a string, a check is performed to see if the string represents a color of the form `/^(#|rgb\(|hsl\()/`, or one of the [CSS named colors](http://www.w3.org/TR/SVG/types.html#ColorKeywords); if so, the starting value is coerced to an RGB color and [interpolateRgb](Transitions.md#d3_interpolateRgb) is used. Otherwise, [interpolateString](Transitions.md#d3_interpolateString) is used, which interpolates numbers embedded within strings.
 
 <a name="attrTween" href="#attrTween">#</a> transition.<b>attrTween</b>(<i>name</i>, <i>tween</i>)
 
@@ -82,7 +82,7 @@ The attrTween operator is used when you need a custom interpolator, such as one 
 
 Transitions the value of the CSS style property with the specified *name* to the specified *value*. An optional *priority* may also be specified, either as null or the string "important" (without the exclamation point). The starting value of the transition is the current computed style property value, and the ending value is the specified *value*.  If *value* is a constant, then all elements are transitioned to the same style property value; otherwise, if *value* is a function, then the function is evaluated for each selected element (in order), being passed the current datum `d` and the current index `i`, with the `this` context as the current DOM element. The function's return value is then used to transition each element's style property. Null values are not supported because the interpolator would be undefined; if you want to remove the style property after the transition finishes, listen to the [end](Transitions.md#each) event.
 
-An interpolator is selected automatically based on the ending value. If the ending value is a number, the starting value is coerced to a number and [interpolateNumber](Transitions.md#d3_interpolateNumber) is used. If the ending value is a string, a check is performed to see if the string represents a color of the form `/^(#|rgb\(|hsl\()/`, or one of the [[CSS named colors|http://www.w3.org/TR/SVG/types.html#ColorKeywords]]; if so, the starting value is coerced to an RGB color and [interpolateRgb](Transitions.md#d3_interpolateRgb) is used. Otherwise, [interpolateString](Transitions.md#d3_interpolateString) is used, which interpolates numbers embedded within strings.
+An interpolator is selected automatically based on the ending value. If the ending value is a number, the starting value is coerced to a number and [interpolateNumber](Transitions.md#d3_interpolateNumber) is used. If the ending value is a string, a check is performed to see if the string represents a color of the form `/^(#|rgb\(|hsl\()/`, or one of the [CSS named colors](http://www.w3.org/TR/SVG/types.html#ColorKeywords); if so, the starting value is coerced to an RGB color and [interpolateRgb](Transitions.md#d3_interpolateRgb) is used. Otherwise, [interpolateString](Transitions.md#d3_interpolateString) is used, which interpolates numbers embedded within strings.
 
 Note that the computed starting value may be different than the value that was previously set, particularly if the style property was set using a shorthand property (such as the "font" style, which is shorthand for "font-size", "font-face", etc.).  Moreover, computed dimensions such as "font-size" and "line-height" are always in pixels, so you should specify the ending value in pixels too if appropriate.
 
@@ -110,7 +110,7 @@ The styleTween operator is used when you need a custom interpolator, such as one
 
 <a name="text" href="#text">#</a> transition.<b>text</b>(<i>value</i>)
 
-The `text` operator is based on the [[textContent|http://www.w3.org/TR/DOM-Level-3-Core/core.html#Node3-textContent]] property; setting the text content will replace any existing child elements.
+The `text` operator is based on the [textContent](http://www.w3.org/TR/DOM-Level-3-Core/core.html#Node3-textContent) property; setting the text content will replace any existing child elements.
 
 Set the text content to the specified value on all selected elements when the transition starts. If *value* is a constant, then all elements are given the same text content; otherwise, if *value* is a function, then the function is evaluated for each selected element (in order), being passed the current datum `d` and the current index `i`, with the `this` context as the current DOM element. The function's return value is then used to set each element's text content. A null value will clear the content.
 
@@ -165,7 +165,7 @@ where *selection* is the current transition's underlying selection. In addition,
 
 <a name="filter" href="#filter">#</a> transition.<b>filter</b>(<i>selector</i>)
 
-Filters the transition, returning a new transition that contains only the elements for which the specified *selector* is true. The *selector* may be specified either as a function or as a selector string, such as ".foo". As with other operators, the function is passed the current datum `d` and index `i`, with the `this` context as the current DOM element. Like the built-in array [[filter|https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/Filter]] method, the returned selection *does not* preserve the index of the original selection; it returns a copy with elements removed. If you want to preserve the index, use [select](#select) instead. For example, to select every other element:
+Filters the transition, returning a new transition that contains only the elements for which the specified *selector* is true. The *selector* may be specified either as a function or as a selector string, such as ".foo". As with other operators, the function is passed the current datum `d` and index `i`, with the `this` context as the current DOM element. Like the built-in array [filter](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/Filter) method, the returned selection *does not* preserve the index of the original selection; it returns a copy with elements removed. If you want to preserve the index, use [select](#select) instead. For example, to select every other element:
 
 ```javascript
 var odds = transition.select(function(d, i) { return i & 1 ? this : null; });
@@ -301,7 +301,7 @@ These built-in types may be extended using a variety of modes:
 * in-out - copies and mirrors the easing function from [0,.5] and [.5,1].
 * out-in - copies and mirrors the easing function from [1,.5] and [.5,0].
 
-The default easing function is "cubic-in-out" which provides suitable [[slow-in slow-out|http://en.wikipedia.org/wiki/12_basic_principles_of_animation#Slow_In_and_Slow_Out]] animation.
+The default easing function is "cubic-in-out" which provides suitable [slow-in slow-out](http://en.wikipedia.org/wiki/12_basic_principles_of_animation#Slow_In_and_Slow_Out) animation.
 
 <a name="_ease" href="#_ease">#</a> <b>ease</b>(<i>t</i>)
 
@@ -309,7 +309,7 @@ Given a parametric time *t*, typically in the range [0,1], returns the eased tim
 
 ## Timers
 
-D3 internally maintains an efficient timer queue so that thousands of timers can be processed concurrently with minimal overhead; in addition, this timer queue guarantees consistent timing of animations when concurrent or staged transitions are scheduled. If your browser supports it, the timer queue will use [[requestAnimationFrame|http://paulirish.com/2011/requestanimationframe-for-smart-animating/]] for fluid and efficient animation. The timer queue is also smart about using setTimeout when there is a long delay before the next scheduled event.
+D3 internally maintains an efficient timer queue so that thousands of timers can be processed concurrently with minimal overhead; in addition, this timer queue guarantees consistent timing of animations when concurrent or staged transitions are scheduled. If your browser supports it, the timer queue will use [requestAnimationFrame](http://paulirish.com/2011/requestanimationframe-for-smart-animating/) for fluid and efficient animation. The timer queue is also smart about using setTimeout when there is a long delay before the next scheduled event.
 
 <a name="d3_timer" href="#d3_timer">#</a> d3.<b>timer</b>(<i>function</i>[, <i>delay</i>[, <i>time</i>]])
 
@@ -343,7 +343,7 @@ Returns the default interpolator between the two values *a* and *b*. The type of
 4. If *b* is an object and not coercible to a number, interpolateObject is used.
 5. Otherwise, interpolateNumber is used.
 
-Based on the chosen interpolator, *a* is coerced to a suitable corresponding type. The color check applies to both instances of [d3.rgb](Colors.md#d3_rgb) and other color spaces as well as color strings of the form `/^(#|rgb\(|hsl\()/` or a [[CSS named colors|http://www.w3.org/TR/SVG/types.html#ColorKeywords]].
+Based on the chosen interpolator, *a* is coerced to a suitable corresponding type. The color check applies to both instances of [d3.rgb](Colors.md#d3_rgb) and other color spaces as well as color strings of the form `/^(#|rgb\(|hsl\()/` or a [CSS named colors](http://www.w3.org/TR/SVG/types.html#ColorKeywords).
 
 The behavior of this default interpolator may be extended to support additional types by pushing custom interpolators onto the [d3.interpolators](#d3_interpolators) array.
 

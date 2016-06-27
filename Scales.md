@@ -4,6 +4,6 @@
 
 See one of:
 
-* [[Quantitative Scales](https://github.com/d3/d3-3.x-api-reference/blob/master/Quantitative-Scales.md)] - for continuous input domains, such as numbers.
-* [[Ordinal Scales](https://github.com/d3/d3-3.x-api-reference/blob/master/Ordinal-Scales.md)] - for discrete input domains, such as names or categories.
-* [[Time Scales](https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Scales.md)] - for time domains.
+* [Quantitative Scales](Quantitative-Scales.md) - for continuous input domains, such as numbers.
+* [Ordinal Scales](Ordinal-Scales.md) - for discrete input domains, such as names or categories.
+* [Time Scales](Time-Scales.md) - for time domains.

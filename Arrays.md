@@ -106,7 +106,7 @@ Returns the standard deviation, defined as the square root of the [bias-correcte
 
 <a name="d3_bisectLeft" href="#d3_bisectLeft">#</a> d3.**bisectLeft**(*array*, *x*[, *lo*[, *hi*]])
 
-Locate the insertion point for *x* in *array* to maintain sorted order. The arguments *lo* and *hi* may be used to specify a subset of the array which should be considered; by default the entire array is used. If *x* is already present in *array*, the insertion point will be before (to the left of) any existing entries. The return value is suitable for use as the first argument to [[splice|https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/splice]] assuming that *array* is already sorted. The returned insertion point *i* partitions the *array* into two halves so that all *v* < *x* for *v* in *array*.slice(lo, i) for the left side and all v >= x for v in *array*.slice(i, hi) for the right side.
+Locate the insertion point for *x* in *array* to maintain sorted order. The arguments *lo* and *hi* may be used to specify a subset of the array which should be considered; by default the entire array is used. If *x* is already present in *array*, the insertion point will be before (to the left of) any existing entries. The return value is suitable for use as the first argument to [splice](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/splice) assuming that *array* is already sorted. The returned insertion point *i* partitions the *array* into two halves so that all *v* < *x* for *v* in *array*.slice(lo, i) for the left side and all v >= x for v in *array*.slice(i, hi) for the right side.
 
 <a name="d3_bisect" href="#d3_bisect">#</a> d3.**bisect**(*array*, *x*[, *lo*[, *hi*]])<br>
 <a name="d3_bisectRight" href="#d3_bisectRight">#</a> d3.**bisectRight**(*array*, *x*[, *lo*[, *hi*]])
@@ -274,7 +274,7 @@ d3.merge([ [1], [2, 3] ]); // returns [1, 2, 3]
 
 <a name="d3_range" href="#d3_range">#</a> d3.**range**([*start*, ]*stop*[, *step*])
 
-Generates an array containing an arithmetic progression, similar to the Python built-in [[range|http://docs.python.org/library/functions.html#range]]. This method is often used to iterate over a sequence of numeric or integer values, such as the indexes into an array. Unlike the Python version, the arguments are not required to be integers, though the results are more predictable if they are due to floating point precision. If *step* is omitted, it defaults to 1. If *start* is omitted, it defaults to 0. The *stop* value is not included in the result. The full form returns an array of numbers [*start*, *start* + *step*, *start* + 2 \* *step*, …]. If *step* is positive, the last element is the largest *start* + *i* \* *step* less than *stop*; if *step* is negative, the last element is the smallest *start* + *i* \* *step* greater than *stop*. If the returned array would contain an infinite number of values, an error is thrown rather than causing an infinite loop.
+Generates an array containing an arithmetic progression, similar to the Python built-in [range](http://docs.python.org/library/functions.html#range). This method is often used to iterate over a sequence of numeric or integer values, such as the indexes into an array. Unlike the Python version, the arguments are not required to be integers, though the results are more predictable if they are due to floating point precision. If *step* is omitted, it defaults to 1. If *start* is omitted, it defaults to 0. The *stop* value is not included in the result. The full form returns an array of numbers [*start*, *start* + *step*, *start* + 2 \* *step*, …]. If *step* is positive, the last element is the largest *start* + *i* \* *step* less than *stop*; if *step* is negative, the last element is the smallest *start* + *i* \* *step* greater than *stop*. If the returned array would contain an infinite number of values, an error is thrown rather than causing an infinite loop.
 
 <a name="d3_permute" href="#d3_permute">#</a> d3.**permute**(*array*, *indexes*)
 
@@ -302,7 +302,7 @@ d3.zip([1, 2], [3, 4]); // returns [[1, 3], [2, 4]]
 
 <a name="d3_transpose" href="#d3_transpose">#</a> d3.**transpose**(*matrix*)
 
-Equivalent to `d3.zip.apply(null, matrix)`; uses the zip operator as a two-dimensional [[matrix transpose|http://en.wikipedia.org/wiki/Transpose]].
+Equivalent to `d3.zip.apply(null, matrix)`; uses the zip operator as a two-dimensional [[matrix transpose](http://en.wikipedia.org/wiki/Transpose).
 
 <a name="d3_pairs" href="#d3_pairs">#</a> d3.**pairs**(*array*)
 

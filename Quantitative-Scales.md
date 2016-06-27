@@ -30,7 +30,7 @@ Note: the invert operator is only supported if the output range is numeric! D3 a
 
 <a name="linear_domain" href="Quantitative-Scales#linear_domain">#</a> linear.<b>domain</b>([<i>numbers</i>])
 
-If *numbers* is specified, sets the scale's input domain to the specified array of numbers. The array must contain two or more numbers. If the elements in the given array are not numbers, they will be coerced to numbers; this coercion happens similarly when the scale is called. Thus, a linear scale can be used to encode types such as [[date objects|https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date]] that can be converted to numbers; however, it is often more convenient to use [d3.time.scale](Time-Scales.md) for dates. (You can implement your own convertible number objects using [[valueOf|https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/valueOf]].) If *numbers* is not specified, returns the scale's current input domain.
+If *numbers* is specified, sets the scale's input domain to the specified array of numbers. The array must contain two or more numbers. If the elements in the given array are not numbers, they will be coerced to numbers; this coercion happens similarly when the scale is called. Thus, a linear scale can be used to encode types such as [date objects](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date) that can be converted to numbers; however, it is often more convenient to use [d3.time.scale](Time-Scales.md) for dates. (You can implement your own convertible number objects using [valueOf](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/valueOf).) If *numbers* is not specified, returns the scale's current input domain.
 
 Although linear scales typically have just two numeric values in their domain, you can specify more than two values for a *polylinear* scale. In this case, there must be an equivalent number of values in the output range. A polylinear scale represents multiple piecewise linear scales that divide a continuous domain and range. This is particularly useful for defining diverging quantitative scales. For example, to interpolate between white and red for negative values, and white and green for positive values, say:
 
@@ -132,7 +132,7 @@ Constructs a new power scale with the default domain [0,1], the default range [0
 d3.scale.pow().exponent(.5)
 ```
 
-The returned scale is a function that takes a single argument *x* representing a value in the input domain; the return value is the corresponding value in the output range. Thus, the returned scale is equivalent to the [[sqrt|https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Math/sqrt]] function for numbers; for example sqrt(0.25) returns 0.5.
+The returned scale is a function that takes a single argument *x* representing a value in the input domain; the return value is the corresponding value in the output range. Thus, the returned scale is equivalent to the [sqrt](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Math/sqrt) function for numbers; for example sqrt(0.25) returns 0.5.
 
 <a name="pow" href="Quantitative-Scales#pow">#</a> d3.scale.<b>pow</b>()
 
@@ -273,7 +273,7 @@ Quantize scales are a variant of linear scales with a discrete rather than conti
 
 <a name="quantize" href="Quantitative-Scales#quantize">#</a> d3.scale.<b>quantize</b>()
 
-Constructs a new quantize scale with the default domain [0,1] and the default range [0,1]. Thus, the default quantize scale is equivalent to the [[round|https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Math/round]] function for numbers; for example quantize(0.49) returns 0, and quantize(0.51) returns 1.
+Constructs a new quantize scale with the default domain [0,1] and the default range [0,1]. Thus, the default quantize scale is equivalent to the [round](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Math/round) function for numbers; for example quantize(0.49) returns 0, and quantize(0.51) returns 1.
 
 ```javascript
  var q = d3.scale.quantize().domain([0, 1]).range(['a', 'b', 'c']);
@@ -303,7 +303,7 @@ Returns an exact copy of this scale. Changes to this scale will not affect the r
 
 ## Quantile Scales
 
-Quantile scales map an input domain to a discrete range. Although the input domain is continuous and the scale will accept any reasonable input value, the input domain is specified as a discrete set of values. The number of values in (the cardinality of) the output range determines the number of quantiles that will be computed from the input domain. To compute the quantiles, the input domain is sorted, and treated as a [[population of discrete values|http://en.wikipedia.org/wiki/Quantile#Quantiles_of_a_population]]. The input domain is typically a dimension of the data that you want to visualize, such as the daily change of the stock market. The output range is typically a dimension of the desired output visualization, such as a diverging color scale.
+Quantile scales map an input domain to a discrete range. Although the input domain is continuous and the scale will accept any reasonable input value, the input domain is specified as a discrete set of values. The number of values in (the cardinality of) the output range determines the number of quantiles that will be computed from the input domain. To compute the quantiles, the input domain is sorted, and treated as a [population of discrete values](http://en.wikipedia.org/wiki/Quantile#Quantiles_of_a_population). The input domain is typically a dimension of the data that you want to visualize, such as the daily change of the stock market. The output range is typically a dimension of the desired output visualization, such as a diverging color scale.
 
 <a name="quantile" href="Quantitative-Scales#quantile">#</a> d3.scale.<b>quantile</b>()
 
@@ -339,7 +339,7 @@ Threshold scales are similar to quantize scales, except they allow you to map ar
 
 <a name="threshold" href="#threshold">#</a> d3.scale.<b>threshold</b>()
 
-Constructs a new threshold scale with the default domain [.5] and the default range [0,1]. Thus, the default threshold scale is equivalent to the [[round|https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Math/round]] function for numbers; for example threshold(0.49) returns 0, and threshold(0.51) returns 1.
+Constructs a new threshold scale with the default domain [.5] and the default range [0,1]. Thus, the default threshold scale is equivalent to the [round](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Math/round) function for numbers; for example threshold(0.49) returns 0, and threshold(0.51) returns 1.
 
 ```javascript
 var t = d3.scale.threshold().domain([0, 1]).range(['a', 'b', 'c']);
