@@ -219,8 +219,7 @@ Constructs a new ordinal scale with a range of twenty categorical colors:
 
 ## ColorBrewer
 
-D3 also bundles some fantastic categorical color scales by [Cynthia Brewer](http://colorbrewer2.org/). You can find those in either CSS or JavaScript form in [lib/colorbrewer](/mbostock/d3/tree/master/lib/colorbrewer).
-
+D3 also bundles some fantastic categorical color scales by [Cynthia Brewer](http://colorbrewer2.org/). You can find those in either CSS or JavaScript form in [lib/colorbrewer](https://github.com/d3/d3/tree/v3.5.17/lib/colorbrewer).
 For CSS, assign a class such as "q0-3", "q1-3" or "q2-3" to the element you wish it be filled. Then, set the class attribute on a parent element (such as the SVG element) with the desired color scale name, such as "RdBu" or "Blues". For examples, see: [calendar heatmap](http://mbostock.github.com/d3/talk/20111116/calendar.html), [choropleth](http://mbostock.github.com/d3/talk/20111018/choropleth.html).
 
 For JavaScript, you can use colorbrewer.RdBu[9] or equivalent as the range of a d3.scale.ordinal. For example:
