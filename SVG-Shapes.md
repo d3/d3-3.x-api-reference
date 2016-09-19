@@ -82,7 +82,7 @@ A path generator, such as that returned by d3.svg.line, is both an object and a 
 
 Constructs a new line generator with the default *x*- and *y*-accessor functions (that assume the input data is a two-element array of numbers; see below for details), and linear interpolation. The returned function generates path data for an open piecewise linear curve, or polyline, as in a line chart:
 
-![line](line.png)
+![line](img/line.png)
 
 By changing the interpolation, you can also generate splines and step functions. Also, don't be afraid to tack on additional path commands at the end. For example, if you want to generate a closed path, append a closepath (Z) command:
 
@@ -248,7 +248,7 @@ See the Cartesian [line.defined](SVG-Shapes.md#line_defined) method.
 
 Constructs a new area generator with the default *x*-, *y0*- and *y1*-accessor functions (that assume the input data is a two-element array of numbers; see below for details), and linear interpolation. The returned function generates path data for a closed piecewise linear curve, or polygon, as in an area chart:
 
-![area](area.png)
+![area](img/area.png)
 
 Conceptually, the polygon is formed using two [lines](SVG-Shapes.md#line): the top line is formed using the *x*- and *y1*-accessor functions, and proceeds from left-to-right; the bottom line is added to this line, using the *x*- and *y0*-accessor functions, and proceeds from right-to-left. By setting the [transform](http://www.w3.org/TR/SVG/coords.html#TransformAttribute) attribute to rotate the path element by 90 degrees, you can also generate vertical areas. By changing the interpolation, you can also generate splines and step functions.
 
@@ -399,7 +399,7 @@ Returns the path data string for the specified array of *data* elements.
 
 Constructs a new arc generator with the default inner radius, outer radius, start angle and end angle accessor functions (that assume the input data is an object with named attributes matching the accessors; see below for details). While the default accessors assume that the arc dimensions are all specified dynamically, it is very common to set one or more of the dimensions as a constant, such as setting the inner radius to zero for a pie chart. The returned function generates path data for a closed solid arc, as in a pie or donut chart:
 
-![arc](arc.png)
+![arc](img/arc.png)
 
 In fact, four forms are possible: a [disk](https://en.wikipedia.org/wiki/Disk_(mathematics)) (when the inner radius is zero and the angular span is greater than or equal to 2π), a [circular sector](http://en.wikipedia.org/wiki/Circular_sector) (when the inner radius is zero and the angular span is less than 2π), an [annulus](http://en.wikipedia.org/wiki/Annulus_(mathematics)) (when the inner radius is non-zero and the angular span is greater than or equal to 2π), and an annular sector (when the inner radius is non-zero and the angular span is less than 2π).
 
@@ -511,7 +511,7 @@ Alternatively, you can use SVG's transform attribute to rotate text into positio
 
 Constructs a new symbol generator with the default *type*- and *size*-accessor functions (that make no assumptions about input data, and produce a circle sized 64 square pixels; see below for details). While the default accessors generate static symbols, it is common to set one or more of the accessors using a function, such as setting the size proportional to a dimension of data for a scatterplot. The returned function generates path data for various symbols, as in a dot plot:
 
-![symbol](symbol.png)
+![symbol](img/symbol.png)
 
 Note that the symbol does not include accessors for *x* and *y*. Instead, you can use the path element's [transform](http://www.w3.org/TR/SVG/coords.html#TransformAttribute) attribute to position the symbols, as in:
 
@@ -556,7 +556,7 @@ The array of supported [symbol types](#symbol_type).
 
 Constructs a new chord generator with the default accessor functions (that assume the input data is an object with named attributes matching the accessors; see below for details). While the default accessors assume that the chord dimensions are all specified dynamically, it is very common to set one or more of the dimensions as a constant, such as the radius. The returned function generates path data for a closed shape connecting two [arcs](http://en.wikipedia.org/wiki/Arc_(geometry)) with quadratic Bézier curves, as in a [chord diagram](http://mbostock.github.com/d3/ex/chord.html):
 
-![chord](chord.png)
+![chord](img/chord.png)
 
 A chord generator is often used in conjunction with an [arc generator](SVG-Shapes.md#arc), so as to draw annular segments at the start and end of the chords. In addition, the [chord layout](Chord-Layout.md) is useful for generating objects that describe a set of grouped chords from a matrix, compatible with the default accessors.
 
@@ -628,7 +628,7 @@ The *endAngle*-accessor is invoked in a similar manner as other value functions 
 
 Constructs a new diagonal generator with the default accessor functions (that assume the input data is an object with named attributes matching the accessors; see below for details). The returned function generates the path data for a cubic Bézier connecting the source and target points; the tangents are specified to produce smooth fan-in and fan-out when connecting nodes, as in a [node-link diagram](http://mbostock.github.com/d3/ex/tree.html):
 
-![diagonal](diagonal.png)
+![diagonal](img/diagonal.png)
 
 Although diagonals default to Cartesian (axis-aligned) orientations, they can be used in radial and other orientations using a [projection](SVG-Shapes.md#diagonal_projection).
 

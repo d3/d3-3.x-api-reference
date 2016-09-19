@@ -4,7 +4,7 @@
 
 The **tree** layout produces tidy node-link diagrams of trees using the [Reingold–Tilford “tidy” algorithm](http://emr.cs.iit.edu/~reingold/tidier-drawings.pdf). For example, a tree layout can be used to organize software classes in a package hierarchy:
 
-[![diagonal](diagonal.png)](http://mbostock.github.com/d3/ex/tree.html)
+[![diagonal](img/diagonal.png)](http://mbostock.github.com/d3/ex/tree.html)
 
 Like most other layouts, the object returned by d3.layout.tree is both an object and a function. That is: you can call the layout like any other function, and the layout has additional methods that change its behavior. Like other classes in D3, layouts follow the method chaining pattern where setter methods return the layout itself, allowing multiple setters to be invoked in a concise statement.
 

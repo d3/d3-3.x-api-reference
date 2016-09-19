@@ -4,7 +4,7 @@
 
 The **cluster layout** produces [dendrograms](http://en.wikipedia.org/wiki/Dendrogram): node-link diagrams that place leaf nodes of the tree at the same depth. For example, a cluster layout can be used to organize software classes in a package hierarchy:
 
-[![cluster](cluster.png)](http://mbostock.github.com/d3/ex/cluster.html)
+[![cluster](img/cluster.png)](http://mbostock.github.com/d3/ex/cluster.html)
 
 Like other classes in D3, layouts follow the method chaining pattern where setter methods return the layout itself, allowing multiple setters to be invoked in a concise statement.
 

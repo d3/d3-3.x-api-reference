@@ -4,7 +4,7 @@
 
 A flexible force-directed graph layout implementation using position [Verlet integration](http://en.wikipedia.org/wiki/Verlet_integration) to allow [simple constraints](http://www.csse.monash.edu.au/~tdwyer/Dwyer2009FastConstraints.pdf). For more on physical simulations, see [Thomas Jakobsen](http://www.gamasutra.com/resource_guide/20030121/jacobson_pfv.htm). This implementation uses a [quadtree](Quadtree-Geom.md) to accelerate charge interaction using the [Barnes–Hut approximation](http://en.wikipedia.org/wiki/Barnes%E2%80%93Hut_simulation). In addition to the repulsive [charge](Force-Layout.md#charge) force, a pseudo-[gravity](Force-Layout.md#gravity) force keeps nodes centered in the visible area and avoids expulsion of disconnected subgraphs, while links are fixed-[distance](Force-Layout.md#distance) geometric constraints. Additional custom forces and constraints may be applied on the "tick" event, simply by updating the *x* and *y* attributes of nodes.
 
-[![force](force.png)](http://bl.ocks.org/mbostock/4062045)
+[![force](img/force.png)](http://bl.ocks.org/mbostock/4062045)
 
 For an extensive overview of the possibilities, with examples, see [this talk](https://vimeo.com/29458354) and [corresponding deck](http://mbostock.github.io/d3/talk/20110921/#0).
 

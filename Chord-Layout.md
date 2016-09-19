@@ -4,7 +4,7 @@
 
 **Chord diagrams** show relationships among a group of entities. For example, consider a hypothetical population of people with different hair colors: black, blonde, brown and red. Each person in this population has a preferred hair color for a dating partner; of the 29,630 (hypothetical) people with black hair, 40% (11,975) prefer partners with the same hair color. This preference is asymmetric: for example, only 10% of people with blonde hair prefer black hair, while 20% of people with black hair prefer blonde hair.
 
-[![chord](chord.png)](http://mbostock.github.com/d3/ex/chord.html)
+[![chord](img/chord.png)](http://mbostock.github.com/d3/ex/chord.html)
 
 A chord diagram visualizes these relationships by drawing quadratic Bézier curves between arcs. The source and target arcs represents two mirrored subsets of the total population, such as the number of people with black hair that prefer blonde hair, and the number of people with blonde hair that prefer black hair. As another example, consider this chord diagram of [software dependencies](http://bl.ocks.org/mbostock/1046712).
 

@@ -131,91 +131,91 @@ Returns an exact copy of this ordinal scale. Changes to this scale will not affe
 
 Constructs a new ordinal scale with a range of ten categorical colors:
 
-![1f77b4](1f77b4.png) #1f77b4<br>
-![ff7f0e](ff7f0e.png) #ff7f0e<br>
-![2ca02c](2ca02c.png) #2ca02c<br>
-![d62728](d62728.png) #d62728<br>
-![9467bd](9467bd.png) #9467bd<br>
-![8c564b](8c564b.png) #8c564b<br>
-![e377c2](e377c2.png) #e377c2<br>
-![7f7f7f](7f7f7f.png) #7f7f7f<br>
-![bcbd22](bcbd22.png) #bcbd22<br>
-![17becf](17becf.png) #17becf<br>
+![1f77b4](img/1f77b4.png) #1f77b4<br>
+![ff7f0e](img/ff7f0e.png) #ff7f0e<br>
+![2ca02c](img/2ca02c.png) #2ca02c<br>
+![d62728](img/d62728.png) #d62728<br>
+![9467bd](img/9467bd.png) #9467bd<br>
+![8c564b](img/8c564b.png) #8c564b<br>
+![e377c2](img/e377c2.png) #e377c2<br>
+![7f7f7f](img/7f7f7f.png) #7f7f7f<br>
+![bcbd22](img/bcbd22.png) #bcbd22<br>
+![17becf](img/17becf.png) #17becf<br>
 
 <a name="category20" href="Ordinal-Scales#category20">#</a> d3.scale.<b>category20</b>()
 
 Constructs a new ordinal scale with a range of twenty categorical colors:
 
-![1f77b4](1f77b4.png) #1f77b4<br>
-![aec7e8](aec7e8.png) #aec7e8<br>
-![ff7f0e](ff7f0e.png) #ff7f0e<br>
-![ffbb78](ffbb78.png) #ffbb78<br>
-![2ca02c](2ca02c.png) #2ca02c<br>
-![98df8a](98df8a.png) #98df8a<br>
-![d62728](d62728.png) #d62728<br>
-![ff9896](ff9896.png) #ff9896<br>
-![9467bd](9467bd.png) #9467bd<br>
-![c5b0d5](c5b0d5.png) #c5b0d5<br>
-![8c564b](8c564b.png) #8c564b<br>
-![c49c94](c49c94.png) #c49c94<br>
-![e377c2](e377c2.png) #e377c2<br>
-![f7b6d2](f7b6d2.png) #f7b6d2<br>
-![7f7f7f](7f7f7f.png) #7f7f7f<br>
-![c7c7c7](c7c7c7.png) #c7c7c7<br>
-![bcbd22](bcbd22.png) #bcbd22<br>
-![dbdb8d](dbdb8d.png) #dbdb8d<br>
-![17becf](17becf.png) #17becf<br>
-![9edae5](9edae5.png) #9edae5<br>
+![1f77b4](img/1f77b4.png) #1f77b4<br>
+![aec7e8](img/aec7e8.png) #aec7e8<br>
+![ff7f0e](img/ff7f0e.png) #ff7f0e<br>
+![ffbb78](img/ffbb78.png) #ffbb78<br>
+![2ca02c](img/2ca02c.png) #2ca02c<br>
+![98df8a](img/98df8a.png) #98df8a<br>
+![d62728](img/d62728.png) #d62728<br>
+![ff9896](img/ff9896.png) #ff9896<br>
+![9467bd](img/9467bd.png) #9467bd<br>
+![c5b0d5](img/c5b0d5.png) #c5b0d5<br>
+![8c564b](img/8c564b.png) #8c564b<br>
+![c49c94](img/c49c94.png) #c49c94<br>
+![e377c2](img/e377c2.png) #e377c2<br>
+![f7b6d2](img/f7b6d2.png) #f7b6d2<br>
+![7f7f7f](img/7f7f7f.png) #7f7f7f<br>
+![c7c7c7](img/c7c7c7.png) #c7c7c7<br>
+![bcbd22](img/bcbd22.png) #bcbd22<br>
+![dbdb8d](img/dbdb8d.png) #dbdb8d<br>
+![17becf](img/17becf.png) #17becf<br>
+![9edae5](img/9edae5.png) #9edae5<br>
 
 <a name="category20b" href="Ordinal-Scales#category20b">#</a> d3.scale.<b>category20b</b>()
 
 Constructs a new ordinal scale with a range of twenty categorical colors:
 
-![393b79](393b79.png) #393b79<br>
-![5254a3](5254a3.png) #5254a3<br>
-![6b6ecf](6b6ecf.png) #6b6ecf<br>
-![9c9ede](9c9ede.png) #9c9ede<br>
-![637939](637939.png) #637939<br>
-![8ca252](8ca252.png) #8ca252<br>
-![b5cf6b](b5cf6b.png) #b5cf6b<br>
-![cedb9c](cedb9c.png) #cedb9c<br>
-![8c6d31](8c6d31.png) #8c6d31<br>
-![bd9e39](bd9e39.png) #bd9e39<br>
-![e7ba52](e7ba52.png) #e7ba52<br>
-![e7cb94](e7cb94.png) #e7cb94<br>
-![843c39](843c39.png) #843c39<br>
-![ad494a](ad494a.png) #ad494a<br>
-![d6616b](d6616b.png) #d6616b<br>
-![e7969c](e7969c.png) #e7969c<br>
-![7b4173](7b4173.png) #7b4173<br>
-![a55194](a55194.png) #a55194<br>
-![ce6dbd](ce6dbd.png) #ce6dbd<br>
-![de9ed6](de9ed6.png) #de9ed6<br>
+![393b79](img/393b79.png) #393b79<br>
+![5254a3](img/5254a3.png) #5254a3<br>
+![6b6ecf](img/6b6ecf.png) #6b6ecf<br>
+![9c9ede](img/9c9ede.png) #9c9ede<br>
+![637939](img/637939.png) #637939<br>
+![8ca252](img/8ca252.png) #8ca252<br>
+![b5cf6b](img/b5cf6b.png) #b5cf6b<br>
+![cedb9c](img/cedb9c.png) #cedb9c<br>
+![8c6d31](img/8c6d31.png) #8c6d31<br>
+![bd9e39](img/bd9e39.png) #bd9e39<br>
+![e7ba52](img/e7ba52.png) #e7ba52<br>
+![e7cb94](img/e7cb94.png) #e7cb94<br>
+![843c39](img/843c39.png) #843c39<br>
+![ad494a](img/ad494a.png) #ad494a<br>
+![d6616b](img/d6616b.png) #d6616b<br>
+![e7969c](img/e7969c.png) #e7969c<br>
+![7b4173](img/7b4173.png) #7b4173<br>
+![a55194](img/a55194.png) #a55194<br>
+![ce6dbd](img/ce6dbd.png) #ce6dbd<br>
+![de9ed6](img/de9ed6.png) #de9ed6<br>
 
 <a name="category20c" href="Ordinal-Scales#category20c">#</a> d3.scale.<b>category20c</b>()
 
 Constructs a new ordinal scale with a range of twenty categorical colors:
 
-![3182bd](3182bd.png) #3182bd<br>
-![6baed6](6baed6.png) #6baed6<br>
-![9ecae1](9ecae1.png) #9ecae1<br>
-![c6dbef](c6dbef.png) #c6dbef<br>
-![e6550d](e6550d.png) #e6550d<br>
-![fd8d3c](fd8d3c.png) #fd8d3c<br>
-![fdae6b](fdae6b.png) #fdae6b<br>
-![fdd0a2](fdd0a2.png) #fdd0a2<br>
-![31a354](31a354.png) #31a354<br>
-![74c476](74c476.png) #74c476<br>
-![a1d99b](a1d99b.png) #a1d99b<br>
-![c7e9c0](c7e9c0.png) #c7e9c0<br>
-![756bb1](756bb1.png) #756bb1<br>
-![9e9ac8](9e9ac8.png) #9e9ac8<br>
-![bcbddc](bcbddc.png) #bcbddc<br>
-![dadaeb](dadaeb.png) #dadaeb<br>
-![636363](636363.png) #636363<br>
-![969696](969696.png) #969696<br>
-![bdbdbd](bdbdbd.png) #bdbdbd<br>
-![d9d9d9](d9d9d9.png) #d9d9d9<br>
+![3182bd](img/3182bd.png) #3182bd<br>
+![6baed6](img/6baed6.png) #6baed6<br>
+![9ecae1](img/9ecae1.png) #9ecae1<br>
+![c6dbef](img/c6dbef.png) #c6dbef<br>
+![e6550d](img/e6550d.png) #e6550d<br>
+![fd8d3c](img/fd8d3c.png) #fd8d3c<br>
+![fdae6b](img/fdae6b.png) #fdae6b<br>
+![fdd0a2](img/fdd0a2.png) #fdd0a2<br>
+![31a354](img/31a354.png) #31a354<br>
+![74c476](img/74c476.png) #74c476<br>
+![a1d99b](img/a1d99b.png) #a1d99b<br>
+![c7e9c0](img/c7e9c0.png) #c7e9c0<br>
+![756bb1](img/756bb1.png) #756bb1<br>
+![9e9ac8](img/9e9ac8.png) #9e9ac8<br>
+![bcbddc](img/bcbddc.png) #bcbddc<br>
+![dadaeb](img/dadaeb.png) #dadaeb<br>
+![636363](img/636363.png) #636363<br>
+![969696](img/969696.png) #969696<br>
+![bdbdbd](img/bdbdbd.png) #bdbdbd<br>
+![d9d9d9](img/d9d9d9.png) #d9d9d9<br>
 
 ## ColorBrewer
 

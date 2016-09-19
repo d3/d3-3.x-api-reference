@@ -4,7 +4,7 @@
 
 Implements Danny Holten's [hierarchical edge bundling](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.220.8113&rep=rep1&type=pdf) algorithm. For each input link, a path is computed that travels through the tree, up the parent hierarchy to the least common ancestor, and then back down to the destination node. This sequence of nodes can then be used in conjunction with other [hierarchical layouts](Hierarchy-Layout.md), such as [cluster](Cluster-Layout.md) to generate bundled splines between nodes:
 
-![bundle](bundle.png)
+![bundle](img/bundle.png)
 
 For example, consider this visualization of [software dependencies](http://bl.ocks.org/mbostock/1044242).
 

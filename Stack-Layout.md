@@ -6,7 +6,7 @@ The stack layout takes an array of layer objects, each having a series (array) o
 The layout computes a baseline for the first layer which it then propagates to the above layers, so as to produce a stacked data set.
 Several baseline algorithms are supported, along with sorting heuristics to improve perception, as described in [“Stacked Graphs—Geometry & Aesthetics”](http://www.leebyron.com/else/streamgraph/download.php?file=stackedgraphs_byron_wattenberg.pdf) by Byron & Wattenberg.
 
-[![stack](stack.png)](http://bl.ocks.org/mbostock/4060954)
+[![stack](img/stack.png)](http://bl.ocks.org/mbostock/4060954)
 
 The stack layout operates in an arbitrary two-dimensional *x* and *y* coordinate space, similar to D3's other layouts, including [tree](Tree-Layout.md). Thus, layers can be stacked vertically, horizontally, or even [radially](http://hint.fm/projects/flickr/). While the "zero" offset is the default, a streamgraph can be generated using the "wiggle" offset, which attempts to minimize change in slope weighted by layer thickness.
 

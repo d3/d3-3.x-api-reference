@@ -4,7 +4,7 @@
 
 The pie layout is a convenience for computing the start and end angles of arcs that comprise a pie or donut chart:
 
-![pie](pie.png)
+![pie](img/pie.png)
 
 You don't *need* to use the pie layout to create a pie chart; you can just use the [arc shape](SVG-Shapes.md#arc) directly if you prefer. The pie layout simply makes it easier to convert an array of data into an array of objects with startAngle and endAngle attributes that range from 0 to 2π, which you can then pass to the arc shape generator.
 

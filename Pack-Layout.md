@@ -6,11 +6,11 @@ Enclosure diagrams use containment (nesting) to represent the hierarchy. The siz
 
 This layout is based on [Visualization of large hierarchical data by circle packing](https://dl.acm.org/citation.cfm?id=1124851) by Wang et al.
 
-[![pack](pack.png)](http://bl.ocks.org/mbostock/4063530)
+[![pack](img/pack.png)](http://bl.ocks.org/mbostock/4063530)
 
 By flattening the hierarchy, the **pack layout** can also be used to create [bubble charts](http://en.wikipedia.org/wiki/Bubble_chart):
 
-[![bubble](bubble.png)](http://bl.ocks.org/mbostock/4063269)
+[![bubble](img/bubble.png)](http://bl.ocks.org/mbostock/4063269)
 
 Like other classes in D3, layouts follow the method chaining pattern where setter methods return the layout itself, allowing multiple setters to be invoked in a concise statement.
 
