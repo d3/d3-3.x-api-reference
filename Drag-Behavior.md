@@ -4,7 +4,7 @@
 
 This behavior automatically creates event listeners to handle drag gestures on an element. Both mouse events and touch events are supported.
 
-<a name="drag" href="Drag-Behavior#drag">#</a> d3.behavior.<b>drag</b>()
+<a name="drag" href="#drag">#</a> d3.behavior.<b>drag</b>()
 
 Constructs a new drag behavior. Once constructed, you can apply the drag behavior to selected elements using selection.call:
 
@@ -19,7 +19,7 @@ All registered listeners use the “drag” namespace, so to subsequently remove
 selection.on(".drag", null);
 ```
 
-<a name="on" href="Drag-Behavior#on">#</a> drag.<b>on</b>(<i>type</i>[, <i>listener</i>])
+<a name="on" href="#on">#</a> drag.<b>on</b>(<i>type</i>[, <i>listener</i>])
 
 Registers the specified *listener* to receive events of the specified *type* from the drag behavior. If no *listener* is specified, returns the currently-registered listener for the specified event *type*. (The *type* may include a namespace; see [dispatch.on](Internals.md#dispatch_on) for additional details.) The following events are supported:
 
@@ -46,7 +46,7 @@ drag.on("dragstart", function() {
 });
 ```
 
-<a name="origin" href="Drag-Behavior#origin">#</a> drag.<b>origin</b>([<i>origin</i>])
+<a name="origin" href="#origin">#</a> drag.<b>origin</b>([<i>origin</i>])
 
 If *origin* is specified, sets the origin accessor to the specified function. If *origin* is not specified, returns the current origin accessor which defaults to null.
 

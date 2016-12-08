@@ -4,7 +4,7 @@
 
 SVG has a different namespace from HTML, so D3 provides a few tools to simplify dealing with namespaces.
 
-<a name="prefix" href="Namespaces#prefix">#</a> d3.ns.<b>prefix</b>
+<a name="prefix" href="#prefix">#</a> d3.ns.<b>prefix</b>
 
 The map of registered namespace prefixes. The default value is:
 
@@ -20,7 +20,7 @@ The map of registered namespace prefixes. The default value is:
 
 Additional prefixes may be assigned as needed to create elements or attributes in other namespaces.
 
-<a name="qualify" href="Namespaces#qualify">#</a> d3.ns.<b>qualify</b>(<i>name</i>)
+<a name="qualify" href="#qualify">#</a> d3.ns.<b>qualify</b>(<i>name</i>)
 
 Qualifies the specified *name*, which may have a namespace prefix. If the name contains a colon (":"), the substring before the colon is interpreted as the namespace prefix, which must be registered in d3.ns.**prefix**; the return value is an object with `space` and `local` attributes containing the full namespace URL and the local name. For example, the result of qualify("svg:text") is:
 

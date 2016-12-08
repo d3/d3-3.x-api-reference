@@ -10,11 +10,11 @@ Several baseline algorithms are supported, along with sorting heuristics to impr
 
 The stack layout operates in an arbitrary two-dimensional *x* and *y* coordinate space, similar to D3's other layouts, including [tree](Tree-Layout.md). Thus, layers can be stacked vertically, horizontally, or even [radially](http://hint.fm/projects/flickr/). While the "zero" offset is the default, a streamgraph can be generated using the "wiggle" offset, which attempts to minimize change in slope weighted by layer thickness.
 
-<a name="stack" href="Stack-Layout#stack">#</a> d3.layout.<b>stack</b>()
+<a name="stack" href="#stack">#</a> d3.layout.<b>stack</b>()
 
 Constructs a new stack layout with the default offset (zero) and order (null). The returned layout object is both an object and a function. That is: you can call the layout like any other function, and the layout has additional methods that change its behavior. Like other classes in D3, layouts follow the method chaining pattern where setter methods return the layout itself, allowing multiple setters to be invoked in a concise statement.
 
-<a name="_stack" href="Stack-Layout#_stack">#</a> <b>stack</b>(<i>layers</i>[, <i>index</i>])
+<a name="_stack" href="#_stack">#</a> <b>stack</b>(<i>layers</i>[, <i>index</i>])
 
 Computes the *y*-coordinate baseline for each layer in the *layers* array, and then propagates that baseline to the other layers. In the simplest case, *layers* is a two-dimensional array of *point objects*, all having the same length, and each having a vertical  and horizontal ordinate value to define the *y*-thickness of each layer at the given *x*-position.
 
@@ -33,7 +33,7 @@ The last two being physically added onto the point objects if required.
 
 The optional *index* argument is not consumed by the default layout, but is made available to custom [order](Stack-Layout.md#order) and [offset](Stack-Layout.md#offset) objects.
 
-<a name="values" href="Stack-Layout#values">#</a> stack.<b>values</b>([<i>accessor</i>])
+<a name="values" href="#values">#</a> stack.<b>values</b>([<i>accessor</i>])
 
 Specifies how to extract the *points* array from the *layer* elements of the *layers* array; *accessor* is a function which is invoked on each input layer passed to [stack](Stack-Layout.md#_stack), equivalent to calling *layers.map(accessor)* before computing the stack layout. The default values function is the identity function. If *accessor* is not specified, returns the current values accessor.
 
@@ -77,7 +77,7 @@ svg.selectAll("path")
     .text(function(d) { return d.name; });
 ```
 
-<a name="offset" href="Stack-Layout#offset">#</a> stack.<b>offset</b>([<i>offset</i>])
+<a name="offset" href="#offset">#</a> stack.<b>offset</b>([<i>offset</i>])
 
 If *offset* is specified, sets the stack offset algorithm to the specified value. If *offset* is not specified, returns the current offset algorithm. The following string values are supported:
 
@@ -98,7 +98,7 @@ function offset(data) {
 }
 ```
 
-<a name="order" href="Stack-Layout#order">#</a> stack.<b>order</b>([<i>order</i>])
+<a name="order" href="#order">#</a> stack.<b>order</b>([<i>order</i>])
 
 If *order* is specified, sets the stack order to the specified value. If *order* is not specified, returns the current order. The following string values are supported:
 
@@ -116,7 +116,7 @@ function order(data) {
 
 See also [d3.range](Arrays.md#d3_range).
 
-<a name="x" href="Stack-Layout#x">#</a> stack.<b>x</b>([<i>accessor</i>])
+<a name="x" href="#x">#</a> stack.<b>x</b>([<i>accessor</i>])
 
 Specifies how to access the *x*-coordinate of each value’s position. If *accessor* is specified, sets the accessor to the specified function. If *accessor* is not specified, returns the current function, which by default assumes that each input value has an x attribute:
 
@@ -130,7 +130,7 @@ The *x*-accessor is invoked for each input value, for each input layer, being pa
 
 The *x*-coordinate only affects the behavior of the “wiggle” [offset](#offset); changing this accessor does *not* affect how data is grouped into stacks. Although the *x*-accessor is invoked for all layers (not just the bottommost layer), **the stack layout assumes that the *x*-coordinates of all layers are homogenous and consistent**. In other words, each layer must contain the same number of values, at the same *x*-coordinates, in the same order. If your data is irregular, you will need to reinterpolate or reorder the data before computing the stack.
 
-<a name="y" href="Stack-Layout#y">#</a> stack.<b>y</b>([<i>accessor</i>])
+<a name="y" href="#y">#</a> stack.<b>y</b>([<i>accessor</i>])
 
 Specifies how to access the *y*-coordinate of each value's thickness. If *accessor* is specified, sets the accessor to the specified function. If *accessor* is not specified, returns the current function, which by default assumes that each input value has a y attribute:
 
@@ -142,7 +142,7 @@ function y(d) {
 
 The *y*-accessor is invoked for each input value, for each input layer, being passed the current data (d) and index (i). The return value of the accessor must be a number. With the exception of the "expand" offset, the stack layout does not perform any automatic scaling of data. To simplify scaling, use this layout in conjunction with a [linear scale](Quantitative-Scales.md#linear) or similar.
 
-<a name="out" href="Stack-Layout#out">#</a> stack.<b>out</b>([<i>setter</i>])
+<a name="out" href="#out">#</a> stack.<b>out</b>([<i>setter</i>])
 
 Specifies how to propagate the computed baseline to above layers. If *setter* is specified, it is used as the output function. If *setter* is not specified, returns the current output function, which by default assumes that each input value has y and y0 attributes:
 

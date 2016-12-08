@@ -24,11 +24,11 @@ D3’s [axis component](http://bl.ocks.org/mbostock/1166403) displays reference 
 
 The axis component is designed to work with D3’s [quantitative](Quantitative-Scales.md), [time](Time-Scales.md) and [ordinal](Ordinal-Scales.md) scales.
 
-<a name="axis" href="SVG-Axes#axis">#</a> d3.svg.<b>axis</b>()
+<a name="axis" href="#axis">#</a> d3.svg.<b>axis</b>()
 
 Create a new default axis.
 
-<a name="_axis" href="SVG-Axes#_axis">#</a> <b>axis</b>(<i>selection</i>)
+<a name="_axis" href="#_axis">#</a> <b>axis</b>(<i>selection</i>)
 
 Apply the axis to a [selection](Selections.md) or [transition](Transitions.md). The selection must contain an `svg` or `g` element. For example:
 

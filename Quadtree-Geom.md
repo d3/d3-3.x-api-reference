@@ -14,10 +14,9 @@ A **quadtree** is a two-dimensional recursive spatial subdivision. This implemen
 
 Creates a new quadtree factory with the default [_x_-accessor](#x), [_y_-accessor](#y) and [extent](#extent). The [returned function](#_quadtree) can be used to create any number of quadtrees from data with the factory’s configuration.
 
-<a name="_quadtree" href="Quadtree-Geom#_quadtree">#</a> <b>quadtree</b>(<i>points</i>),
-<a name="_quadtree" href="Quadtree-Geom#_quadtree">#</a> <b>quadtree</b>(<i>points</i>, <i>x2</i>, <i>y2</i>),
-<a name="_quadtree" href="Quadtree-Geom#_quadtree">#</a> <b>quadtree</b>(<i>points</i>, <i>x1</i>, <i>y1</i>, <i>x2</i>, <i>y2</i>)
-
+<a name="_quadtree" href="#_quadtree">#</a> <b>quadtree</b>(<i>points</i>),
+<a name="_quadtree" href="#_quadtree">#</a> <b>quadtree</b>(<i>points</i>, <i>x2</i>, <i>y2</i>),
+<a name="_quadtree" href="#_quadtree">#</a> <b>quadtree</b>(<i>points</i>, <i>x1</i>, <i>y1</i>, <i>x2</i>, <i>y2</i>)
 
 Constructs a new quadtree for the specified array of data _points_, returning the root node of a new quadtree. The elements of the _points_ array must have _x_ and _y_ members defining their coordinates. The current [_x_-](#x) and [_y_-](#y) accessor functions are ignored. The extent can also be specified with by additional, optional arguments with `x1` and `y1` specified explicitly or assumed to be zero if omitted. To build a quadtree by adding points incrementally, the specified _points_ array can be empty, and then points can be later [added](#add) to the returned root node; in this case, you must also specify the [extent](#extent) of the quadtree.
 

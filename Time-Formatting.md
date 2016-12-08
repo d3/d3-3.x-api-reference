@@ -4,7 +4,7 @@
 
 D3 includes a helper module for parsing and formatting dates modeled after the venerable [strptime](http://pubs.opengroup.org/onlinepubs/009695399/functions/strptime.html) and [strftime](http://pubs.opengroup.org/onlinepubs/007908799/xsh/strftime.html) C-library standards. These functions are also notably available in Python's [time](http://docs.python.org/library/time.html) module.
 
-<a name="format" href="Time-Formatting#format">#</a> d3.time.<b>format</b>(<i>specifier</i>)
+<a name="format" href="#format">#</a> d3.time.<b>format</b>(<i>specifier</i>)
 
 Constructs a new local time formatter using the given *specifier*. (Equivalent to [locale.timeFormat](Localization.md#locale_timeFormat) for the default U.S. English locale.) The specifier string may contain the following directives.
 
@@ -53,7 +53,7 @@ format.parse("2011-01-01"); // returns a Date
 format(new Date(2011, 0, 1)); // returns a string
 ```
 
-<a name="_format" href="Time-Formatting#_format">#</a> <b>format</b>(<i>date</i>)
+<a name="_format" href="#_format">#</a> <b>format</b>(<i>date</i>)
 
 Formats the specified *date*, returning the corresponding string. The *date* must be a JavaScript [Date](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date) object.
 
@@ -73,7 +73,7 @@ date = new Date(time); // convert a time in milliseconds to a Date object
 
 If you prefer to be explicit, you can also use the date object's [getTime](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date/getTime) method, but the + operator is shorter and possibly faster.
 
-<a name="parse" href="Time-Formatting#parse">#</a> format.<b>parse</b>(<i>string</i>)
+<a name="parse" href="#parse">#</a> format.<b>parse</b>(<i>string</i>)
 
 Parses the specified *string*, returning the corresponding date object. If the parsing fails, returns null. Unlike "natural language" date parsers (including JavaScript's built-in [parse](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date/parse)), this method is strict: if the specified string does not exactly match the associated format specifier, this method returns null. For example, if the associated format is the full ISO 8601 string "%Y-%m-%dT%H:%M:%SZ", then the string "2011-07-01T19:15:28Z" will be parsed correctly, but "2011-07-01T19:15:28", "2011-07-01 19:15:28" and "2011-07-01" will return null, despite being valid 8601 dates. (Note that the hard-coded "Z" here is different from `%Z`, the time zone offset.) If desired, you can use multiple formats to try multiple format specifiers sequentially.
 
@@ -100,11 +100,11 @@ Thus, if the specified date is not a round second, the milliseconds format (`".%
 
 The **multi** method is available on any d3.time.format constructor. For example, [d3.time.format.utc](#format_utc).multi returns a multi-resolution UTC time format, and [locale.timeFormat](Localization.md#timeFormat).multi returns a multi-resolution time format for the specified locale.
 
-<a name="format_utc" href="Time-Formatting#format_utc">#</a> d3.time.format.<b>utc</b>(<i>specifier</i>)
+<a name="format_utc" href="#format_utc">#</a> d3.time.format.<b>utc</b>(<i>specifier</i>)
 
 Constructs a new UTC time formatter using the given *specifier*. (Equivalent to [locale.timeFormat.utc](Localization.md#locale_timeFormat_utc) for the default U.S. English locale.) The specifier may contain the same directives as the local time [format](Time-Formatting.md#format). Internally, this time formatter is implemented using the UTC methods on the Date object, such as [getUTCDate](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date/getUTCDate) and [setUTCDate](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date/setUTCDate) in place of [getDate](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date/getDate) and [setDate](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date/setDate).
 
-<a name="format_iso" href="Time-Formatting#format_iso">#</a> d3.time.format.<b>iso</b>
+<a name="format_iso" href="#format_iso">#</a> d3.time.format.<b>iso</b>
 
 The full [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) UTC time format: "%Y-%m-%dT%H:%M:%S.%LZ". Where available, this method will use [Date.toISOString](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Date/toISOString) to format and the [Date constructor](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Date) to parse strings. If you depend on strict validation of the input format according to ISO 8601, you should construct a time format explicitly instead:
 

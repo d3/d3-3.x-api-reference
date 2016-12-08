@@ -58,7 +58,7 @@ Specifies an _x_-scale whose domain should be automatically adjusted when zoomin
 
 Specifies an _y_-scale whose domain should be automatically adjusted when zooming. If not specified, returns the current _y_-scale, which defaults to null. If the scale's domain or range is modified programmatically, this function should be called again. Setting the _y_-scale also resets the scale to 1 and the translate to [0, 0].
 
-<a name="on" href="Zoom-Behavior#on">#</a> zoom.<b>on</b>(<i>type</i>, <i>listener</i>)
+<a name="on" href="#on">#</a> zoom.<b>on</b>(<i>type</i>, <i>listener</i>)
 
 Registers the specified *listener* to receive events of the specified *type* from the zoom behavior. The following types are supported:
 

@@ -8,11 +8,11 @@ Implements Danny Holten's [hierarchical edge bundling](http://citeseerx.ist.psu.
 
 For example, consider this visualization of [software dependencies](http://bl.ocks.org/mbostock/1044242).
 
-<a name="bundle" href="Bundle-Layout#bundle">#</a> d3.layout.<b>bundle</b>()
+<a name="bundle" href="#bundle">#</a> d3.layout.<b>bundle</b>()
 
 Constructs a new default bundle layout. Currently, the bundle layout is stateless and thus only has a default configuration. The returned layout object is both an object and a function. That is: you can call the layout like any other function, and the layout has additional methods that change its behavior. Like other classes in D3, layouts follow the method chaining pattern where setter methods return the layout itself, allowing multiple setters to be invoked in a concise statement.
 
-<a name="_bundle" href="Bundle-Layout#_bundle">#</a> <b>bundle</b>(<i>links</i>)
+<a name="_bundle" href="#_bundle">#</a> <b>bundle</b>(<i>links</i>)
 
 Evaluates the bundle layout on the specified array of *links*, returning the computed path from the source to the target, through the [least common ancestor](http://en.wikipedia.org/wiki/Lowest_common_ancestor). Each input link must have two attributes:
 

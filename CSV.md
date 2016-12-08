@@ -52,7 +52,7 @@ d3.csv("example.csv", function(d) {
 
 Using + rather than [parseInt](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/parseInt) or [parseFloat](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/parseFloat) is typically faster, though more restrictive. For example, "30px" when coerced using + returns NaN, while parseInt and parseFloat return 30.
 
-<a name="parseRows" href="CSV#parseRows">#</a> d3.csv.<b>parseRows</b>(<i>string</i>[, <i>accessor</i>])
+<a name="parseRows" href="#parseRows">#</a> d3.csv.<b>parseRows</b>(<i>string</i>[, <i>accessor</i>])
 
 Parses the specified *string*, which is the contents of a CSV file, returning an array of arrays representing the parsed rows. The string is assumed to be [RFC4180-compliant](http://tools.ietf.org/html/rfc4180). Unlike the [parse](CSV.md#parse) method, this method treats the header line as a standard row, and should be used whenever the CSV file does not contain a header. Each row is represented as an array rather than an object. Rows may have variable length. For example, consider the following CSV file:
 
@@ -74,13 +74,13 @@ Note that the values themselves are always strings; they will not be automatical
 
 An optional *accessor* function may be specified as the second argument. This function is invoked for each row in the CSV file, being passed the current row and index as two arguments. The return value of the function replaces the element in the returned array of rows; if the function returns null, the row is stripped from the returned array of rows. In effect, the accessor is similar to applying a [map](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/map) and [filter](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/filter) operator to the returned rows. The accessor function is used by [parse](CSV.md#parse) to convert each row to an object with named attributes.
 
-<a name="format" href="CSV#format">#</a> d3.csv.<b>format</b>(<i>rows</i>)
+<a name="format" href="#format">#</a> d3.csv.<b>format</b>(<i>rows</i>)
 
 Converts the specified array of *rows* into comma-separated values format, returning a string. This operation is the reverse of [parse](CSV.md#parse). Each row will be separated by a newline (\n), and each column within each row will be separated by a comma (,). Values that contain either commas, double-quotes (") or newlines will be escaped using double-quotes.
 
 Each row should be an object, and all object properties will be converted into fields.  For greater control over which properties are converted, convert the rows into arrays containing only the properties that should be converted and use [formatRows](CSV.md#formatRows).
 
-<a name="formatRows" href="CSV#formatRows">#</a> d3.csv.<b>formatRows</b>(<i>rows</i>)
+<a name="formatRows" href="#formatRows">#</a> d3.csv.<b>formatRows</b>(<i>rows</i>)
 
 Converts the specified array of *rows* into comma-separated values format, returning a string. This operation is the reverse of [parseRows](CSV.md#parseRows). Each row will be separated by a newline (\n), and each column within each row will be separated by a comma (,). Values that contain either commas, double-quotes (") or newlines will be escaped using double-quotes.
 
