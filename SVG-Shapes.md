@@ -658,7 +658,7 @@ function target(d) {
 }
 ```
 
-The *target*-accessor is invoked in the same manner as other value functions in D3. The function is passed two arguments, the current datum (d) and the current index (i). It is also possible to specify the *source*-accessor as a constant rather than a function.
+The *target*-accessor is invoked in the same manner as other value functions in D3. The function is passed two arguments, the current datum (d) and the current index (i). It is also possible to specify the *target*-accessor as a constant rather than a function.
 
 <a name="diagonal_projection" href="#diagonal_projection">#</a> diagonal.<b>projection</b>([<i>projection</i>])
 
