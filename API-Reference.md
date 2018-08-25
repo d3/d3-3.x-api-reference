@@ -417,6 +417,7 @@ See one of:
 * [brush.x](SVG-Controls.md#brush_x) - the brush’s <i>x</i>-scale, for horizontal brushing.
 * [brush.y](SVG-Controls.md#brush_y) - the brush’s <i>y</i>-scale, for vertical brushing.
 * [brush.extent](SVG-Controls.md#brush_extent) - the brush’s extent in zero, one or two dimensions.
+* [brush.clamp](SVG-Controls.md#brush_clamp) - enable or disable clamping of the brush extent.
 * [brush.clear](SVG-Controls.md#brush_clear) - reset the brush extent.
 * [brush.empty](SVG-Controls.md#brush_empty) - whether or not the brush extent is empty.
 * [brush.on](SVG-Controls.md#brush_on) - listeners for when the brush is moved.
